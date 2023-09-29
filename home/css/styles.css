@@ -10,32 +10,27 @@
     width: 100%;
     height:600px;
     object-fit: cover;
-    border-radius: 15px;
+    border-radius: 3px;
 }
 
 .productboxes {
-    width: 90%;
+    width: 100%;
     height: 300px;
     object-fit: cover;
-    border-radius: 15px;
+    border-radius: 3px;
 }
 
 .productbanner {
     width: 100%;
     height:300px;
     object-fit: cover;
-    border-radius: 15px;
+    border-radius: 3px;
 }
 
 .row {
     display: flex;
     justify-content: space-evenly;
-}
-
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
+    gap: 2em;
 }
 
 /* http://localhost:3000/home/index.php */
