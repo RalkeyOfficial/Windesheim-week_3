@@ -1,0 +1,41 @@
+#homepage-container {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    background-color: blue; /* temporary, to get an overview */
+    margin-bottom: 3%;
+}
+
+.homepagebanner {
+    width: 100%;
+    height:600px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.productboxes {
+    width: 90%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.productbanner {
+    width: 100%;
+    height:300px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* http://localhost:3000/home/index.php */
