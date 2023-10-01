@@ -1,0 +1,52 @@
+body {
+    background-color: #F8F8F4;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;/*breedte grijze vak*/
+    padding: 0;
+    text-align: center;
+}
+
+header {
+    background-color: #333333;
+    color: white;
+    padding: 20px 0; /*lengte grijze vak*/
+    font-family: 'Poppins', sans-serif;
+}
+
+h1 {
+    font-size: 36px;
+    font-family: 'Poppins', sans-serif;
+    color: #2776EA;
+}
+
+section {
+    margin: 40px auto;
+    max-width: 800px;
+    padding: 20px;
+    text-align: center;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+h2 {
+    font-size: 24px;
+    margin-top: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+p {
+    margin-top: 10px;
+    font-family: 'Poppins', sans-serif;
+}
+
+footer {
+    background-color: #333333;
+    color: white;
+    padding: 10px 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+

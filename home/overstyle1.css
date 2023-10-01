@@ -1,0 +1,77 @@
+body {
+    background-color: #F2F2ED;
+}
+.over-ons {
+    width: 100%;
+    padding-top: 40px; /* Verhoog de bovenmarge */
+    padding-bottom: 50px; /* Verhoog de ondermarge  */
+    max-width: 900px; /* maximale breedte  */
+    margin: 0 auto; /* Centreer inhoud  */
+}
+
+.over-ons img {
+    max-height: 200px;
+    max-width: 100%;
+    margin: 0 auto; /* Centreer afbeelding horizontaal */
+    display: block; /* witruimte onder de afbeelding */
+}
+
+.over-ons-text {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.main {
+    width: 100%;
+    max-width: 1130px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column; /* inhoud boven elkaar in plaats van naast elkaar */
+    align-items: center;
+    justify-content: center;
+}
+
+.over-ons-text h2 {
+    color: #2776EA;
+    font-size: 40px; /* kop kleiner */
+    text-transform: capitalize;
+    margin-bottom: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.over-ons-text h5 {
+    color: #2776EA;
+    letter-spacing: 2px;
+    font-size: 25px; /* subkop kleiner */
+    margin-bottom: 25px;
+    text-transform: capitalize;
+    font-family: 'Poppins', sans-serif;
+}
+
+.over-ons-text p {
+    color: #2776EA;
+    letter-spacing: 1px;
+    line-height: 24px; /*regelhoogte te verkleinen */
+    font-size: 20px; /* tekst kleiner */
+    margin-bottom: 30px; /* ruimte onder de alinea  */
+    font-family: 'Poppins', sans-serif;
+}
+
+.button-over {
+    background-color: #2776EA;
+    color: white;
+    text-decoration: none;
+    border: 2px solid transparent;
+    font-weight: bold;
+    padding: 13px 30px;
+    border-radius: 30px;
+    transition: .4s;
+    margin-top: -5px; /* Verhoog de bovenmarge van de knop */
+}
+
+.button-over:hover {
+    background-color: transparent;
+    border: 2px solid #2776EA;
+    cursor: pointer;
+    color: black;
+}
