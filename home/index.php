@@ -11,40 +11,40 @@
     
     <div id="homepage-container">
         <div>
-            <a href="https://google.com"><img src="img/highlighted-products/headphones.jpg" alt="Headphones" class="homepagebanner"></a>
+            <a href="./productpage.php"><img src="img/highlighted-products/keyboard.jpg" alt="keyboard" class="homepagebanner"></a>
         </div>
     </div>
 
     <div id="homepage-container">
         <div class="row">
-            <a href="https://google.com"><img src="img/highlighted-products/headphones.jpg" alt="Headphones" class="productboxes"></a>
-            <a href="https://google.com"><img src="img/highlighted-products/headphones.jpg" alt="Headphones" class="productboxes"></a>
-            <a href="https://google.com"><img src="img/highlighted-products/headphones.jpg" alt="Headphones" class="productboxes"></a>
-            <a href="https://google.com"><img src="img/highlighted-products/headphones.jpg" alt="Headphones" class="productboxes"></a>
+            <a href="./productpage.php"><img src="img/highlighted-products/headphones.jpg" alt="Headphones" class="homepageboxes"></a>
+            <a href="./productpage.php"><img src="img/highlighted-products/headphones.jpg" alt="Headphones" class="homepageboxes"></a>
+            <a href="./productpage.php"><img src="img/highlighted-products/headphones.jpg" alt="Headphones" class="homepageboxes"></a>
+            <a href="./productpage.php"><img src="img/highlighted-products/headphones.jpg" alt="Headphones" class="homepageboxes"></a>
         </div>
     </div>
 
     <div id="homepage-container">
         <div class="row">
-            <a href="https://google.com"><img src="img/highlighted-products/headphones.jpg" alt="Headphones" class="productboxes"></a>
-            <a href="https://google.com"><img src="img/highlighted-products/headphones.jpg" alt="Headphones" class="productboxes"></a>
-            <a href="https://google.com"><img src="img/highlighted-products/headphones.jpg" alt="Headphones" class="productboxes"></a>
-            <a href="https://google.com"><img src="img/highlighted-products/headphones.jpg" alt="Headphones" class="productboxes"></a>
+            <a href="./productpage.php"><img src="img/highlighted-products/headphones.jpg" alt="Headphones" class="homepageboxes"></a>
+            <a href="./productpage.php"><img src="img/highlighted-products/headphones.jpg" alt="Headphones" class="homepageboxes"></a>
+            <a href="./productpage.php"><img src="img/highlighted-products/headphones.jpg" alt="Headphones" class="homepageboxes"></a>
+            <a href="./productpage.php"><img src="img/highlighted-products/headphones.jpg" alt="Headphones" class="homepageboxes"></a>
         </div>
     </div>
 
     <div id="homepage-container">
         <div>
-            <a href="https://google.com"><img src="img/highlighted-products/headphones.jpg" alt="Headphones" class="productbanner"></a>
+            <a href="./productpage.php"><img src="img/highlighted-products/headphones.jpg" alt="Headphones" class="productbanner"></a>
         </div>
     </div>
 
     <div id="homepage-container">
         <div class="row">
-            <a href="https://google.com"><img src="img/highlighted-products/headphones.jpg" alt="Headphones" class="productboxes"></a>
-            <a href="https://google.com"><img src="img/highlighted-products/headphones.jpg" alt="Headphones" class="productboxes"></a>
-            <a href="https://google.com"><img src="img/highlighted-products/headphones.jpg" alt="Headphones" class="productboxes"></a>
-            <a href="https://google.com"><img src="img/highlighted-products/headphones.jpg" alt="Headphones" class="productboxes"></a>
+            <a href="./productpage.php"><img src="img/highlighted-products/headphones.jpg" alt="Headphones" class="homepageboxes"></a>
+            <a href="./productpage.php"><img src="img/highlighted-products/headphones.jpg" alt="Headphones" class="homepageboxes"></a>
+            <a href="./productpage.php"><img src="img/highlighted-products/headphones.jpg" alt="Headphones" class="homepageboxes"></a>
+            <a href="./productpage.php"><img src="img/highlighted-products/headphones.jpg" alt="Headphones" class="homepageboxes"></a>
             </div>
         </div>
     </div>
