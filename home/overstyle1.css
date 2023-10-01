@@ -57,7 +57,7 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
-button {
+.button-over {
     background-color: #2776EA;
     color: white;
     text-decoration: none;
@@ -69,7 +69,7 @@ button {
     margin-top: -5px; /* Verhoog de bovenmarge van de knop */
 }
 
-button:hover {
+.button-over:hover {
     background-color: transparent;
     border: 2px solid #2776EA;
     cursor: pointer;
