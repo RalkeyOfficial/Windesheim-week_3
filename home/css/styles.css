@@ -49,3 +49,9 @@
 }
 
 /* http://localhost:3000/home/index.php */
+
+.center {
+    display: flex;
+    justify-content: center;
+    gap: 3%;
+}
