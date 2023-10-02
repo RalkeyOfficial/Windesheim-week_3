@@ -16,7 +16,7 @@
     </div>
 
     <div id="homepage-container">
-        <div class="row">
+        <div class="center">
             <a href="./productpage.php"><img src="img/highlighted-products/headphones.jpg" alt="Headphones" class="homepageboxes"></a>
             <a href="./productpage.php"><img src="img/highlighted-products/headphones.jpg" alt="Headphones" class="homepageboxes"></a>
             <a href="./productpage.php"><img src="img/highlighted-products/headphones.jpg" alt="Headphones" class="homepageboxes"></a>
@@ -25,7 +25,7 @@
     </div>
 
     <div id="homepage-container">
-        <div class="row">
+        <div class="center">
             <a href="./productpage.php"><img src="img/highlighted-products/headphones.jpg" alt="Headphones" class="homepageboxes"></a>
             <a href="./productpage.php"><img src="img/highlighted-products/headphones.jpg" alt="Headphones" class="homepageboxes"></a>
             <a href="./productpage.php"><img src="img/highlighted-products/headphones.jpg" alt="Headphones" class="homepageboxes"></a>
@@ -40,7 +40,7 @@
     </div>
 
     <div id="homepage-container">
-        <div class="row">
+        <div class="center">
             <a href="./productpage.php"><img src="img/highlighted-products/headphones.jpg" alt="Headphones" class="homepageboxes"></a>
             <a href="./productpage.php"><img src="img/highlighted-products/headphones.jpg" alt="Headphones" class="homepageboxes"></a>
             <a href="./productpage.php"><img src="img/highlighted-products/headphones.jpg" alt="Headphones" class="homepageboxes"></a>

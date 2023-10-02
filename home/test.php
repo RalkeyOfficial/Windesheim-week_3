@@ -1,10 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link rel="stylesheet" href="css/styles.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <style>
+        .center {
+            display: flex;
+            justify-content: center;
+            gap: 3%;
+        }
+    </style>
+
 </head>
 <body>
     <div class="center">
