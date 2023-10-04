@@ -11,11 +11,11 @@
             <h1>Nerdy Gadgets</h1>
         </a>
         <div class="search">
-            <input type="text">
+            <input type="text" placeholder="search products">
             <button><i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i></button>
         </div>
         <div class="buttons">
-            
+
         </div>
     </div>
     <div class="seperator" />

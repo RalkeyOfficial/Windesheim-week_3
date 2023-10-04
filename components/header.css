@@ -3,7 +3,9 @@
 :root {
     --header-height: 120px;
     --head-size: 55%;
+    --border-radius: 3px;
 
+    --primary-color: #2776EA;
 }
 
 * {
@@ -53,7 +55,7 @@ header .logo img {
     object-fit: cover;
 }
 header .logo h1 {
-    color: #2776EA;
+    color: var(--primary-color);
     width: 6ch; /* 6ch staat voor 6 characters, dus van "Nerdy Gadgets" is het zo lang als "Nerdy " */
     line-height: 24px;
 }
@@ -62,6 +64,23 @@ header .logo h1 {
 header .search {
     width: 100%;
     font-size: 0; /* om whitespace weg te halen */
+    display: flex;
+    align-items: center;
+}
+
+header .search input {
+    outline: none;
+    border: none;
+    border-radius: var(--border-radius) 0 0 var(--border-radius);
+    padding: 0.3rem;
+    flex-grow: 1;
+}
+header .search button {
+    background-color: var(--primary-color);
+    outline: none;
+    border: none;
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+    padding: 0.3rem 0.4rem;
 }
 
 header .navbar {
