@@ -15,7 +15,8 @@
             <button><i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i></button>
         </div>
         <div class="buttons">
-
+            <i class="fa-solid fa-user fa-xl" style="color: #ffffff;"></i>
+            <i class="fa-solid fa-cart-shopping fa-xl" style="color: #ffffff;"></i>   
         </div>
     </div>
     <div class="seperator" />
