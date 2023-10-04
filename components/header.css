@@ -2,7 +2,7 @@
 
 :root {
     --header-height: 120px;
-    --head-size: 60%;
+    --head-size: 55%;
 
 }
 
@@ -23,11 +23,13 @@ header {
 
 header > * {
     padding: 0.5rem;
-    width: 1200px;
+    width: 100%;
+    max-width: 1200px;
 }
 
 .seperator {
     width: 100vw !important;
+    max-width: none;
     height: 1px;
     box-shadow: 0px 2px 1px 1px #252525;
     padding: 0 !important;
@@ -37,9 +39,10 @@ header .head {
     height: var(--head-size);
     display: flex;
     flex-direction: row;
-    gap: 4rem;
+    gap: 6rem;
 }
 
+/* HEAD - LOGO */
 header .logo {
     height: 100%;
     display: flex;
@@ -51,8 +54,14 @@ header .logo img {
 }
 header .logo h1 {
     color: #2776EA;
-    width: 6ch;
+    width: 6ch; /* 6ch staat voor 6 characters, dus van "Nerdy Gadgets" is het zo lang als "Nerdy " */
     line-height: 24px;
+}
+
+/* HEAD - SEARCH */
+header .search {
+    width: 100%;
+    font-size: 0; /* om whitespace weg te halen */
 }
 
 header .navbar {
