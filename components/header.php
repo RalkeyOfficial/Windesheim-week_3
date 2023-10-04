@@ -1,5 +1,5 @@
 <style>
-    <?php include_once ROOT.'/components/header.css' ?>
+    <?php include_once ROOT . '/components/header.css' ?>
 </style>
 
 <script src="https://kit.fontawesome.com/ee85149100.js" crossorigin="anonymous"></script>
@@ -12,15 +12,32 @@
         </a>
         <div class="search">
             <input type="text" placeholder="search products">
-            <button><i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i></button>
+            <button><i class="fa-solid fa-magnifying-glass fa-lg" style="color: #ffffff;"></i></button>
         </div>
         <div class="buttons">
-            <i class="fa-solid fa-user fa-xl" style="color: #ffffff;"></i>
-            <i class="fa-solid fa-cart-shopping fa-xl" style="color: #ffffff;"></i>   
+            <i class="fa-solid fa-user fa-2xl" style="color: #ffffff;"></i>
+            <i class="fa-solid fa-cart-shopping fa-2xl" style="color: #ffffff;"></i>
         </div>
     </div>
-    <div class="seperator" />
+    <div class="separator"></div>
     <div class="navbar">
-
+        <div>
+            <button class="dropdown">
+                hardware
+                <span><i class="fa-solid fa-caret-down" style="color: #ffffff;"></i></span>
+            </button>
+            <button>
+                desktops
+                <!-- <span><i class="fa-solid fa-caret-down" style="color: #ffffff;"></i></span> -->
+            </button>
+            <button>
+                laptops
+                <!-- <span><i class="fa-solid fa-caret-down" style="color: #ffffff;"></i></span> -->
+            </button>
+            <button>
+                accessoires
+                <!-- <span><i class="fa-solid fa-caret-down" style="color: #ffffff;"></i></span> -->
+            </button>
+        </div>
     </div>
 </header>

@@ -1,16 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
 
 :root {
     --header-height: 120px;
     --head-size: 55%;
     --border-radius: 3px;
 
-    --primary-color: #2776EA;
+    --primary-color: #2776ea;
 }
 
 * {
     margin: 0;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     box-sizing: border-box;
 }
 
@@ -29,7 +29,7 @@ header > * {
     max-width: 1200px;
 }
 
-.seperator {
+.separator {
     width: 100vw !important;
     max-width: none;
     height: 1px;
@@ -49,6 +49,7 @@ header .logo {
     height: 100%;
     display: flex;
     align-items: center;
+    text-decoration: none;
 }
 header .logo img {
     height: 100%;
@@ -81,6 +82,7 @@ header .search button {
     border: none;
     border-radius: 0 var(--border-radius) var(--border-radius) 0;
     padding: 0.3rem 0.4rem;
+    cursor: pointer;
 }
 
 /* HEAD - BUTTONS */
@@ -88,11 +90,29 @@ header .buttons {
     display: flex;
     gap: 1.5rem;
     align-items: center;
-}
-header .button > * {
-
+    cursor: pointer;
 }
 
+/* NAVBAR */
 header .navbar {
     height: calc(100% - var(--head-size));
+}
+
+header .navbar div:first-child {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+header .navbar div:first-child button {
+    background-color: transparent;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    border-radius: var(--border-radius);
+    color: white;
+    font-size: large;
+}
+header .navbar div:first-child button.dropdown {
+    background-color: var(--primary-color);
 }
