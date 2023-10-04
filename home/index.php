@@ -1,3 +1,5 @@
+<?php include_once '../includes/globals.php' ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,19 +12,21 @@
     <title>NerdyGadgets | home</title>
 </head>
 <body>
-<!---Over ons Pagina--->
-<section class="over-ons">
-    <div class="main">
-        <img src="/images/Logo-website.png" alt="Logo">
-        <div class="over-ons-text">
-            <h2>Over Ons</h2>
-            <h5>Leef nerdy, kies NerdyGadgets</h5>
-            <p>Nerdy Gadgets is dé besteming voor technologie- en popcultuurliefhebbers in Nederland.
-                Wij zijn gepassioneerd door de wereld van gadgets, verzamelobjecten en futuristische technologie
-                en we delen deze passie graag met onze klanten.</p>
-            <a href="/over-ons"><button class="button-over">Meer info?</button></a>
+    <!-- header -->
+    <?php include_once ROOT.'/components/header.php' ?> 
+    <!---Over ons Pagina--->
+    <section class="over-ons">
+        <div class="main">
+            <img src="/images/Logo-website.png" alt="Logo">
+            <div class="over-ons-text">
+                <h2>Over Ons</h2>
+                <h5>Leef nerdy, kies NerdyGadgets</h5>
+                <p>Nerdy Gadgets is dé besteming voor technologie- en popcultuurliefhebbers in Nederland.
+                    Wij zijn gepassioneerd door de wereld van gadgets, verzamelobjecten en futuristische technologie
+                    en we delen deze passie graag met onze klanten.</p>
+                <a href="/over-ons"><button class="button-over">Meer info?</button></a>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 </body>
 </html>
