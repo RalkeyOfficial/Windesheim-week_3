@@ -147,17 +147,42 @@ header .navbar .dropdown-content a {
     text-decoration: none;
     padding: 0.5rem;
     color: black;
+    transition: transform 0.5s ease-in-out, background-color 0.5s ease-in-out;
+    transform: translateX(0px);
 }
 header .navbar .dropdown-content a:hover {
+    transition: transform 0.5s ease-in-out, background-color 0.5s ease-in-out;
     background-color: rgb(231, 231, 231);
+    transform: translateX(30px);
 }
 
+header .navbar .dropdown-content a::after {
+    content: "";
+    position: absolute;
+    left: 0px;
+    top: 0;
+    width: 0px;
+    height: 100%;
+    background-color: #2776ea;
+    box-shadow: inset -10px 0 15px -5px #1a54ac;
+    background-image: url("../images/angles-right-solid.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 24px;
+    transition: width 0.5s ease-in-out, left 0.5s ease-in-out;
+}
 header .navbar .dropdown-content a:hover::after {
     content: "";
     position: absolute;
-    left: 0;
+    left: -30px;
     top: 0;
-    width: 3px;
+    width: 30px;
     height: 100%;
     background-color: #2776ea;
+    box-shadow: inset -10px 0 15px -5px #1a54ac;
+    background-image: url("../images/angles-right-solid.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 24px;
+    transition: width 0.5s ease-in-out, left 0.5s ease-in-out;
 }
