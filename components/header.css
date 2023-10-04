@@ -165,7 +165,7 @@ header .navbar .dropdown-content a::after {
     height: 100%;
     background-color: #2776ea;
     box-shadow: inset -10px 0 15px -5px #1a54ac;
-    background-image: url("../images/angles-right-solid.svg");
+    background-image: url("../../../../../../images/angles-right-solid.svg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: 24px;
@@ -180,7 +180,7 @@ header .navbar .dropdown-content a:hover::after {
     height: 100%;
     background-color: #2776ea;
     box-shadow: inset -10px 0 15px -5px #1a54ac;
-    background-image: url("../images/angles-right-solid.svg");
+    background-image: url("../../../../../../images/angles-right-solid.svg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: 24px;
