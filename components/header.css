@@ -113,6 +113,51 @@ header .navbar div:first-child button {
     color: white;
     font-size: large;
 }
-header .navbar div:first-child button.dropdown {
+header .navbar div:first-child .dropdown button {
     background-color: var(--primary-color);
+    padding: 0 1rem;
+}
+
+header .navbar .dropdown {
+    position: relative;
+    display: inline-block;
+}
+header .navbar .dropdown-content {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    height: auto;
+    min-width: 120px;
+    max-height: 0px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    background-color: #f9f9f9;
+    z-index: 1;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+}
+header .navbar .dropdown:hover .dropdown-content {
+    max-height: 500px;
+}
+
+header .navbar .dropdown-content a {
+    position: relative;
+    font-size: smaller;
+    background-color: #f9f9f9;
+    text-decoration: none;
+    padding: 0.5rem;
+    color: black;
+}
+header .navbar .dropdown-content a:hover {
+    background-color: rgb(231, 231, 231);
+}
+
+header .navbar .dropdown-content a:hover::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 3px;
+    height: 100%;
+    background-color: #2776ea;
 }

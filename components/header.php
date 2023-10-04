@@ -22,22 +22,26 @@
     <div class="separator"></div>
     <div class="navbar">
         <div>
-            <button class="dropdown">
-                hardware
-                <span><i class="fa-solid fa-caret-down" style="color: #ffffff;"></i></span>
-            </button>
-            <button>
-                desktops
-                <!-- <span><i class="fa-solid fa-caret-down" style="color: #ffffff;"></i></span> -->
-            </button>
-            <button>
-                laptops
-                <!-- <span><i class="fa-solid fa-caret-down" style="color: #ffffff;"></i></span> -->
-            </button>
-            <button>
-                accessoires
-                <!-- <span><i class="fa-solid fa-caret-down" style="color: #ffffff;"></i></span> -->
-            </button>
+            <div class="dropdown">
+                <button>
+                    Hardware
+                    <span><i class="fa-solid fa-caret-down" style="color: #ffffff;"></i></span>
+                </button>
+                <div class="dropdown-content">
+                    <a href="#">Videokaarten</a>
+                    <a href="#">Moederborden</a>
+                    <a href="#">Processoren</a>
+                    <a href="#">SSD (Solid State Drive)</a>
+                    <a href="#">Hard disks</a>
+                    <a href="#">Behuizing</a>
+                    <a href="#">Koeling</a>
+                    <a href="#">Geheugen</a>
+                    <a href="#">Voeding</a>
+                </div>
+            </div>
+            <button>Desktops</button>
+            <button>Laptops</button>
+            <button>Accessoires</button>
         </div>
     </div>
 </header>
