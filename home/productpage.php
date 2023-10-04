@@ -7,8 +7,6 @@
     <title>NerdyGadgets | home</title>
 </head>
 <body>
-    <h3>Hello world</h3>
-    
     <div id="product-container">
         <div class="row">
             <div>
@@ -71,7 +69,6 @@
             </div>
 
             <div>
-                <h2>ㅤ</h2>
                 <div class="test">399,-</div>
                 <a href="#" class="button">In winkelmand</a>
             </div>

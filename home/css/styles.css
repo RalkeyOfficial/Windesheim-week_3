@@ -1,45 +1,8 @@
-#homepage-container {
+.container {
     width: 80%;
     margin-left: 10%;
     margin-right: 10%;
-    background-color: blue; /* temporary, to get an overview */
     margin-bottom: 3%;
-}
-
-#product-container {
-    width: 80%;
-    margin-left: 10%;
-    margin-right: 10%;
-    background-color: blue; /* temporary, to get an overview */
-    margin-bottom: 3%;
-}
-
-.homepagebanner {
-    width: 100%;
-    height:600px;
-    object-fit: cover;
-    border-radius: 3px;
-}
-
-.homepageboxes {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 3px;
-}
-
-.productbanner {
-    width: 100%;
-    height:300px;
-    object-fit: cover;
-    border-radius: 3px;
-}
-
-.productboxes {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 3px;
 }
 
 .row {
@@ -48,15 +11,19 @@
     gap: 2em;
 }
 
-/* http://localhost:3000/home/index.php */
-
-/* code demonstration */
-.center {
-    display: flex;
-    justify-content: center;
-    gap: 3%;
+.banner {
+    width: 100%;
+    height:450px;
+    object-fit: cover;
+    border-radius: 3px;
 }
 
+.boxes {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 3px;
+}
 
 /* product table styling */
 table {
@@ -75,27 +42,6 @@ table {
     background-color: #dddddd;
 }
 
-.test {
-    background-color: #4CAF50;
-    padding: 15px 32px;
-    text-align: center;
-    margin-bottom: 10px;
-    font-size: 16px;
-    margin: 4px 2px;
-    color: white;
-    margin-bottom: 2em;
-    
+* {
+    font-family: 'Poppins';font-size: 22px;
 }
-
-/* example button, will be removed for universal button */
-.button {
-    background-color: #4CAF50;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-  }
