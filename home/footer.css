@@ -1,0 +1,84 @@
+/* Algemene stijl voor de footer */
+footer {
+    background-color: white; /* Achtergrondkleur wit */
+    color: black; /* Tekstkleur zwart */
+    padding: 40px 0;
+}
+
+/* Stijl voor secties in de footer */
+.section {
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #f7f7f7;
+}
+
+/* Stijl voor contactinformatie */
+.contact-info {
+    margin-top: 10px;
+}
+
+/* Stijl voor scheidingslijnen */
+.divider {
+    width: 85%;
+    text-align: right;
+    margin: 20px auto;
+    border: none;
+    border-top: 1px solid #ddd;
+}
+
+/* Stijl voor afbeeldingen in de image-container */
+.image-container img {
+    margin-right: 120px; /* Meer ruimte tussen afbeeldingen */
+    width: 85px; /* Grotere afbeeldingsbreedte */
+    height: 55px; /* Grotere afbeeldingshoogte */
+    object-fit: contain;
+}
+
+/* Stijl voor de lijst met klantenservice-items */
+.service-list {
+    list-style: none;
+    padding: 0;
+}
+
+.service-list li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+    background-image: url('https://cdn.jsdelivr.net/gh/hafeez-khan/footer-design/assets/bullet.png'); /* Vervang dit door de URL naar je eigen bullet-afbeelding */
+    background-repeat: no-repeat;
+    background-position: 0 5px;
+}
+
+.service-list a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.service-list a:hover {
+    text-decoration: underline;
+}
+
+/* Stijl voor de lijst met social media-links */
+.social-list {
+    list-style: none;
+    padding: 0;
+}
+
+.social-list li {
+    margin-bottom: 10px;
+}
+
+.social-list a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.social-list a:hover {
+    text-decoration: underline;
+}
+
+/* Stijl voor de sectietitel */
+.section-title {
+    margin-top: 0;
+}
