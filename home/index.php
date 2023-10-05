@@ -34,11 +34,11 @@
         <div class="container">
         <h1 class="highlights">highlighted products!</h1>
             <div class="row">
-                <a href=""><img src="img/highlighted-products/1_AMD-Ryzen-7-7800X3D-Processor.jpg" alt="highlighted product" class="boxes"></a>
-                <a href=""><img src="img/highlighted-products/1_Asus-ROG-STRIX-B650E-F-GAMING-WIFI.jpg" alt="highlighted product" class="boxes"></a>
-                <a href=""><img src="img/highlighted-products/1_Corsair-DDR4-Vengeance-LPX-2x8GB-3200-Geheugenmodule.jpg" alt="highlighted product" class="boxes"></a>
-                <a href=""><img src="img/highlighted-products/1_Fractal-Design-North-Charcoal-Black-TG-Dark-Midi-Tower-Behuizing.jpg" alt="highlighted product" class="boxes"></a>
-                <a href=""><img src="img/highlighted-products/1_MSI-G272QPF-27-2K-170Hz-IPS-gaming-monitor.jpg" alt="highlighted product" class="boxes"></a>
+                <a href=""><img src="img/highlighted-products/Ryzen-7-7800X3D.jpg" alt="highlighted product" class="boxes"></a>
+                <a href=""><img src="img/highlighted-products/Asus-ROG-STRIX-B650E-F-GAMING-WIFI.jpg" alt="highlighted product" class="boxes"></a>
+                <a href=""><img src="img/highlighted-products/Corsair-DDR4-Vengeance.jpg" alt="highlighted product" class="boxes"></a>
+                <a href=""><img src="img/highlighted-products/Fractal-Design-North-Charcoal-Black-TG-Dark.jpg" alt="highlighted product" class="boxes"></a>
+                <a href=""><img src="img/highlighted-products/MSI-G272QPF.jpg" alt="highlighted product" class="boxes"></a>
             </div>
         </div>
 
