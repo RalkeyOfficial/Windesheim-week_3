@@ -9,7 +9,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-    <title>Footer</title>
     <link rel="stylesheet" href="footer.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <title>NerdyGadgets | home</title>
@@ -29,6 +28,7 @@
         </div>
     </div>
 </section>
+
 <footer>
     <div class="container">
         <div class="row">
@@ -39,7 +39,7 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="section contact-section">
-                    <h2><b>Contact</b></h2>
+                    <h3><b>Contact</b></h3>
                     <p>Kom je er niet uit? We helpen je graag!</p>
                     <p>Bereik ons via onderstaande mail of telefoonnummer en verwacht zo snel mogelijk een antwoord.</p>
                     <div class="contact-info">
@@ -55,7 +55,7 @@
             <div class="col-md-4">
                 <div class="section">
                     <ul class="service-list">
-                        <h2><b>Klantenservice</b></h2>
+                        <h3><b>Klantenservice</b></h3>
                         <li>Bestellen</li>
                         <li>Betalen</li>
                         <li>Verzenden</li>
@@ -69,7 +69,7 @@
             </div>
             <div class="col-md-4">
                 <div class="section">
-                    <h2><b>Social</b></h2>
+                    <h3><b>Social</b></h3>
                     <ul class="social-list">
                         <li><a href="https://www.facebook.com/jouwfacebookpagina" target="_blank">Facebook</a></li>
                         <li><a href="https://www.instagram.com/jouwinstagram" target="_blank">Instagram</a></li>
@@ -84,10 +84,10 @@
     <div class="container">
         <div class="section">
             <div style="text-align: center;">
-                <h2>Veilige betalingsmogelijkheden</h2>
+                <h3>Veilige betalingsmogelijkheden</h3>
                 <br>
                 <div class="image-container">
-                    <a href="https://www.bing.com/search?q=google&cvid=e1e23e7dfb254e2e8b7327f346b009b7&gs_lcrp=EgZjaHj7MgYIAhBFGDwyBggDEEUYPDIGCAQQRRhA0gELMjU5MTExMWowajmoAgCwAgA&FORM=ANAB01&PC=LCTS"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/IDEAL_Logo.png" alt="iDeal" width="80" height="20"></a>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/IDEAL_Logo.png" alt="iDeal" width="80" height="20">
                     <img src="https://www.bestbuy-officechairs.co.uk/assets/img/svg/visa.svg" alt="VISA" width="60" height="120">
                     <img src="https://cdn.freebiesupply.com/logos/large/2x/paypal-logo-png-transparent.png" alt="PayPal" width="120" height="70">
                     <img src="https://swappie.com/app/uploads/Klarna_Black.png" alt="Klarna" width="100" height="70">
@@ -99,7 +99,7 @@
     <div class="container">
         <div class="section">
             <div style="text-align: center;">
-                <h2>Onze leveranciers</h2>
+                <h3>Onze leveranciers</h3>
                 <br>
                 <div class="image-container">
                     <img src="https://f.eu1.jwwb.nl/public/i/z/v/temp-izrhntetkdmmjmeuvlqz/PostNL_logo_logotype.png" alt="Postnl" width="80" height="80">
