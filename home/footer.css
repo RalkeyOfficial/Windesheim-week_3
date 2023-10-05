@@ -32,6 +32,7 @@ footer {
     margin-right: 120px; /* Meer ruimte tussen afbeeldingen */
     width: 85px; /* Grotere afbeeldingsbreedte */
     height: 55px; /* Grotere afbeeldingshoogte */
+    object-fit: contain;
 }
 
 /* Stijl voor de lijst met klantenservice-items */
