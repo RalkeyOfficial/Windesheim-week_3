@@ -1,6 +1,4 @@
-body {
-    background-color: #F8F8F4;
-}
+
 .over-ons {
     width: 100%;
     padding-top: 40px; /* Verhoog de bovenmarge */
@@ -16,12 +14,12 @@ body {
     display: block; /* witruimte onder de afbeelding */
 }
 
-.over-ons-text {
+.over-ons .over-ons-text {
     max-width: 700px;
     margin: 0 auto;
 }
 
-.main {
+.over-ons .main {
     width: 100%;
     max-width: 1130px;
     margin: 0 auto;
@@ -31,7 +29,7 @@ body {
     justify-content: center;
 }
 
-.over-ons-text h2 {
+.over-ons .over-ons-text h2 {
     color: #2776EA;
     font-size: 40px; /* kop kleiner */
     text-transform: capitalize;
@@ -39,7 +37,7 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
-.over-ons-text h5 {
+.over-ons .over-ons-text h5 {
     color: #2776EA;
     letter-spacing: 2px;
     font-size: 25px; /* subkop kleiner */
@@ -48,7 +46,7 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
-.over-ons-text p {
+.over-ons .over-ons-text p {
     color: #2776EA;
     letter-spacing: 1px;
     line-height: 24px; /*regelhoogte te verkleinen */
@@ -57,7 +55,7 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
-.button-over {
+.over-ons .button-over {
     background-color: #2776EA;
     color: white;
     text-decoration: none;
@@ -69,7 +67,7 @@ body {
     margin-top: -5px; /* Verhoog de bovenmarge van de knop */
 }
 
-.button-over:hover {
+.over-ons .button-over:hover {
     background-color: transparent;
     border: 2px solid #2776EA;
     cursor: pointer;

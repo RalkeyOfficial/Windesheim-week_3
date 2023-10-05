@@ -1,12 +1,28 @@
 /* Algemene stijl voor de footer */
 footer {
+    width: 100vw;
     background-color: white; /* Achtergrondkleur wit */
     color: black; /* Tekstkleur zwart */
     padding: 40px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer > * {
+    width: 100%;
+    max-width: 1200px;
+}
+
+footer .footerMain {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-rows: 1fr;
+    gap: 1rem;
 }
 
 /* Stijl voor secties in de footer */
-.section {
+footer .section {
     margin-bottom: 20px;
     padding: 20px;
     border-radius: 5px;
@@ -14,12 +30,12 @@ footer {
 }
 
 /* Stijl voor contactinformatie */
-.contact-info {
+footer .contact-info {
     margin-top: 10px;
 }
 
 /* Stijl voor scheidingslijnen */
-.divider {
+footer .divider {
     width: 85%;
     text-align: right;
     margin: 20px auto;
@@ -28,7 +44,7 @@ footer {
 }
 
 /* Stijl voor afbeeldingen in de image-container */
-.image-container img {
+footer .image-container img {
     margin-right: 120px; /* Meer ruimte tussen afbeeldingen */
     width: 85px; /* Grotere afbeeldingsbreedte */
     height: 55px; /* Grotere afbeeldingshoogte */
@@ -36,12 +52,12 @@ footer {
 }
 
 /* Stijl voor de lijst met klantenservice-items */
-.service-list {
+footer .service-list {
     list-style: none;
     padding: 0;
 }
 
-.service-list li {
+footer .service-list li {
     margin-bottom: 10px;
     padding-left: 20px;
     position: relative;
@@ -50,35 +66,35 @@ footer {
     background-position: 0 5px;
 }
 
-.service-list a {
+footer .service-list a {
     color: #007bff;
     text-decoration: none;
 }
 
-.service-list a:hover {
+footer .service-list a:hover {
     text-decoration: underline;
 }
 
 /* Stijl voor de lijst met social media-links */
-.social-list {
+footer .social-list {
     list-style: none;
     padding: 0;
 }
 
-.social-list li {
+footer .social-list li {
     margin-bottom: 10px;
 }
 
-.social-list a {
+footer .social-list a {
     color: #007bff;
     text-decoration: none;
 }
 
-.social-list a:hover {
+footer .social-list a:hover {
     text-decoration: underline;
 }
 
 /* Stijl voor de sectietitel */
-.section-title {
+footer .section-title {
     margin-top: 0;
 }
