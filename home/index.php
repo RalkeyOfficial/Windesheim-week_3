@@ -1,3 +1,5 @@
+<?php include_once '../includes/globals.php' ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,6 +16,9 @@
     <title>NerdyGadgets | home</title>
 </head>
 <body>
+    <!-- header -->
+    <?php include_once ROOT.'/components/header.php' ?> 
+
     <div class="container">
         <a href=""><img src="img/highlighted-products/keyboard.jpg" alt="keyboard" class="banner"></a>
     </div>
@@ -149,6 +154,4 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
-
-
 </html>

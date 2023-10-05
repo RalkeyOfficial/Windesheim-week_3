@@ -1,0 +1,188 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+
+:root {
+    --header-height: 120px;
+    --head-size: 55%;
+    --border-radius: 3px;
+
+    --primary-color: #2776ea;
+}
+
+* {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+}
+
+header {
+    width: 100vw;
+    height: var(--header-height);
+    background-color: #333333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header > * {
+    padding: 0.5rem;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.separator {
+    width: 100vw !important;
+    max-width: none;
+    height: 1px;
+    box-shadow: 0px 2px 1px 1px #252525;
+    padding: 0 !important;
+}
+
+header .head {
+    height: var(--head-size);
+    display: flex;
+    flex-direction: row;
+    gap: 6rem;
+}
+
+/* HEAD - LOGO */
+header .logo {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+header .logo img {
+    height: 100%;
+    object-fit: cover;
+}
+header .logo h1 {
+    color: var(--primary-color);
+    width: 6ch; /* 6ch staat voor 6 characters, dus van "Nerdy Gadgets" is het zo lang als "Nerdy " */
+    line-height: 24px;
+}
+
+/* HEAD - SEARCH */
+header .search {
+    width: 100%;
+    font-size: 0; /* om whitespace weg te halen */
+    display: flex;
+    align-items: center;
+}
+
+header .search input {
+    outline: none;
+    border: none;
+    border-radius: var(--border-radius) 0 0 var(--border-radius);
+    padding: 0.3rem;
+    flex-grow: 1;
+}
+header .search button {
+    background-color: var(--primary-color);
+    outline: none;
+    border: none;
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+    padding: 0.3rem 0.4rem;
+    cursor: pointer;
+}
+
+/* HEAD - BUTTONS */
+header .buttons {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* NAVBAR */
+header .navbar {
+    height: calc(100% - var(--head-size));
+}
+
+header .navbar div:first-child {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+header .navbar div:first-child button {
+    background-color: transparent;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    border-radius: var(--border-radius);
+    color: white;
+    font-size: large;
+}
+header .navbar div:first-child .dropdown button {
+    background-color: var(--primary-color);
+    padding: 0 1rem;
+}
+
+header .navbar .dropdown {
+    position: relative;
+    display: inline-block;
+}
+header .navbar .dropdown-content {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    height: auto;
+    min-width: 120px;
+    max-height: 0px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    background-color: #f9f9f9;
+    z-index: 1;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+}
+header .navbar .dropdown:hover .dropdown-content {
+    max-height: 500px;
+}
+
+header .navbar .dropdown-content a {
+    position: relative;
+    font-size: smaller;
+    background-color: #f9f9f9;
+    text-decoration: none;
+    padding: 0.5rem;
+    color: black;
+    transition: transform 0.5s ease-in-out, background-color 0.5s ease-in-out;
+    transform: translateX(0px);
+}
+header .navbar .dropdown-content a:hover {
+    transition: transform 0.5s ease-in-out, background-color 0.5s ease-in-out;
+    background-color: rgb(231, 231, 231);
+    transform: translateX(30px);
+}
+
+header .navbar .dropdown-content a::after {
+    content: "";
+    position: absolute;
+    left: 0px;
+    top: 0;
+    width: 0px;
+    height: 100%;
+    background-color: #2776ea;
+    box-shadow: inset -10px 0 15px -5px #1a54ac;
+    background-image: url("../../../../../../images/angles-right-solid.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 24px;
+    transition: width 0.5s ease-in-out, left 0.5s ease-in-out;
+}
+header .navbar .dropdown-content a:hover::after {
+    content: "";
+    position: absolute;
+    left: -30px;
+    top: 0;
+    width: 30px;
+    height: 100%;
+    background-color: #2776ea;
+    box-shadow: inset -10px 0 15px -5px #1a54ac;
+    background-image: url("../../../../../../images/angles-right-solid.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 24px;
+    transition: width 0.5s ease-in-out, left 0.5s ease-in-out;
+}
