@@ -25,24 +25,25 @@
 
         <div class="container">
             <div class="row">
-                <a href=""><img src="img/highlighted-products/headphones.jpg" alt="Headphones" class="boxes"></a>
-                <a href=""><img src="img/highlighted-products/headphones.jpg" alt="Headphones" class="boxes"></a>
-                <a href=""><img src="img/highlighted-products/headphones.jpg" alt="Headphones" class="boxes"></a>
-                <a href=""><img src="img/highlighted-products/headphones.jpg" alt="Headphones" class="boxes"></a>
+                <a href=""><img src="img/highlighted-products/action_1.jpg" alt="ACTIE" class="boxes"></a>
+                <a href=""><img src="img/highlighted-products/action_2.png" alt="ACTIE" class="boxes"></a>
+                <a href=""><img src="img/highlighted-products/action_3.png" alt="ACTIE" class="boxes"></a>
             </div>
         </div>
 
         <div class="container">
+        <h1 class="highlights">highlighted products!</h1>
             <div class="row">
-                <a href=""><img src="img/highlighted-products/headphones.jpg" alt="Headphones" class="boxes"></a>
-                <a href=""><img src="img/highlighted-products/headphones.jpg" alt="Headphones" class="boxes"></a>
-                <a href=""><img src="img/highlighted-products/headphones.jpg" alt="Headphones" class="boxes"></a>
-                <a href=""><img src="img/highlighted-products/headphones.jpg" alt="Headphones" class="boxes"></a>
+                <a href=""><img src="img/highlighted-products/1_AMD-Ryzen-7-7800X3D-Processor.jpg" alt="highlighted product" class="boxes"></a>
+                <a href=""><img src="img/highlighted-products/1_Asus-ROG-STRIX-B650E-F-GAMING-WIFI.jpg" alt="highlighted product" class="boxes"></a>
+                <a href=""><img src="img/highlighted-products/1_Corsair-DDR4-Vengeance-LPX-2x8GB-3200-Geheugenmodule.jpg" alt="highlighted product" class="boxes"></a>
+                <a href=""><img src="img/highlighted-products/1_Fractal-Design-North-Charcoal-Black-TG-Dark-Midi-Tower-Behuizing.jpg" alt="highlighted product" class="boxes"></a>
+                <a href=""><img src="img/highlighted-products/1_MSI-G272QPF-27-2K-170Hz-IPS-gaming-monitor.jpg" alt="highlighted product" class="boxes"></a>
             </div>
         </div>
 
         <div class="container">
-            <a href=""><img src="img/highlighted-products/headphones.jpg" alt="Headphones" class="boxes"></a>
+            <a href=""><img src="img/highlighted-products/banner_2.avif" alt="Headphones" class="banner"></a>
         </div>
 
         <div class="container">

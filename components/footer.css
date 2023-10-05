@@ -1,6 +1,6 @@
 /* Algemene stijl voor de footer */
 footer {
-    width: 100vw;
+    width: 100%;
     background-color: white; /* Achtergrondkleur wit */
     color: black; /* Tekstkleur zwart */
     padding: 40px 0;

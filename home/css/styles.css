@@ -32,6 +32,10 @@ main > * {
     gap: 2em;
 }
 
+.highlights {
+    margin-bottom: 1rem;
+}
+
 .banner {
     width: 100%;
     height: 450px;
@@ -41,7 +45,6 @@ main > * {
 
 .boxes {
     width: 100%;
-    height: 300px;
     object-fit: cover;
     border-radius: 3px;
 }
