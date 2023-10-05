@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/overstyle1.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./overstyle1.css">
@@ -14,10 +14,45 @@
     <title>NerdyGadgets | home</title>
 </head>
 <body>
+    <div class="container">
+        <a href=""><img src="img/highlighted-products/keyboard.jpg" alt="keyboard" class="banner"></a>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <a href=""><img src="img/highlighted-products/headphones.jpg" alt="Headphones" class="boxes"></a>
+            <a href=""><img src="img/highlighted-products/headphones.jpg" alt="Headphones" class="boxes"></a>
+            <a href=""><img src="img/highlighted-products/headphones.jpg" alt="Headphones" class="boxes"></a>
+            <a href=""><img src="img/highlighted-products/headphones.jpg" alt="Headphones" class="boxes"></a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <a href=""><img src="img/highlighted-products/headphones.jpg" alt="Headphones" class="boxes"></a>
+            <a href=""><img src="img/highlighted-products/headphones.jpg" alt="Headphones" class="boxes"></a>
+            <a href=""><img src="img/highlighted-products/headphones.jpg" alt="Headphones" class="boxes"></a>
+            <a href=""><img src="img/highlighted-products/headphones.jpg" alt="Headphones" class="boxes"></a>
+      </div>
+    </div>
+
+    <div class="container">
+        <a href=""><img src="img/highlighted-products/headphones.jpg" alt="Headphones" class="boxes"></a>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <a href=""><img src="img/highlighted-products/headphones.jpg" alt="Headphones" class="boxes"></a>
+            <a href=""><img src="img/highlighted-products/headphones.jpg" alt="Headphones" class="boxes"></a>
+            <a href=""><img src="img/highlighted-products/headphones.jpg" alt="Headphones" class="boxes"></a>
+            <a href=""><img src="img/highlighted-products/headphones.jpg" alt="Headphones" class="boxes"></a>
+            </div>
+        </div>
+    </div>
 <!---Over ons Pagina--->
 <section class="over-ons">
     <div class="main">
-        <img src="/images/Logo-website.png" alt="Logo">
+        <img src="./img/Logo-website.png" alt="Logo">
         <div class="over-ons-text">
             <h2>Over Ons</h2>
             <h5>Leef nerdy, kies NerdyGadgets</h5>
