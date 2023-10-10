@@ -39,9 +39,9 @@
                     <a href="#">Voeding</a>
                 </div>
             </div>
-            <button>Desktops</button>
-            <button>Laptops</button>
-            <button>Accessoires</button>
+            <a href="../Productoverzicht/index.php">Desktops</a>
+            <a href="../Productoverzicht/index.php">Laptops</a>
+            <a href="../Productoverzicht/index.php">Accesoires</a>
         </div>
     </div>
 </header>
