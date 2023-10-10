@@ -188,3 +188,8 @@ header .navbar .dropdown-content a:hover::after {
     background-size: 24px;
     transition: width 0.5s ease-in-out, left 0.5s ease-in-out;
 }
+.navItem{
+    color: white;
+    text-decoration: none;
+
+}
