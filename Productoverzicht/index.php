@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <link rel="stylesheet" href="Productov.css">
-    <link rel="stylesheet" href="css/overstyle1.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css" integrity="sha384-QYIZto+st3yW+o8+5OHfT6S482Zsvz2WfOzpFSXMF9zqeLcFV0/wlZpMtyFcZALm" crossorigin="anonymous">
@@ -19,6 +18,7 @@
 <?php include_once ROOT . '/components/header.php' ?>
 
 <!------productoverzicht------>
+<main>
 <div class="p-container">
     <h2 class="title">Producten</h2>
     <div class="row">
@@ -204,11 +204,10 @@
         <a href="pagina2.html"><span>2</span></a>
         <a href="pagina3.html"><span>3</span></a>
         <a href="pagina4.html"><span>4</span></a>
-        <a href="pagina4.html"><span>&#8594;</span></a>
+        <a href="pagina4.html"><span><i class="fa fa-arrow-right"></i></span></a>
     </div>
 </div>
-</body>
-</html>
+</main>
 
 <!-- footer -->
 <?php include_once ROOT . '/components/footer.php' ?>
