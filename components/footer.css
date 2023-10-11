@@ -1,0 +1,100 @@
+/* Algemene stijl voor de footer */
+footer {
+    width: 100%;
+    background-color: white; /* Achtergrondkleur wit */
+    color: black; /* Tekstkleur zwart */
+    padding: 40px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer > * {
+    width: 100%;
+    max-width: 1200px;
+}
+
+footer .footerMain {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-rows: 1fr;
+    gap: 1rem;
+}
+
+/* Stijl voor secties in de footer */
+footer .section {
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #f7f7f7;
+}
+
+/* Stijl voor contactinformatie */
+footer .contact-info {
+    margin-top: 10px;
+}
+
+/* Stijl voor scheidingslijnen */
+footer .divider {
+    width: 85%;
+    text-align: right;
+    margin: 20px auto;
+    border: none;
+    border-top: 1px solid #ddd;
+}
+
+/* Stijl voor afbeeldingen in de image-container */
+footer .image-container img {
+    margin-right: 120px; /* Meer ruimte tussen afbeeldingen */
+    width: 85px; /* Grotere afbeeldingsbreedte */
+    height: 55px; /* Grotere afbeeldingshoogte */
+    object-fit: contain;
+}
+
+/* Stijl voor de lijst met klantenservice-items */
+footer .service-list {
+    list-style: none;
+    padding: 0;
+}
+
+footer .service-list li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+    background-image: url('https://cdn.jsdelivr.net/gh/hafeez-khan/footer-design/assets/bullet.png'); /* Vervang dit door de URL naar je eigen bullet-afbeelding */
+    background-repeat: no-repeat;
+    background-position: 0 5px;
+}
+
+footer .service-list a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+footer .service-list a:hover {
+    text-decoration: underline;
+}
+
+/* Stijl voor de lijst met social media-links */
+footer .social-list {
+    list-style: none;
+    padding: 0;
+}
+
+footer .social-list li {
+    margin-bottom: 10px;
+}
+
+footer .social-list a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+footer .social-list a:hover {
+    text-decoration: underline;
+}
+
+/* Stijl voor de sectietitel */
+footer .section-title {
+    margin-top: 0;
+}
