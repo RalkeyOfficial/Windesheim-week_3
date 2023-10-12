@@ -18,8 +18,10 @@ body {
     grid-template-columns: 1fr 1fr; /* Twee kolommen met gelijke breedte */
     align-items: center;
 }
-.smallcategorietekst{
+.smallcategorietekst {
     color: #2776EA;
+    font-weight: bold;
+
 }
 .col-2 {
     padding-right: 20px;
@@ -140,12 +142,4 @@ body {
     cursor: pointer;
     color: black;
 }
-.small-img-row{
-    display: flex;
-    justify-content: center;
-}
-.small-img-col{
-    flex-basis: 24%;
-    cursor: pointer;
-    width: 150%;
-}
+

@@ -22,19 +22,11 @@
 <div class="p-container">
     <div class="row-p">
         <div class="col-2">
-            <img src="images/asus1.jpg" alt="image1" id="ProductImg">
-            <div class="small-img-row">
-                <div class="small-img-col">
-                    <img src="images/asus1-2.jpg" alt="image2" class="small-img">
-                </div>
-                <div class="small-img-col">
-                    <img src="images/asus1.jpg"  alt="image1" class="small-img">
-                </div>
-            </div>
+            <img src="images/asus1.jpg" alt="image1">
         </div>
         <div class="col-2">
             <div class="product-info">
-                <p class="smallcategorietekst">NerdyGadgets | Laptops</p>
+                <p class="smallcategorietekst">Laptops</p>
                 <h1>ASUS TUF Gaming A15 (2022)</h1>
                 <h4>€1050.00</h4>
                 <a href="/winkelwagen"><button class="button-winkelwagen">Toevoegen aan winkelwagen</button></a>
@@ -51,7 +43,7 @@
     <h2 class="title">Gerelateerde producten</h2>
     <div class="row">
         <div class="col-4">
-            <a href="../Productpagina/index.php">
+            <a href="../Productpagina/">
                 <img src="images/asus1.jpg" alt="product">
             </a>
             <h4>Asus Tuf Gaming A15</h4>
@@ -65,7 +57,7 @@
             <p>€1050.00</p>
         </div>
         <div class="col-4">
-            <a href="../Productpagina/index.php">
+            <a href="../Productpagina/">
                 <img src="images/asus2.jpg" alt="product">
             </a>
             <h4>ASUS X415EA-EB1510W</h4>
@@ -79,7 +71,7 @@
             <p>€700.00</p>
         </div>
         <div class="col-4">
-            <a href="../Productpagina/index.php">
+            <a href="../Productpagina/">
                 <img src="images/asus3.jpg" alt="product">
             </a>
             <h4>ASUS Vivobook 15</h4>
@@ -93,7 +85,7 @@
             <p>€800.00</p>
         </div>
         <div class="col-4">
-            <a href="../Productpagina/index.php">
+            <a href="../Productpagina/">
                 <img src="images/asus4.jpg" alt="product">
             </a>
             <h4>ASUS Vivobook 16</h4>
@@ -108,19 +100,7 @@
         </div>
     </div>
 </div>
-<script>
-var ProductImg = document.getElementById("ProductImg");
-var smallImg = document.getElementsByClassName("small-img")
 
-smallImg[0].onclick =function()
-{
-ProductImg.src = smallImg[0].src;
-}
-smallImg[1].onclick =function()
-{
-ProductImg.src = smallImg[1].src;
-}
-</script>
 
 <!-- footer -->
 <?php include_once ROOT . '/components/footer.php' ?>

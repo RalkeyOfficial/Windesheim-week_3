@@ -23,7 +23,7 @@
     <h2 class="title">Producten</h2>
     <div class="row">
         <div class="col-4">
-            <a href="../Productpagina/index.php">
+            <a href="../Productpagina/">
                 <img src="images/asus1.jpg" alt="product">
             </a>
             <h4>Asus Tuf Gaming A15</h4>
@@ -34,10 +34,10 @@
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star"></i>
             </div>
-            <p>€30.00</p>
+            <p>€1050.00</p>
         </div>
         <div class="col-4">
-            <a href="../Productpagina/index.php">
+            <a href="../Productpagina/">
                 <img src="images/asus2.jpg" alt="product">
             </a>
             <h4>ASUS X415EA-EB1510W</h4>
@@ -48,10 +48,10 @@
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star-o"></i>
             </div>
-            <p>€30.00</p>
+            <p>€700.00</p>
         </div>
         <div class="col-4">
-            <a href="../Productpagina/index.php">
+            <a href="../Productpagina/">
                 <img src="images/asus3.jpg" alt="product">
             </a>
             <h4>ASUS Vivobook 15</h4>
@@ -62,10 +62,10 @@
                 <i class="fa fa-star-half-o"></i>
                 <i class="fa fa-star-o"></i>
             </div>
-            <p>€30.00</p>
+            <p>€800.00</p>
         </div>
         <div class="col-4">
-            <a href="../Productpagina/index.php">
+            <a href="../Productpagina/">
                 <img src="images/asus4.jpg" alt="product">
             </a>
             <h4>ASUS Vivobook 16</h4>
@@ -76,7 +76,7 @@
                 <i class="fa fa-star-o"></i>
                 <i class="fa fa-star-o"></i>
             </div>
-            <p>€30.00</p>
+            <p>€850.00</p>
         </div>
     </div>
 </div>
