@@ -143,3 +143,37 @@ body {
     color: black;
 }
 
+.small-img-row{
+    display: flex;
+    justify-content: center;
+}
+.small-img-col{
+    flex-basis: 24%;
+    cursor: pointer;
+    width: 150%;
+}
+
+/* Tables */
+
+.product-table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: auto;
+}
+
+.product-table td, .product-table th {
+    border: 1px solid #B9B9B9;
+    width: 50%;
+    padding: 8px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.product-table tr:nth-child(odd){background-color: #D9D9D9;}
+.product-table tr:nth-child(even){background-color: #F5F5F5;}
+
+.product-table table, h3{
+    font-size: 20px;
+    margin-top: 30px; /* Vergroot de afstand boven de h3 */
+    margin-bottom: 30px; /* Vergroot de afstand boven de h3 */
+    font-family: 'Poppins', sans-serif;
+}

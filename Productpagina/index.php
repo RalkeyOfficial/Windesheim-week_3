@@ -37,6 +37,92 @@
     </div>
 </div>
 
+<!-------Product specificaties-------->
+<div class="p-container">
+    <table class="product-table">
+        <h3>Specificaties</h3>
+        <tr>
+            <td>Lorem</td>
+            <td>ipsum</td>
+        </tr>
+        <tr>
+            <td>Lorem</td>
+            <td>ipsum</td>
+        </tr>
+        <tr>
+            <td>Lorem</td>
+            <td>ipsum</td>
+        </tr>
+        <tr>
+            <td>Lorem</td>
+            <td>ipsum</td>
+        </tr>
+        <tr>
+            <td>Lorem</td>
+            <td>ipsum</td>
+        </tr>
+        <tr>
+            <td>Lorem</td>
+            <td>ipsum</td>
+        </tr>
+    </table>
+</div>
+
+<!-------Alle Product specificaties-------->
+<div class="p-container">
+    <table class="product-table">
+        <h3>Alle specificaties</h3>
+        <tr>
+            <td>Lorem</td>
+            <td>ipsum</td>
+        </tr>
+        <tr>
+            <td>Lorem</td>
+            <td>ipsum</td>
+        </tr>
+        <tr>
+            <td>Lorem</td>
+            <td>ipsum</td>
+        </tr>
+        <tr>
+            <td>Lorem</td>
+            <td>ipsum</td>
+        </tr>
+            <tr>
+            <td>Lorem</td>
+            <td>ipsum</td>
+        </tr>
+        <tr>
+            <td>Lorem</td>
+            <td>ipsum</td>
+        </tr>
+        <tr>
+            <td>Lorem</td>
+            <td>ipsum</td>
+        </tr>
+        <tr>
+            <td>Lorem</td>
+            <td>ipsum</td>
+        </tr>
+        <tr>
+            <td>Lorem</td>
+            <td>ipsum</td>
+        </tr>
+        <tr>
+            <td>Lorem</td>
+            <td>ipsum</td>
+        </tr>
+        <tr>
+            <td>Lorem</td>
+            <td>ipsum</td>
+        </tr>
+        <tr>
+            <td>Lorem</td>
+            <td>ipsum</td>
+        </tr>
+    </table>
+
+</div>
 
 <!------gerelateerde producten------>
 <div class="p-container">
