@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body {
+    background-color: white;
+}
+.p-container {
+    max-width: 1080px;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+.row-p {
+    display: grid; /* Gebruik een grid-layout */
+    grid-template-columns: 1fr 1fr; /* Twee kolommen met gelijke breedte */
+    align-items: center;
+}
+.smallcategorietekst {
+    color: #2776EA;
+    font-weight: bold;
+
+}
+.col-2 {
+    padding-right: 20px;
+}
+.col-2 img {
+    width: 100%; /* Pas de breedte van de afbeelding aan */
+}
+
+.row {
+    display: flex; /* kolommen in één rij  */
+    align-items: center;
+    flex-wrap: wrap; /*  kolommen nieuwe rij  niet in de container passen */
+    justify-content: space-around;
+}
+
+.col-4 {
+    flex-basis: 25%;
+    padding: 10px;
+    min-width: 200px;
+    margin-bottom: 50px;
+    box-sizing: border-box; /* padding en randen binnen de 25% breedte vallen */
+    text-align: center; /* Centreer  inhoud binnen de kolom */
+}
+
+.col-4 img {
+    width: 100%;
+    height: 200px; /*  gewenste hoogte img */
+    object-fit: cover; /* beeldverhouding en bedek de volledige ruimte */
+}
+
+.title {
+    text-align: center;
+    margin: 0 auto 80px;
+    position: relative;
+    line-height: 60px;
+    color: #2776EA ;
+    font-family: 'Poppins', sans-serif;
+    font-size: 40px;
+}
+
+.product-info h4 {
+    color: black;
+    font-weight: normal;
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+}
+
+.col-4 p {
+    font-size: 30px;
+}
+.col-4 h4{
+    font-size: 20px;
+}
+.klantreviews .fa {
+    color: #2776EA;
+}
+.pagina-btn{
+    margin: 0 auto 80px;
+}
+.pagina-btn span{
+    display: inline-block;
+    border: 1px solid #2776EA;
+    margin-left: 10px;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+}
+.product-info {
+    overflow: hidden; /* Voorkomt dat inhoud uit de container stroomt */
+    padding-bottom: 20px; /* Voeg extra ruimte onderaan de container toe */
+}
+
+.product-info p {
+    font-size: 20px;
+    margin-bottom: 30px; /* Verhoog de afstand onder de paragraaf */
+    font-family: 'Poppins', sans-serif;
+}
+
+.product-info h1 {
+    font-size: 30px;
+    margin-bottom: 30px; /* Verhoog de afstand onder de h1 */
+    font-family: 'Poppins', sans-serif;
+}
+
+.product-info h4 {
+    font-size: 24px;
+    margin-bottom: 30px; /* Verhoog de afstand onder de h4 */
+    font-family: 'Poppins', sans-serif;
+}
+.product-info h3 {
+    font-size: 24px;
+    margin-top: 40px; /*afstand boven h3 naar 40px */
+    font-family: 'Poppins', sans-serif;
+}
+.product-info p{
+    font-size: 20px;
+    margin-top: 40px; /* Vergroot de afstand boven de h3 */
+    font-family: 'Poppins', sans-serif;
+}
+
+.button-winkelwagen {
+    background-color: #2776EA;
+    color: white;
+    text-decoration: none;
+    border: 2px solid transparent;
+    font-weight: bold;
+    padding: 13px 30px;
+    border-radius: 30px;
+    transition: .4s;
+    margin-top: 20px; /* Verhoog de bovenmarge van de knop */
+}
+
+.button-winkelwagen:hover {
+    background-color: transparent;
+    border: 2px solid #2776EA;
+    cursor: pointer;
+    color: black;
+}
+
