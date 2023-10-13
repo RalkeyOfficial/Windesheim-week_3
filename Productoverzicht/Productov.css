@@ -9,6 +9,8 @@ body {
 }
 .main{
     max-width: 1200px;
+    display: grid;
+    grid-template-columns: auto auto;
 }
 .p-container {
     max-width: 1200px;
