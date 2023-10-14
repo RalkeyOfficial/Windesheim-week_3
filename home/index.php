@@ -32,7 +32,7 @@
         </div>
 
         <div class="container">
-        <h1 class="highlights">highlighted products!</h1>
+            <h1 class="highlights">highlighted products!</h1>
             <div class="row">
                 <a href=""><img src="img/highlighted-products/Ryzen-7-7800X3D.jpg" alt="highlighted product" class="boxes"></a>
                 <a href=""><img src="img/highlighted-products/Asus-ROG-STRIX-B650E-F-GAMING-WIFI.jpg" alt="highlighted product" class="boxes"></a>
