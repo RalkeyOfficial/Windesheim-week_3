@@ -8,6 +8,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/overstyle1.css">
+    <!-- <link rel="stylesheet" href="../Productpagina/Productpag.css"> -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -32,13 +33,28 @@
         </div>
 
         <div class="container">
-        <h1 class="highlights">highlighted products!</h1>
+        <h1 class="highlights">Highlighted products!</h1>
             <div class="row">
-                <a href=""><img src="img/highlighted-products/Ryzen-7-7800X3D.jpg" alt="highlighted product" class="boxes"></a>
-                <a href=""><img src="img/highlighted-products/Asus-ROG-STRIX-B650E-F-GAMING-WIFI.jpg" alt="highlighted product" class="boxes"></a>
-                <a href=""><img src="img/highlighted-products/Corsair-DDR4-Vengeance.jpg" alt="highlighted product" class="boxes"></a>
-                <a href=""><img src="img/highlighted-products/Fractal-Design-North-Charcoal-Black-TG-Dark.jpg" alt="highlighted product" class="boxes"></a>
-                <a href=""><img src="img/highlighted-products/MSI-G272QPF.jpg" alt="highlighted product" class="boxes"></a>
+                <div>
+                    <h3>Product name</h3>
+                    <a href=""><img src="img/highlighted-products/Ryzen-7-7800X3D.jpg" alt="highlighted product" class="boxes"><button class="button-toevoegen">€500</button></a>
+                </div>
+                <div>
+                    <h3>Product name</h3>
+                <a href=""><img src="img/highlighted-products/Asus-ROG-STRIX-B650E-F-GAMING-WIFI.jpg" alt="highlighted product" class="boxes"><button class="button-toevoegen">€400</button></a>
+                </div>
+                <div>
+                    <h3>Product name</h3>
+                <a href=""><img src="img/highlighted-products/Corsair-DDR4-Vengeance.jpg" alt="highlighted product" class="boxes"><button class="button-toevoegen">€200</button></a>
+                </div>
+                <div>
+                    <h3>Product name</h3>
+                <a href=""><img src="img/highlighted-products/Fractal-Design-North-Charcoal-Black-TG-Dark.jpg" alt="highlighted product" class="boxes"><button class="button-toevoegen">€150</button></a>
+                </div>
+                <div>
+                    <h3>Product name</h3>
+                <a href=""><img src="img/highlighted-products/MSI-G272QPF.jpg" alt="highlighted product" class="boxes"><button class="button-toevoegen">€500</button></a>
+                </div>
             </div>
         </div>
 
