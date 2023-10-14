@@ -23,144 +23,165 @@
 <!------productoverzicht------>
 <main>
     <!--filter-->
+
     <div class="box">
         <div class="section">
             <b>Filteren</b>
         </div>
         <div class="divider"></div>
-        <div class="section">
+        <div class="opties">
             <b>Prijs</b>
         </div>
 
-        <div class="square-box">
-            <div class="text">
-                <span class="hover-text ">Oplopend</span>
-            </div>
+        <div class="label:hover">
+            <label>
+                <input type="checkbox">
+                Hoog-laag
+            </label>
         </div>
 
-        <div class="square-box">
-            <div class="text">
-                <span class="hover-text ">Aflopend</span>
-            </div>
+        <div class="label:hover">
+            <label>
+                <input type="checkbox">
+                Laag-hoog
+            </label>
         </div>
 
         <div class="opties">
             <b>Merken</b>
         </div>
 
-        <div class="square-box">
-            <div class="text">
-                <span class="hover-text ">Merk</span>
-            </div>
+        <div class="label:hover">
+            <label>
+                <input type="checkbox">
+                TUF
+            </label>
         </div>
-        <div class="square-box">
-            <div class="text">
-                <span class="hover-text ">Merk</span>
-            </div>
+        <div class="label:hover">
+            <label>
+                <input type="checkbox">
+                Apple
+            </label>
         </div>
-        <div class="square-box">
-            <div class="text">
-                <span class="hover-text ">Merk</span>
-            </div>
+        <div class="label:hover">
+            <label>
+                <input type="checkbox">
+                Samsung
+            </label>
         </div>
-        <div class="square-box">
-            <div class="text">
-                <span class="hover-text ">Merk</span>
-            </div>
+        <div class="label:hover">
+            <label>
+                <input type="checkbox">
+                Lenovo
+            </label>
         </div>
 
         <div class="opties">
             <b>Populariteit</b>
         </div>
-        <div class="square-box">
-            <div class="text">
-                <span class="hover-text ">Meest</span>
-            </div>
+        <div class="label:hover">
+            <label>
+                <input type="checkbox">
+                Meest verkocht
+            </label>
         </div>
-        <div class="square-box">
-            <div class="text">
-                <span class="hover-text ">Featured</span>
-            </div>
+        <div class="label:hover">
+            <label>
+                <input type="checkbox">
+                Korting
+            </label>
         </div>
-        <div class="square-box">
-            <div class="text">
-                <span class="hover-text ">Trending</span>
-            </div>
+        <div class="label:hover">
+            <label>
+                <input type="checkbox">
+                Featured
+            </label>
         </div>
 
         <div class="opties">
             <b>Geheugen capaciteit</b>
         </div>
-        <div class="square-box">
-            <div class="text">
-                <span class="hover-text ">16</span>
-            </div>
+        <div class="label:hover">
+            <label>
+                <input type="checkbox">
+                16 GB
+            </label>
         </div>
-        <div class="square-box">
-            <div class="text">
-                <span class="hover-text ">32</span>
-            </div>
+        <div class="label:hover">
+            <label>
+                <input type="checkbox">
+                32 GB
+            </label>
         </div>
-        <div class="square-box">
-            <div class="text">
-                <span class="hover-text ">64</span>
-            </div>
+        <div class="label:hover">
+            <label>
+                <input type="checkbox">
+                64 GB
+            </label>
         </div>
 
         <div class="opties">
             <b>Opslag capaciteit</b>
         </div>
-        <div class="square-box">
-            <div class="text">
-                <span class="hover-text ">128</span>
-            </div>
+        <div class="label:hover">
+            <label>
+                <input type="checkbox">
+                128 GB
+            </label>
         </div>
-        <div class="square-box">
-            <div class="text">
-                <span class="hover-text ">256</span>
-            </div>
+        <div class="label:hover">
+            <label>
+                <input type="checkbox">
+                256 GB
+            </label>
         </div>
-        <div class="square-box">
-            <div class="text">
-                <span class="hover-text ">512</span>
-            </div>
+        <div class="label:hover">
+            <label>
+                <input type="checkbox">
+                512 GB
+            </label>
         </div>
 
         <div class="opties">
             <b>Resolutie</b>
         </div>
-        <div class="square-box">
-            <div class="text">
-                <span class="hover-text ">1920</span>
-            </div>
+        <div class="label:hover">
+            <label>
+                <input type="checkbox">
+                1920 x 1080
+            </label>
         </div>
-        <div class="square-box">
-            <div class="text">
-                <span class="hover-text ">1920</span>
-            </div>
+        <div class="label:hover">
+            <label>
+                <input type="checkbox">
+                1920 x 1200
+            </label>
         </div>
-        <div class="square-box">
-            <div class="text">
-                <span class="hover-text ">2560</span>
-            </div>
+        <div class="label:hover">
+            <label>
+                <input type="checkbox">
+                2560 x 1600
+            </label>
         </div>
 
         <div class="opties">
             <b>Touch Screen</b>
         </div>
-        <div class="square-box">
-            <div class="text">
-                <span class="hover-text ">Ja</span>
-            </div>
+        <div class="label:hover">
+            <label>
+                <input type="checkbox">
+                Ja
+            </label>
         </div>
-        <div class="square-box">
-            <div class="text">
-                <span class="hover-text ">Nee</span>
-            </div>
+        <div class="label:hover">
+            <label>
+                <input type="checkbox">
+                Nee
+            </label>
+        </div>
     </div>
 
-
-     <div class="products">
+    <div class="products">
             <div class="p-container">
             <h2 class="title">Producten</h2>
             <div class="row">
