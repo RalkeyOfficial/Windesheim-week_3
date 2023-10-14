@@ -49,7 +49,7 @@ main > * {
     border-radius: 3px;
 }
 
-.pricetag { /* Button van productpagina */
+.price-tag {
     background-color: #2776EA;
     color: white;
     text-decoration: none;
