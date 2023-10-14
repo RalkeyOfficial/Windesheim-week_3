@@ -48,16 +48,3 @@ main > * {
     object-fit: cover;
     border-radius: 3px;
 }
-
-.button-toevoegen { /* Button van productpagina */
-    background-color: #2776EA;
-    color: white;
-    text-decoration: none;
-    border: 2px solid transparent;
-    font-weight: bold;
-    padding: 10px 15px;
-    border-radius: 10px;
-    transition: .4s;
-    margin-top: 10px; /* Verhoog de bovenmarge van de knop */
-    font-size: 1.3rem;
-}
