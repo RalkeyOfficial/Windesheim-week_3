@@ -34,11 +34,26 @@
         <div class="container">
             <h1 class="highlights">highlighted products!</h1>
             <div class="row">
-                <a href=""><img src="img/highlighted-products/Ryzen-7-7800X3D.jpg" alt="highlighted product" class="boxes"></a>
-                <a href=""><img src="img/highlighted-products/Asus-ROG-STRIX-B650E-F-GAMING-WIFI.jpg" alt="highlighted product" class="boxes"></a>
-                <a href=""><img src="img/highlighted-products/Corsair-DDR4-Vengeance.jpg" alt="highlighted product" class="boxes"></a>
-                <a href=""><img src="img/highlighted-products/Fractal-Design-North-Charcoal-Black-TG-Dark.jpg" alt="highlighted product" class="boxes"></a>
-                <a href=""><img src="img/highlighted-products/MSI-G272QPF.jpg" alt="highlighted product" class="boxes"></a>
+                <div>
+                    <h3>Product name</h3>
+                    <a href=""><img src="img/highlighted-products/Ryzen-7-7800X3D.jpg" alt="highlighted product" class="boxes"><button class="price-tag">€500</button></a>
+                </div>
+                <div>
+                    <h3>Product name</h3>
+                <a href=""><img src="img/highlighted-products/Asus-ROG-STRIX-B650E-F-GAMING-WIFI.jpg" alt="highlighted product" class="boxes"><button class="price-tag">€400</button></a>
+                </div>
+                <div>
+                    <h3>Product name</h3>
+                <a href=""><img src="img/highlighted-products/Corsair-DDR4-Vengeance.jpg" alt="highlighted product" class="boxes"><button class="price-tag">€200</button></a>
+                </div>
+                <div>
+                    <h3>Product name</h3>
+                <a href=""><img src="img/highlighted-products/Fractal-Design-North-Charcoal-Black-TG-Dark.jpg" alt="highlighted product" class="boxes"><button class="price-tag">€150</button></a>
+                </div>
+                <div>
+                    <h3>Product name</h3>
+                <a href=""><img src="img/highlighted-products/MSI-G272QPF.jpg" alt="highlighted product" class="boxes"><button class="price-tag">€500</button></a>
+                </div>
             </div>
         </div>
 
