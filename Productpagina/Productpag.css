@@ -54,7 +54,7 @@ body {
 
 .title {
     text-align: center;
-    margin: 0 auto 80px;
+    margin: 0 auto 60px;
     position: relative;
     line-height: 60px;
     color: #2776EA ;
@@ -143,3 +143,47 @@ body {
     color: black;
 }
 
+/* recenties start */
+
+.box {
+    width: 100%;
+    border-radius: 4px;
+    padding: 15px;
+    background-color: #D9D9D9;
+    margin-bottom: 40px;
+}
+
+.review .evenly{
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: space-between;
+}
+
+.review h2 {
+    font-size: 25px;
+    margin-top: 5px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.review h4, p {
+    font-size: 20px;
+    margin-top: 10px; /* Vergroot de afstand boven de h3 */
+    font-family: 'Poppins', sans-serif;
+}
+
+.review .behulpzaam {
+    font-size: 20px;
+    margin-top: 10px; /* Vergroot de afstand boven de h3 */
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    gap: 1rem;
+}
+
+/* recenties end */
+
+.wrap {
+    display: flex;
+    width: 1080px;
+    margin: auto;
+}
