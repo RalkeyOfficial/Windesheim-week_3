@@ -4,22 +4,18 @@
     box-sizing: border-box;
 }
 
-body {
-    background-color: #F8F8F4;
-}
-
 main {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    
+
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 main > * {
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
 }
 
 .container {
@@ -32,8 +28,39 @@ main > * {
     gap: 2em;
 }
 
-.highlights {
+.highlights > .content {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Creates 3 equal-sized columns */
+    gap: 2rem;
+}
+.highlights > .title {
     margin-bottom: 1rem;
+}
+
+.product {
+    text-decoration: none;
+    color: black;
+
+    display: grid;
+    grid-template-rows: 1fr 3fr auto;
+    gap: 1rem;
+}
+.product > img {
+    width: 100%;
+    height: 229px;
+    object-fit: contain;
+}
+.product > .price-tag {
+    justify-self: end;
+    width: min-content;
+    background-color: #2776ea;
+    color: white;
+    text-decoration: none;
+    border: 2px solid transparent;
+    font-weight: bold;
+    border-radius: 4px;
+    padding: 4px 15px;
+    font-size: 1.3rem;
 }
 
 .banner {
@@ -47,16 +74,4 @@ main > * {
     width: 100%;
     object-fit: cover;
     border-radius: 3px;
-}
-
-.price-tag {
-    background-color: #2776EA;
-    color: white;
-    text-decoration: none;
-    border: 2px solid transparent;
-    font-weight: bold;
-    border-radius: 4px;
-    padding: 4px 15px;
-    margin-top: 10px; /* Verhoog de bovenmarge van de knop */
-    font-size: 1.3rem;
 }
