@@ -49,14 +49,15 @@ main > * {
     border-radius: 3px;
 }
 
-.pricetag { /* Button van productpagina */
+.button-toevoegen { /* Button van productpagina */
     background-color: #2776EA;
     color: white;
     text-decoration: none;
     border: 2px solid transparent;
     font-weight: bold;
-    border-radius: 4px;
-    padding: 4px 15px;
+    padding: 10px 15px;
+    border-radius: 10px;
+    transition: .4s;
     margin-top: 10px; /* Verhoog de bovenmarge van de knop */
     font-size: 1.3rem;
 }
