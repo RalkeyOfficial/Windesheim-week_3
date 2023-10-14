@@ -31,29 +31,30 @@
             </div>
         </div>
 
-        <div class="container">
-            <h1 class="highlights">highlighted products!</h1>
-            <div class="row">
-                <div>
-                    <h3>Product name</h3>
-                    <a href=""><img src="img/highlighted-products/Ryzen-7-7800X3D.jpg" alt="highlighted product" class="boxes"><button class="price-tag">€500</button></a>
-                </div>
-                <div>
-                    <h3>Product name</h3>
-                <a href=""><img src="img/highlighted-products/Asus-ROG-STRIX-B650E-F-GAMING-WIFI.jpg" alt="highlighted product" class="boxes"><button class="price-tag">€400</button></a>
-                </div>
-                <div>
-                    <h3>Product name</h3>
-                <a href=""><img src="img/highlighted-products/Corsair-DDR4-Vengeance.jpg" alt="highlighted product" class="boxes"><button class="price-tag">€200</button></a>
-                </div>
-                <div>
-                    <h3>Product name</h3>
-                <a href=""><img src="img/highlighted-products/Fractal-Design-North-Charcoal-Black-TG-Dark.jpg" alt="highlighted product" class="boxes"><button class="price-tag">€150</button></a>
-                </div>
-                <div>
-                    <h3>Product name</h3>
-                <a href=""><img src="img/highlighted-products/MSI-G272QPF.jpg" alt="highlighted product" class="boxes"><button class="price-tag">€500</button></a>
-                </div>
+        <div class="highlights">
+            <h1 class="title">highlighted products!</h1>
+            <div class="content">
+                <?php
+                include_once '../api/popular-items.php';
+
+                foreach ($result as $row) {
+                    $productId = $row['id'];
+                    $productName = $row['name'];
+                    $productPrice = $row['price'];
+                    $productImage = $row['image'];
+
+                    // if cent is 00 replace it with -
+                    $productPrice = preg_replace('/.00$/', '.-', $productPrice);
+
+                    echo "
+                    <a href=\"\" class=\"product\">
+                        <h4>$productName</h4>
+                        <img src=\"/images/products/{$productImage}.jpg\" alt=\"{$productName}\" class=\"boxes\">
+                        <span class=\"price-tag\">€{$productPrice}</span>
+                    </a>
+                    ";
+                }
+                ?>
             </div>
         </div>
 
