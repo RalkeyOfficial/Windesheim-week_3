@@ -12,15 +12,10 @@ ORDER BY total_quantity DESC
 LIMIT 10;
 ";
 
-// execute query
+// execute query & get result
 // WARNING: you will only use query() if no user defined data will be used
 // if ANYTHING in this query you receive from the user use a prepared statement
 $res = $conn->query($query);
-
-// return all results
-while ($row = $res->fetch_assoc()) {
-    print_r($row);
-}
 
 // free up memory
 $res->free_result();
