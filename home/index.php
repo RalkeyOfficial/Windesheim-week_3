@@ -33,27 +33,27 @@
         </div>
 
         <div class="container">
-        <h1 class="highlights">highlighted products!</h1>
+        <h1 class="highlights">Highlighted products!</h1>
             <div class="row">
                 <div>
-                    <p>Product name</p>
-                    <a href=""><img src="img/highlighted-products/Ryzen-7-7800X3D.jpg" alt="highlighted product" class="boxes"><button class="button-winkelwagen">€500</button></a>
+                    <h3>Product name</h3>
+                    <a href=""><img src="img/highlighted-products/Ryzen-7-7800X3D.jpg" alt="highlighted product" class="boxes"><button class="button-toevoegen">€500</button></a>
                 </div>
                 <div>
-                    <p>Product name</p>
-                <a href=""><img src="img/highlighted-products/Asus-ROG-STRIX-B650E-F-GAMING-WIFI.jpg" alt="highlighted product" class="boxes"><button class="button-winkelwagen">€400</button></a>
+                    <h3>Product name</h3>
+                <a href=""><img src="img/highlighted-products/Asus-ROG-STRIX-B650E-F-GAMING-WIFI.jpg" alt="highlighted product" class="boxes"><button class="button-toevoegen">€400</button></a>
                 </div>
                 <div>
-                    <p>Product name</p>
-                <a href=""><img src="img/highlighted-products/Corsair-DDR4-Vengeance.jpg" alt="highlighted product" class="boxes"><button class="button-winkelwagen">€200</button></a>
+                    <h3>Product name</h3>
+                <a href=""><img src="img/highlighted-products/Corsair-DDR4-Vengeance.jpg" alt="highlighted product" class="boxes"><button class="button-toevoegen">€200</button></a>
                 </div>
                 <div>
-                    <p>Product name</p>
-                <a href=""><img src="img/highlighted-products/Fractal-Design-North-Charcoal-Black-TG-Dark.jpg" alt="highlighted product" class="boxes"><button class="button-winkelwagen">€150</button></a>
+                    <h3>Product name</h3>
+                <a href=""><img src="img/highlighted-products/Fractal-Design-North-Charcoal-Black-TG-Dark.jpg" alt="highlighted product" class="boxes"><button class="button-toevoegen">€150</button></a>
                 </div>
                 <div>
-                    <p>Product name</p>
-                <a href=""><img src="img/highlighted-products/MSI-G272QPF.jpg" alt="highlighted product" class="boxes"><button class="button-winkelwagen">€500</button></a>
+                    <h3>Product name</h3>
+                <a href=""><img src="img/highlighted-products/MSI-G272QPF.jpg" alt="highlighted product" class="boxes"><button class="button-toevoegen">€500</button></a>
                 </div>
             </div>
         </div>
