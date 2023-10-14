@@ -48,3 +48,15 @@ main > * {
     object-fit: cover;
     border-radius: 3px;
 }
+
+.price-tag {
+    background-color: #2776EA;
+    color: white;
+    text-decoration: none;
+    border: 2px solid transparent;
+    font-weight: bold;
+    border-radius: 4px;
+    padding: 4px 15px;
+    margin-top: 10px; /* Verhoog de bovenmarge van de knop */
+    font-size: 1.3rem;
+}
