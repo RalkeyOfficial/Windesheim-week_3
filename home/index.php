@@ -8,6 +8,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/overstyle1.css">
+    <!-- <link rel="stylesheet" href="../Productpagina/Productpag.css"> -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -34,11 +35,26 @@
         <div class="container">
         <h1 class="highlights">highlighted products!</h1>
             <div class="row">
-                <a href=""><img src="img/highlighted-products/Ryzen-7-7800X3D.jpg" alt="highlighted product" class="boxes"></a>
-                <a href=""><img src="img/highlighted-products/Asus-ROG-STRIX-B650E-F-GAMING-WIFI.jpg" alt="highlighted product" class="boxes"></a>
-                <a href=""><img src="img/highlighted-products/Corsair-DDR4-Vengeance.jpg" alt="highlighted product" class="boxes"></a>
-                <a href=""><img src="img/highlighted-products/Fractal-Design-North-Charcoal-Black-TG-Dark.jpg" alt="highlighted product" class="boxes"></a>
-                <a href=""><img src="img/highlighted-products/MSI-G272QPF.jpg" alt="highlighted product" class="boxes"></a>
+                <div>
+                    <p>Product name</p>
+                    <a href=""><img src="img/highlighted-products/Ryzen-7-7800X3D.jpg" alt="highlighted product" class="boxes"><button class="button-winkelwagen">€500</button></a>
+                </div>
+                <div>
+                    <p>Product name</p>
+                <a href=""><img src="img/highlighted-products/Asus-ROG-STRIX-B650E-F-GAMING-WIFI.jpg" alt="highlighted product" class="boxes"><button class="button-winkelwagen">€400</button></a>
+                </div>
+                <div>
+                    <p>Product name</p>
+                <a href=""><img src="img/highlighted-products/Corsair-DDR4-Vengeance.jpg" alt="highlighted product" class="boxes"><button class="button-winkelwagen">€200</button></a>
+                </div>
+                <div>
+                    <p>Product name</p>
+                <a href=""><img src="img/highlighted-products/Fractal-Design-North-Charcoal-Black-TG-Dark.jpg" alt="highlighted product" class="boxes"><button class="button-winkelwagen">€150</button></a>
+                </div>
+                <div>
+                    <p>Product name</p>
+                <a href=""><img src="img/highlighted-products/MSI-G272QPF.jpg" alt="highlighted product" class="boxes"><button class="button-winkelwagen">€500</button></a>
+                </div>
             </div>
         </div>
 
