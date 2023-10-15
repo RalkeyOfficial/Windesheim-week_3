@@ -33,14 +33,14 @@
             <b>Prijs</b>
         </div>
 
-        <div class="label:hover">
+        <div>
             <label>
                 <input type="checkbox">
                 Hoog-laag
             </label>
         </div>
 
-        <div class="label:hover">
+        <div>
             <label>
                 <input type="checkbox">
                 Laag-hoog
@@ -51,25 +51,25 @@
             <b>Merken</b>
         </div>
 
-        <div class="label:hover">
+        <div>
             <label>
                 <input type="checkbox">
                 TUF
             </label>
         </div>
-        <div class="label:hover">
+        <div >
             <label>
                 <input type="checkbox">
                 Apple
             </label>
         </div>
-        <div class="label:hover">
+        <div >
             <label>
                 <input type="checkbox">
                 Samsung
             </label>
         </div>
-        <div class="label:hover">
+        <div >
             <label>
                 <input type="checkbox">
                 Lenovo
@@ -79,19 +79,19 @@
         <div class="opties">
             <b>Populariteit</b>
         </div>
-        <div class="label:hover">
+        <div>
             <label>
                 <input type="checkbox">
                 Meest verkocht
             </label>
         </div>
-        <div class="label:hover">
+        <div>
             <label>
                 <input type="checkbox">
                 Korting
             </label>
         </div>
-        <div class="label:hover">
+        <div>
             <label>
                 <input type="checkbox">
                 Featured
@@ -101,19 +101,19 @@
         <div class="opties">
             <b>Geheugen capaciteit</b>
         </div>
-        <div class="label:hover">
+        <div>
             <label>
                 <input type="checkbox">
                 16 GB
             </label>
         </div>
-        <div class="label:hover">
+        <div>
             <label>
                 <input type="checkbox">
                 32 GB
             </label>
         </div>
-        <div class="label:hover">
+        <div>
             <label>
                 <input type="checkbox">
                 64 GB
@@ -123,19 +123,19 @@
         <div class="opties">
             <b>Opslag capaciteit</b>
         </div>
-        <div class="label:hover">
+        <div>
             <label>
                 <input type="checkbox">
                 128 GB
             </label>
         </div>
-        <div class="label:hover">
+        <div>
             <label>
                 <input type="checkbox">
                 256 GB
             </label>
         </div>
-        <div class="label:hover">
+        <div>
             <label>
                 <input type="checkbox">
                 512 GB
@@ -145,19 +145,19 @@
         <div class="opties">
             <b>Resolutie</b>
         </div>
-        <div class="label:hover">
+        <div>
             <label>
                 <input type="checkbox">
                 1920 x 1080
             </label>
         </div>
-        <div class="label:hover">
+        <div>
             <label>
                 <input type="checkbox">
                 1920 x 1200
             </label>
         </div>
-        <div class="label:hover">
+        <div>
             <label>
                 <input type="checkbox">
                 2560 x 1600
@@ -167,13 +167,13 @@
         <div class="opties">
             <b>Touch Screen</b>
         </div>
-        <div class="label:hover">
+        <div>
             <label>
                 <input type="checkbox">
                 Ja
             </label>
         </div>
-        <div class="label:hover">
+        <div>
             <label>
                 <input type="checkbox">
                 Nee

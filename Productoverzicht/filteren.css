@@ -54,10 +54,5 @@ input [type="checkbox"] {
 
 .opties {
     margin-top: 35px;
-
     color: black;
-}
-.hover-text:hover {
-    text-decoration: underline; /* Add underline on hover */
-    cursor: pointer;
 }
