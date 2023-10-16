@@ -32,7 +32,7 @@
         </div>
 
         <div class="highlights">
-            <h1 class="title">highlighted products!</h1>
+            <h1 class="title">Veel verkochte producten!</h1>
             <div class="content">
                 <?php
                 include_once '../api/popular-items.php';
@@ -59,7 +59,7 @@
         </div>
 
         <div class="container">
-            <a href=""><img src="img/highlighted-products/banner_2.avif" alt="Headphones" class="banner"></a>
+            <a href=""><img src="img/highlighted-products/banner_2.avif" alt="Headphones" class="small-banner"></a>
         </div>
 
         <div class="container">
