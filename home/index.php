@@ -20,7 +20,7 @@
 
     <main>
         <div class="container">
-            <a href=""><img src="img/highlighted-products/keyboard.jpg" alt="keyboard" class="banner"></a>
+            <a href=""><img src="img/highlighted-products/1475_SHL_MSI_BigCardBigGameReloaded_16-10-2023_d.jpg" alt="keyboard" class="banner"></a>
         </div>
 
         <div class="container">
@@ -31,8 +31,8 @@
             </div>
         </div>
 
-        <div class="highlights">
-            <h1 class="title">highlighted products!</h1>
+        <div class="item_container">
+            <h1 class="title">Veel verkochte producten!</h1>
             <div class="content">
                 <?php
                 include_once '../api/popular-items.php';
@@ -47,11 +47,16 @@
                     $productPrice = preg_replace('/.00$/', '.-', $productPrice);
 
                     echo "
-                    <a href=\"\" class=\"product\">
-                        <h4>$productName</h4>
-                        <img src=\"/images/products/{$productImage}.jpg\" alt=\"{$productName}\" class=\"boxes\">
-                        <span class=\"price-tag\">€{$productPrice}</span>
-                    </a>
+                    <div class=\"product\">
+                        <a href=\"\" class=\"info\">
+                            <h4>$productName</h4>
+                            <img src=\"/images/products/{$productImage}.jpg\" alt=\"{$productName}\" class=\"boxes\">
+                        </a>
+                        <div class=\"buttons\">
+                            <button class=\"cart-button\"><i class=\"fa-solid fa-cart-shopping\"></i></button>
+                            <span class=\"price-tag\">€{$productPrice}</span>
+                        </div>
+                    </div>
                     ";
                 }
                 ?>
@@ -59,15 +64,38 @@
         </div>
 
         <div class="container">
-            <a href=""><img src="img/highlighted-products/banner_2.avif" alt="Headphones" class="banner"></a>
+            <a href=""><img src="img/highlighted-products/231005_banner_AlanWake2_Bundel_NVIDIA.png" alt="Headphones" class="banner"></a>
         </div>
 
-        <div class="container">
-            <div class="row">
-                <a href=""><img src="img/highlighted-products/headphones.jpg" alt="Headphones" class="boxes"></a>
-                <a href=""><img src="img/highlighted-products/headphones.jpg" alt="Headphones" class="boxes"></a>
-                <a href=""><img src="img/highlighted-products/headphones.jpg" alt="Headphones" class="boxes"></a>
-                <a href=""><img src="img/highlighted-products/headphones.jpg" alt="Headphones" class="boxes"></a>
+        <div class="item_container">
+            <h1 class="title">Recent verkocht!</h1>
+            <div class="content">
+                <?php
+                include_once '../api/recent_verkocht.php';
+
+                foreach ($result as $row) {
+                    $productId = $row['id'];
+                    $productName = $row['name'];
+                    $productPrice = $row['price'];
+                    $productImage = $row['image'];
+
+                    // if cent is 00 replace it with -
+                    $productPrice = preg_replace('/.00$/', '.-', $productPrice);
+
+                    echo "
+                    <div class=\"product\">
+                        <a href=\"\" class=\"info\">
+                            <h4>$productName</h4>
+                            <img src=\"/images/products/{$productImage}.jpg\" alt=\"{$productName}\" class=\"boxes\">
+                        </a>
+                        <div class=\"buttons\">
+                            <button class=\"cart-button\"><i class=\"fa-solid fa-cart-shopping\"></i></button>
+                            <span class=\"price-tag\">€{$productPrice}</span>
+                        </div>
+                    </div>
+                    ";
+                }
+                ?>
             </div>
         </div>
 
