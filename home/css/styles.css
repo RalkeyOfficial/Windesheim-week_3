@@ -30,7 +30,7 @@ main > * {
 
 .item_container > .content {
     display: grid;
-    grid-template-columns: repeat(5, 1fr); /* Creates 3 equal-sized columns */
+    grid-template-columns: repeat(5, 1fr);
     gap: 2rem;
 }
 .item_container > .title {
