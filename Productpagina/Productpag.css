@@ -8,20 +8,26 @@ body {
     background-color: white;
 }
 .p-container {
-    max-width: 1080px;
+    max-width: 1200px;
     margin: auto;
     padding-left: 25px;
     padding-right: 25px;
+    margin-bottom: 2rem;
 }
+
+.container {
+    max-width: 1200px;
+}
+
 .row-p {
     display: grid; /* Gebruik een grid-layout */
     grid-template-columns: 1fr 1fr; /* Twee kolommen met gelijke breedte */
     align-items: center;
+    gap : 4rem
 }
 .smallcategorietekst {
     color: #2776EA;
     font-weight: bold;
-
 }
 .col-2 {
     padding-right: 20px;
@@ -31,46 +37,69 @@ body {
 }
 
 .row {
-    display: flex; /* kolommen in één rij  */
+    display: grid; /* kolommen in één rij  */
+    grid-template-columns: auto auto;
     align-items: center;
     flex-wrap: wrap; /*  kolommen nieuwe rij  niet in de container passen */
     justify-content: space-around;
+    gap: 3rem
 }
 
 .col-4 {
     flex-basis: 25%;
     padding: 10px;
     min-width: 200px;
-    margin-bottom: 50px;
+    margin-bottom: 2rem;
     box-sizing: border-box; /* padding en randen binnen de 25% breedte vallen */
     text-align: center; /* Centreer  inhoud binnen de kolom */
 }
 
+.col-4 h4{
+    flex-basis: 25%;
+    min-width: 200px;
+    margin-bottom: 1.5rem;
+    box-sizing: border-box; /* padding en randen binnen de 25% breedte vallen */
+    text-align: center; /* Centreer  inhoud binnen de kolom */
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+
+
 .col-4 img {
     width: 100%;
     height: 200px; /*  gewenste hoogte img */
-    object-fit: cover; /* beeldverhouding en bedek de volledige ruimte */
+    object-fit: contain; /* beeldverhouding en bedek de volledige ruimte */
 }
 
 .title {
     text-align: center;
-    margin: 0 auto 80px;
+    margin: 0 auto 60px;
     position: relative;
     line-height: 60px;
     color: #2776EA ;
-    font-family: 'Poppins', sans-serif;
     font-size: 40px;
+}
+
+.pro-desc-title {
+    color: #2776EA ;
+    font-size: 40px;
+}
+
+.pro-desc {
+    font-size: 17px;
 }
 
 .product-info h4 {
     color: black;
     font-weight: normal;
-    font-family: 'Poppins', sans-serif;
-    font-size: 24px;
+    font-size: 20px;
 }
 
 .col-4 p {
-    font-size: 30px;
+    font-size: 1.2rem;
 }
 .col-4 h4{
     font-size: 20px;
@@ -94,34 +123,10 @@ body {
 .product-info {
     overflow: hidden; /* Voorkomt dat inhoud uit de container stroomt */
     padding-bottom: 20px; /* Voeg extra ruimte onderaan de container toe */
-}
-
-.product-info p {
-    font-size: 20px;
-    margin-bottom: 30px; /* Verhoog de afstand onder de paragraaf */
-    font-family: 'Poppins', sans-serif;
-}
-
-.product-info h1 {
-    font-size: 30px;
-    margin-bottom: 30px; /* Verhoog de afstand onder de h1 */
-    font-family: 'Poppins', sans-serif;
-}
-
-.product-info h4 {
-    font-size: 24px;
-    margin-bottom: 30px; /* Verhoog de afstand onder de h4 */
-    font-family: 'Poppins', sans-serif;
-}
-.product-info h3 {
-    font-size: 24px;
-    margin-top: 40px; /*afstand boven h3 naar 40px */
-    font-family: 'Poppins', sans-serif;
-}
-.product-info p{
-    font-size: 20px;
-    margin-top: 40px; /* Vergroot de afstand boven de h3 */
-    font-family: 'Poppins', sans-serif;
+    width: 100%;
+    border-radius: 4px;
+    padding: 15px;
+    background-color: #F7F7F7;
 }
 
 .button-winkelwagen {
@@ -133,7 +138,7 @@ body {
     padding: 13px 30px;
     border-radius: 30px;
     transition: .4s;
-    margin-top: 20px; /* Verhoog de bovenmarge van de knop */
+    margin-top: 10px; /* Verhoog de bovenmarge van de knop */
 }
 
 .button-winkelwagen:hover {
@@ -143,3 +148,89 @@ body {
     color: black;
 }
 
+/* recenties start */
+
+.box {
+    width: 100%;
+    border-radius: 4px;
+    padding: 15px;
+    background-color: #F7F7F7;
+    margin-bottom: 40px;
+}
+
+.tekstfield {
+    width: 100%;
+    border-radius: 4px;
+    padding: 15px;
+    background-color: #F7F7F7;
+    margin-bottom: 40px;
+}
+
+.review .evenly{
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.review h2 {
+    font-size: 25px;
+    margin-top: 5px;
+}
+
+.review h4, p {
+    font-size: 17px;
+    margin-top: 10px; /* Vergroot de afstand boven de h3 */;
+}
+
+.review .behulpzaam {
+    font-size: 17px;
+    margin-top: 10px; /* Vergroot de afstand boven de h3 */
+    display: flex;
+    gap: 1rem;
+}
+
+.readmore {
+    display: flex;
+    justify-content: center;
+}
+
+/* recenties end */
+
+.wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 1200px;
+    margin: auto;
+    margin-top: 5rem;
+    margin-bottom: 2rem;
+    gap: 3rem;
+}
+
+.dot {
+    height: 22px;
+    width: 22px;
+    background-color: green;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 0.5rem;
+    border-style: solid;
+    border-width: 0.01rem;
+}
+
+.voorraad {
+    display: flex;
+    align-items: center;
+}
+
+.left-space {
+    margin-left: 2rem;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}

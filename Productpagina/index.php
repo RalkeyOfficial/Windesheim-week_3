@@ -1,4 +1,7 @@
-<?php include_once '../includes/globals.php' ?>
+<?php 
+    include_once '../includes/globals.php' 
+    
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -18,89 +21,203 @@
 <!-- header -->
 <?php include_once ROOT . '/components/header.php' ?>
 
-<!-------productpagina-------->
-<div class="p-container">
-    <div class="row-p">
-        <div class="col-2">
-            <img src="images/asus1.jpg" alt="image1">
-        </div>
-        <div class="col-2">
-            <div class="product-info">
-                <p class="smallcategorietekst">Laptops</p>
-                <h1>ASUS TUF Gaming A15 (2022)</h1>
-                <h4>€1050.00</h4>
-                <a href="/winkelwagen"><button class="button-winkelwagen">Toevoegen aan winkelwagen</button></a>
-                <h3>Productbeschrijving</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid amet autem corporis iure magni molestias non quae soluta tenetur totam? A cupiditate dignissimos distinctio expedita molestiae nam perferendis perspiciatis repudiandae, rerum saepe sequi sit tempora unde voluptatem voluptates voluptatibus voluptatum? Distinctio est facilis itaque minima perspiciatis quo quos ullam ut?</p>
+<!-- productpagina -->
+<?php 
+    include_once '../api/product-info.php';
+
+    foreach ($result as $row) {
+        $productId = $row['id'];
+        $productName = $row['name'];
+        $productPrice = $row['price'];
+        $productImage = $row['image'];
+        $productCategory = $row['category'];
+
+        // if cent is 00 replace it with -
+        $productPrice = preg_replace('/.00$/', '.-', $productPrice);
+
+        echo "
+            <div class='p-container'>
+                <div class='row-p'>
+                    <div class='col-2'>
+                    <img src=/images/products/{$productImage}.jpg alt={$productName}>
+                    </div>
+                    <div class='col-2'>
+                        <div class='product-info'>
+                            <p class='smallcategorietekst'>$productCategory</p> <!-- category -->
+                            <h1>$productName</h1> <!-- product name --> 
+                            <hr>
+                            <h4>€$productPrice</h4> <!-- product price -->
+                            <hr>
+                            <div>
+                                <div class='voorraad'>
+                                    <span class='dot'></span>
+                                    <h4>Online op voorraad</h4>
+                                </div>
+                                <div class='left-space'>
+                                    <h4>Voor 23:59 besteld, morgen in huis!</h4>
+                                    <h4>30 dagen bedenktermijn!</h4>
+                                    <h4>36 maanden garantie!</h4>
+                                </div>
+                            </div>
+                            <hr>
+                            <a href='/winkelwagen'><button class='button-winkelwagen'>Toevoegen aan winkelwagen</button></a> <!-- button -->
+                        </div>
+                    </div>
+                </div>
             </div>
+        ";
+    }
+?>
+
+<div class="p-container">
+    <?php 
+        include_once '../api/product-description.php';
+
+        foreach ($result as $row) {
+            $productDescription = $row['description'];
+
+            echo "
+                <h2 class = 'pro-desc-title'>Productbeschrijving</h2>
+                <p class = 'pro-desc'>$productDescription</p>
+            ";
+        }
+    ?>
+</div>
+
+<div class="wrap">
+    <!------Product beoordeling------>
+    <div class="container">
+        <h2 class="title">Recenties</h2>
+        <div class="box">
+            <div class="review">
+                <div class="evenly">
+                    <div class="klantreviews">
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>
+                    </div>
+                    <h5>17/10/2023</h5>
+                </div>
+                <form action="">
+                    <input type="text" id="title" name="title" placeholder="Titel"><br><br>
+                    <textarea name="productreview" rows="6" cols="70rem" placeholder="Schrijf in dit tekstvak uw recentie over dit product."></textarea>
+                    <br>
+                    <input class="button-winkelwagen" type="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="review">
+                <div class="evenly">
+                    <div class="klantreviews">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                    <h5>14/10/2023</h5>
+                </div>
+                <h2>Product titel</h2>
+                <h4>Klantnaam</h4>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type.</p>
+                <div class="behulpzaam">
+                    <div>Behulpzaam?</div>
+                    <div>Ja(0)</div>
+                    <div>Nee(0)</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="review">
+                <div class="evenly">
+                    <div class="klantreviews"> 
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                    <h5>14/10/2023</h5>
+                </div>
+                <h2>Product titel</h2>
+                <h4>Klantnaam</h4>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type.</p>
+                <div class="behulpzaam">
+                    <div>Behulpzaam?</div>
+                    <div>Ja(0)</div>
+                    <div>Nee(0)</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="review">
+                <div class="evenly">
+                    <div class="klantreviews"> 
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                    <h5>14/10/2023</h5>
+                </div>
+                <h2>Product titel</h2>
+                <h4>Klantnaam</h4>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type.</p>
+                <div class="behulpzaam">
+                    <div>Behulpzaam?</div>
+                    <div>Ja(0)</div>
+                    <div>Nee(0)</div>
+                </div>
+            </div>
+        </div>
+        <div class="readmore">
+            <button class="button-winkelwagen" onclick="myFunction()" id="myBtn">Read more</button>
+        </div>
+    </div>
+
+    <!------gerelateerde producten------>
+    <div class="container">
+        <h2 class="title">Gerelateerde producten</h2>
+        <div class="row">
+            <?php 
+                include_once '../api/product-gerelateerde.php';
+
+                foreach ($result as $row) {
+                    $productName = $row['name'];
+                    $productPrice = $row['price'];
+                    $productImage = $row['image'];
+
+                    // if cent is 00 replace it with -
+                    $productPrice = preg_replace('/.00$/', '.-', $productPrice);
+
+                    echo "
+                        <div class='col-4'>
+                            <a href='../Productpagina/'>
+                                <img src=/images/products/{$productImage}.jpg alt={$productName}>
+                            </a>
+                            <h4>$productName</h4>
+                            <div class='klantreviews'>
+                                <i class='fa fa-star'></i>
+                                <i class='fa fa-star'></i>
+                                <i class='fa fa-star'></i>
+                                <i class='fa fa-star'></i>
+                                <i class='fa fa-star'></i>
+                            </div>
+                            <p>€$productPrice</p>
+                        </div>
+                    ";
+                }
+            ?>
         </div>
     </div>
 </div>
-
-
-<!------gerelateerde producten------>
-<div class="p-container">
-    <h2 class="title">Gerelateerde producten</h2>
-    <div class="row">
-        <div class="col-4">
-            <a href="../Productpagina/">
-                <img src="images/asus1.jpg" alt="product">
-            </a>
-            <h4>Asus Tuf Gaming A15</h4>
-            <div class="klantreviews">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-            </div>
-            <p>€1050.00</p>
-        </div>
-        <div class="col-4">
-            <a href="../Productpagina/">
-                <img src="images/asus2.jpg" alt="product">
-            </a>
-            <h4>ASUS X415EA-EB1510W</h4>
-            <div class="klantreviews">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star-o"></i>
-            </div>
-            <p>€700.00</p>
-        </div>
-        <div class="col-4">
-            <a href="../Productpagina/">
-                <img src="images/asus3.jpg" alt="product">
-            </a>
-            <h4>ASUS Vivobook 15</h4>
-            <div class="klantreviews">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star-half-o"></i>
-                <i class="fa fa-star-o"></i>
-            </div>
-            <p>€800.00</p>
-        </div>
-        <div class="col-4">
-            <a href="../Productpagina/">
-                <img src="images/asus4.jpg" alt="product">
-            </a>
-            <h4>ASUS Vivobook 16</h4>
-            <div class="klantreviews">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star-o"></i>
-                <i class="fa fa-star-o"></i>
-            </div>
-            <p>€850.00</p>
-        </div>
-    </div>
-</div>
-
 
 <!-- footer -->
 <?php include_once ROOT . '/components/footer.php' ?>
