@@ -5,13 +5,12 @@ label:hover {
 
 .box {
     width: 180px;
-    height: 1020px;
+    height: fit-content;
     background-color: whitesmoke;
     border: 2px solid #eae6e6;
     padding: 10px;
     margin: 20px;
     border-radius: 5px;
-    margin-top: 150px;
 }
 
 .divider {

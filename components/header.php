@@ -10,10 +10,10 @@
             <img src="../../../../../../images/Logo-website.png" alt="">
             <h1>Nerdy Gadgets</h1>
         </a>
-        <div class="search">
-            <input type="text" placeholder="search products">
+        <form action="/productoverzicht/" class="search">
+            <input type="text" name="search" placeholder="search products" value="<?php echo $_GET['search'] ?? "" ?>">
             <button><i class="fa-solid fa-magnifying-glass fa-lg" style="color: #ffffff;"></i></button>
-        </div>
+        </form>
         <div class="buttons">
             <i class="fa-solid fa-user fa-2xl" style="color: #ffffff;"></i>
             <i class="fa-solid fa-cart-shopping fa-2xl" style="color: #ffffff;"></i>
