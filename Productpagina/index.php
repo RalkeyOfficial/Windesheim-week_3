@@ -37,10 +37,34 @@
     </div>
 </div>
 
-<!-- <div class="wrap"> -->
+<div class="wrap">
     <!------Product beoordeling------>
-    <div class="p-container">
+    <div class="container">
         <h2 class="title">Recenties</h2>
+        <div class="box">
+            <div class="review">
+                <div class="evenly">
+                    <div class="klantreviews">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                    <h5>17/10/2023</h5>
+                </div>
+                <form action="">
+                    <label for="title">Titel: </label>
+                    <input type="text" id="title" name="title"><br><br>
+                    <label for="cname">Klantnaam: </label>
+                    <input type="text" id="cname" name="cname"><br><br>
+                    <textarea id="w3review" name="productreview" rows="6" cols="70rem">Schrijf in dit tekstvak uw recentie over dit product.</textarea>
+                    <br>
+                    <input class="button-winkelwagen" type="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+
         <div class="box">
             <div class="review">
                 <div class="evenly">
@@ -109,10 +133,13 @@
                 </div>
             </div>
         </div>
+        <div class="readmore">
+            <button class="button-winkelwagen" onclick="myFunction()" id="myBtn">Read more</button>
+        </div>
     </div>
 
     <!------gerelateerde producten------>
-    <div class="p-container">
+    <div class="container">
         <h2 class="title">Gerelateerde producten</h2>
         <div class="row">
             <div class="col-4">
@@ -173,7 +200,7 @@
             </div>
         </div>
     </div>
-<!-- </div> -->
+</div>
 
 <!-- footer -->
 <?php include_once ROOT . '/components/footer.php' ?>
