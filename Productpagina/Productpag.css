@@ -12,6 +12,7 @@ body {
     margin: auto;
     padding-left: 25px;
     padding-right: 25px;
+    margin-bottom: 2rem;
 }
 
 .container {
@@ -28,7 +29,6 @@ body {
 .smallcategorietekst {
     color: #2776EA;
     font-weight: bold;
-
 }
 .col-2 {
     padding-right: 20px;
@@ -48,10 +48,24 @@ body {
     flex-basis: 25%;
     padding: 10px;
     min-width: 200px;
-    margin-bottom: 50px;
+    margin-bottom: 2rem;
     box-sizing: border-box; /* padding en randen binnen de 25% breedte vallen */
     text-align: center; /* Centreer  inhoud binnen de kolom */
 }
+
+.col-4 h4{
+    flex-basis: 25%;
+    min-width: 200px;
+    margin-bottom: 1.5rem;
+    box-sizing: border-box; /* padding en randen binnen de 25% breedte vallen */
+    text-align: center; /* Centreer  inhoud binnen de kolom */
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+
 
 .col-4 img {
     width: 100%;
@@ -65,15 +79,22 @@ body {
     position: relative;
     line-height: 60px;
     color: #2776EA ;
-    font-family: 'Poppins', sans-serif;
     font-size: 40px;
+}
+
+.pro-desc-title {
+    color: #2776EA ;
+    font-size: 40px;
+}
+
+.pro-desc {
+    font-size: 17px;
 }
 
 .product-info h4 {
     color: black;
     font-weight: normal;
-    font-family: 'Poppins', sans-serif;
-    font-size: 24px;
+    font-size: 20px;
 }
 
 .col-4 p {
@@ -101,34 +122,10 @@ body {
 .product-info {
     overflow: hidden; /* Voorkomt dat inhoud uit de container stroomt */
     padding-bottom: 20px; /* Voeg extra ruimte onderaan de container toe */
-}
-
-.product-info p {
-    font-size: 20px;
-    margin-bottom: 30px; /* Verhoog de afstand onder de paragraaf */
-    font-family: 'Poppins', sans-serif;
-}
-
-.product-info h1 {
-    font-size: 30px;
-    margin-bottom: 30px; /* Verhoog de afstand onder de h1 */
-    font-family: 'Poppins', sans-serif;
-}
-
-.product-info h4 {
-    font-size: 24px;
-    margin-bottom: 30px; /* Verhoog de afstand onder de h4 */
-    font-family: 'Poppins', sans-serif;
-}
-.product-info h3 {
-    font-size: 24px;
-    margin-top: 40px; /*afstand boven h3 naar 40px */
-    font-family: 'Poppins', sans-serif;
-}
-.product-info p{
-    font-size: 20px;
-    margin-top: 40px; /* Vergroot de afstand boven de h3 */
-    font-family: 'Poppins', sans-serif;
+    width: 100%;
+    border-radius: 4px;
+    padding: 15px;
+    background-color: #EFEFEF;
 }
 
 .button-winkelwagen {
@@ -170,7 +167,6 @@ body {
 
 .review .evenly{
     font-size: 20px;
-    font-family: 'Poppins', sans-serif;
     display: flex;
     justify-content: space-between;
 }
@@ -178,21 +174,23 @@ body {
 .review h2 {
     font-size: 25px;
     margin-top: 5px;
-    font-family: 'Poppins', sans-serif;
 }
 
 .review h4, p {
-    font-size: 20px;
-    margin-top: 10px; /* Vergroot de afstand boven de h3 */
-    font-family: 'Poppins', sans-serif;
+    font-size: 17px;
+    margin-top: 10px; /* Vergroot de afstand boven de h3 */;
 }
 
 .review .behulpzaam {
-    font-size: 20px;
+    font-size: 17px;
     margin-top: 10px; /* Vergroot de afstand boven de h3 */
-    font-family: 'Poppins', sans-serif;
     display: flex;
     gap: 1rem;
+}
+
+.readmore {
+    display: flex;
+    justify-content: center;
 }
 
 /* recenties end */
@@ -206,7 +204,31 @@ body {
     margin-bottom: 2rem;
 }
 
-.readmore {
+.dot {
+    height: 22px;
+    width: 22px;
+    background-color: green;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 0.5rem;
+    border-style: solid;
+    border-width: 0.01rem;
+}
+
+.voorraad {
     display: flex;
-    justify-content: center;
+    align-items: center;
+}
+
+.left-space {
+    margin-left: 2rem;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
 }
