@@ -6,8 +6,9 @@ include_once __DIR__ . "\db\dbc.php";
 // define query
 
 $query = "
-SELECT * 
-FROM product
+SELECT *, c.naam AS category 
+FROM product p
+JOIN categories c ON p.category_id = c.id
 LIMIT 1;
 ";
 
