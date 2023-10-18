@@ -12,7 +12,7 @@
         </a>
         <form action="/productoverzicht/" class="search">
             <input type="text" name="search" placeholder="search products" value="<?php echo $_GET['search'] ?? "" ?>">
-            <button><i class="fa-solid fa-magnifying-glass fa-lg" style="color: #ffffff;"></i></button>
+            <button type="submit"><i class="fa-solid fa-magnifying-glass fa-lg" style="color: #ffffff;"></i></button>
         </form>
         <div class="buttons">
             <i class="fa-solid fa-user fa-2xl" style="color: #ffffff;"></i>
