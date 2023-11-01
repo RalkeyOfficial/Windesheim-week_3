@@ -60,7 +60,7 @@ $products = getProducts($_GET['search'] ?? "");
                 <div>
                     <label>
                         <input type="checkbox">
-                        TUF
+                        Asus
                     </label>
                 </div>
                 <div>
@@ -83,6 +83,22 @@ $products = getProducts($_GET['search'] ?? "");
                 </div>
 
                 <div class="opties">
+                    <b>Volgorde</b>
+                </div>
+                <div>
+                    <label>
+                        <input type="checkbox">
+                        A-Z
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        <input type="checkbox">
+                        Z-A
+                    </label>
+                </div>
+
+                <div class="opties">
                     <b>Populariteit</b>
                 </div>
                 <div>
@@ -95,34 +111,6 @@ $products = getProducts($_GET['search'] ?? "");
                     <label>
                         <input type="checkbox">
                         Korting
-                    </label>
-                </div>
-                <div>
-                    <label>
-                        <input type="checkbox">
-                        Featured
-                    </label>
-                </div>
-
-                <div class="opties">
-                    <b>Geheugen capaciteit</b>
-                </div>
-                <div>
-                    <label>
-                        <input type="checkbox">
-                        16 GB
-                    </label>
-                </div>
-                <div>
-                    <label>
-                        <input type="checkbox">
-                        32 GB
-                    </label>
-                </div>
-                <div>
-                    <label>
-                        <input type="checkbox">
-                        64 GB
                     </label>
                 </div>
 
@@ -148,43 +136,8 @@ $products = getProducts($_GET['search'] ?? "");
                     </label>
                 </div>
 
-                <div class="opties">
-                    <b>Resolutie</b>
-                </div>
-                <div>
-                    <label>
-                        <input type="checkbox">
-                        1920 x 1080
-                    </label>
-                </div>
-                <div>
-                    <label>
-                        <input type="checkbox">
-                        1920 x 1200
-                    </label>
-                </div>
-                <div>
-                    <label>
-                        <input type="checkbox">
-                        2560 x 1600
-                    </label>
-                </div>
 
-                <div class="opties">
-                    <b>Touch Screen</b>
-                </div>
-                <div>
-                    <label>
-                        <input type="checkbox">
-                        Ja
-                    </label>
-                </div>
-                <div>
-                    <label>
-                        <input type="checkbox">
-                        Nee
-                    </label>
-                </div>
+
             </div>
 
             <div class="products">
