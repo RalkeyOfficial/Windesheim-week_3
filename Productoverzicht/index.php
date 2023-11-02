@@ -83,7 +83,7 @@ $products = getProducts($_GET['search'] ?? "");
                 </div>
 
                 <div class="opties">
-                    <b>Volgorde</b>
+                    <b>Order</b>
                 </div>
                 <div>
                     <label>
