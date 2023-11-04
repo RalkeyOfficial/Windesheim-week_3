@@ -10,6 +10,10 @@ $products = getProducts($_GET['search'] ?? "");
 <html lang="en">
 
 <head>
+
+
+
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <link rel="stylesheet" href="Productov.css">
@@ -35,50 +39,48 @@ $products = getProducts($_GET['search'] ?? "");
                     <b>Filteren</b>
                 </div>
                 <div class="divider"></div>
-                <div class="opties">
-                    <b>Prijs</b>
-                </div>
 
-                <div>
-                    <label>
-                        <input type="checkbox">
-                        Hoog-laag
-                    </label>
-                </div>
-
-                <div>
-                    <label>
-                        <input type="checkbox">
-                        Laag-hoog
-                    </label>
-                </div>
 
                 <div class="opties">
-                    <b>Merken</b>
+                    <b>Categorieën</b>
                 </div>
 
                 <div>
                     <label>
                         <input type="checkbox">
-                        Asus
+                        Laptop
                     </label>
                 </div>
                 <div>
                     <label>
                         <input type="checkbox">
-                        Apple
+                        Phone
+                    </label>
+                </div>
+
+                <div>
+                    <label>
+                        <input type="checkbox">
+                        Opslag
+                    </label>
+                </div>
+
+                <div>
+                    <label>
+                        <input type="checkbox">
+                        Router
                     </label>
                 </div>
                 <div>
                     <label>
                         <input type="checkbox">
-                        Samsung
+                        Component
                     </label>
                 </div>
                 <div>
                     <label>
                         <input type="checkbox">
-                        Lenovo
+                        Desktop
                     </label>
                 </div>
 
@@ -99,43 +101,37 @@ $products = getProducts($_GET['search'] ?? "");
                 </div>
 
                 <div class="opties">
-                    <b>Populariteit</b>
+                    <b>Prijs</b>
                 </div>
+
                 <div>
                     <label>
                         <input type="checkbox">
-                        Meest verkocht
+                        Hoog-laag
                     </label>
                 </div>
+
                 <div>
                     <label>
                         <input type="checkbox">
-                        Korting
+                        Laag-hoog
                     </label>
                 </div>
+
 
                 <div class="opties">
-                    <b>Opslag capaciteit</b>
-                </div>
-                <div>
-                    <label>
-                        <input type="checkbox">
-                        128 GB
-                    </label>
-                </div>
-                <div>
-                    <label>
-                        <input type="checkbox">
-                        256 GB
-                    </label>
-                </div>
-                <div>
-                    <label>
-                        <input type="checkbox">
-                        512 GB
-                    </label>
+                    <b>Prijs tussen bereik</b>
                 </div>
 
+                <div class="price-range">
+                    <label for="minPrice">€</label>
+                    <input type="text" id="minPrice">
+
+                    <label for="maxPrice">tot</label>
+                    <input type="text" id="maxPrice">
+                    <br>
+                    <button type="submit">Ok</button>
+                </div>
 
 
             </div>

@@ -29,7 +29,7 @@ label:hover {
 }
 
 .square-box {
-    width: 15px;
+    width: 30px;
     height: 15px;
     background-color: white;
     border: 2px solid #00388b;
@@ -47,3 +47,17 @@ label:hover {
     margin-top: 35px;
     color: black;
 }
+input {
+    /*width: 5px;*/
+    /*height: 13px;*/
+    /*padding: 13px;*/
+    /*margin: 1px;*/
+}
+
+
+.price-range input[type="text"] {
+     width: 30px;
+     height: 18px;
+
+ }
+
