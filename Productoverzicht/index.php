@@ -125,10 +125,10 @@ $products = getProducts($_GET['search'] ?? "");
 
                 <div class="price-range">
                     <label for="minPrice">€</label>
-                    <input type="text" id="minPrice">
+                    <input type="number" id="minPrice">
 
                     <label for="maxPrice">tot</label>
-                    <input type="text" id="maxPrice">
+                    <input type="number" id="maxPrice">
                     <br>
                     <button type="submit">Ok</button>
                 </div>
