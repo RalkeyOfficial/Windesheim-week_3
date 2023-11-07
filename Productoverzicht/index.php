@@ -129,8 +129,7 @@ $products = getProducts($_GET['search'] ?? "");
 
                     <label for="maxPrice">tot</label>
                     <input type="number" id="maxPrice">
-                    <br>
-                    <button type="submit">Ok</button>
+                    <button type="submit">OK</button>
                 </div>
 
 
