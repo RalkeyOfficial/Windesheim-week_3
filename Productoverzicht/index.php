@@ -10,6 +10,10 @@ $products = getProducts($_GET['search'] ?? "");
 <html lang="en">
 
 <head>
+
+
+
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <link rel="stylesheet" href="Productov.css">
@@ -35,6 +39,67 @@ $products = getProducts($_GET['search'] ?? "");
                     <b>Filteren</b>
                 </div>
                 <div class="divider"></div>
+
+
+                <div class="opties">
+                    <b>Categorieën</b>
+                </div>
+
+                <div>
+                    <label>
+                        <input type="checkbox">
+                        Laptop
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        <input type="checkbox">
+                        Phone
+                    </label>
+                </div>
+
+                <div>
+                    <label>
+                        <input type="checkbox">
+                        Opslag
+                    </label>
+                </div>
+
+                <div>
+                    <label>
+                        <input type="checkbox">
+                        Router
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        <input type="checkbox">
+                        Component
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        <input type="checkbox">
+                        Desktop
+                    </label>
+                </div>
+
+                <div class="opties">
+                    <b>Order</b>
+                </div>
+                <div>
+                    <label>
+                        <input type="checkbox">
+                        A-Z
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        <input type="checkbox">
+                        Z-A
+                    </label>
+                </div>
+
                 <div class="opties">
                     <b>Prijs</b>
                 </div>
@@ -53,138 +118,21 @@ $products = getProducts($_GET['search'] ?? "");
                     </label>
                 </div>
 
-                <div class="opties">
-                    <b>Merken</b>
-                </div>
-
-                <div>
-                    <label>
-                        <input type="checkbox">
-                        TUF
-                    </label>
-                </div>
-                <div>
-                    <label>
-                        <input type="checkbox">
-                        Apple
-                    </label>
-                </div>
-                <div>
-                    <label>
-                        <input type="checkbox">
-                        Samsung
-                    </label>
-                </div>
-                <div>
-                    <label>
-                        <input type="checkbox">
-                        Lenovo
-                    </label>
-                </div>
 
                 <div class="opties">
-                    <b>Populariteit</b>
-                </div>
-                <div>
-                    <label>
-                        <input type="checkbox">
-                        Meest verkocht
-                    </label>
-                </div>
-                <div>
-                    <label>
-                        <input type="checkbox">
-                        Korting
-                    </label>
-                </div>
-                <div>
-                    <label>
-                        <input type="checkbox">
-                        Featured
-                    </label>
+                    <b>Prijs tussen bereik</b>
                 </div>
 
-                <div class="opties">
-                    <b>Geheugen capaciteit</b>
-                </div>
-                <div>
-                    <label>
-                        <input type="checkbox">
-                        16 GB
-                    </label>
-                </div>
-                <div>
-                    <label>
-                        <input type="checkbox">
-                        32 GB
-                    </label>
-                </div>
-                <div>
-                    <label>
-                        <input type="checkbox">
-                        64 GB
-                    </label>
+                <div class="price-range">
+                    <label for="minPrice">€</label>
+                    <input type="number" id="minPrice">
+
+                    <label for="maxPrice">tot</label>
+                    <input type="number" id="maxPrice">
+                    <button type="submit">OK</button>
                 </div>
 
-                <div class="opties">
-                    <b>Opslag capaciteit</b>
-                </div>
-                <div>
-                    <label>
-                        <input type="checkbox">
-                        128 GB
-                    </label>
-                </div>
-                <div>
-                    <label>
-                        <input type="checkbox">
-                        256 GB
-                    </label>
-                </div>
-                <div>
-                    <label>
-                        <input type="checkbox">
-                        512 GB
-                    </label>
-                </div>
 
-                <div class="opties">
-                    <b>Resolutie</b>
-                </div>
-                <div>
-                    <label>
-                        <input type="checkbox">
-                        1920 x 1080
-                    </label>
-                </div>
-                <div>
-                    <label>
-                        <input type="checkbox">
-                        1920 x 1200
-                    </label>
-                </div>
-                <div>
-                    <label>
-                        <input type="checkbox">
-                        2560 x 1600
-                    </label>
-                </div>
-
-                <div class="opties">
-                    <b>Touch Screen</b>
-                </div>
-                <div>
-                    <label>
-                        <input type="checkbox">
-                        Ja
-                    </label>
-                </div>
-                <div>
-                    <label>
-                        <input type="checkbox">
-                        Nee
-                    </label>
-                </div>
             </div>
 
             <div class="products">

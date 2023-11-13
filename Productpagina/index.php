@@ -1,6 +1,6 @@
 <?php 
     include_once '../includes/globals.php' 
-    
+
 ?>
 
 <!DOCTYPE html>
