@@ -26,43 +26,25 @@
             <hr>
             <div>Subtotaal</div>
             <div class="box">
-                <div>Artikel</div>
-                <div>$Prijs</div>
+                <div class="flex">
+                    <div>Artikel</div>
+                    <div>($count)</div>
+                </div>
+                <div>€$Prijs</div>
             </div>
             <div class="box">
-                <div>Verzondkosten</div>
-                <div>$prijs</div>
+                <div>Verzendkosten</div>
+                <div>€$prijs</div>
             </div>
             <hr>
             <div>Totaal</div>
             <div class="box">
                 <div>Incl. BTW</div>
-                <div>$prijs</div>
+                <div>€$prijs</div>
             </div>
             <hr>
             <a href=''><button class='button-winkelwagen'>Ga verder naar de kassa</button></a>
         </div>
-        <div class='product-info'>
-                            <p class='smallcategorietekst'>$productCategory</p> <!-- category -->
-                            <h1>$productName</h1> <!-- product name --> 
-                            <hr>
-                            <h4>€$productPrice</h4> <!-- product price -->
-                            <hr>
-                            <div>
-                                <div class='voorraad'>
-                                    <span class='dot'></span>
-                                    <h4>Online op voorraad</h4>
-                                </div>
-                                <div class='left-space'>
-                                    <h4>Voor 23:59 besteld, morgen in huis!</h4>
-                                    <h4>30 dagen bedenktermijn!</h4>
-                                    <h4>36 maanden garantie!</h4>
-                                </div>
-                            </div>
-                            <hr>
-                            <a href='/winkelwagen'><button class='button-winkelwagen'>Toevoegen aan winkelwagen</button></a> <!-- button -->
-                        </div>
-    </div>
 
     <!-- footer -->
     <?php include_once ROOT . '/components/footer.php' ?>

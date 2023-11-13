@@ -27,6 +27,10 @@ hr {
 }
 
 .box {
+    display: flex; 
+    justify-content: space-between;
+}
+
+.flex {
     display: flex;
-    align-items: center;
 }
