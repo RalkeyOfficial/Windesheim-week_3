@@ -17,34 +17,77 @@
     <!-- header -->
     <?php include_once ROOT . '/components/header.php' ?>
 
-    <div>
-        <div> <!-- product -->
+    <h2 class="title">Winkelwagen</h2>
 
+    <div class="wrap">
+        <div class="container">
+            <div class="row">
+                <?php 
+                    include_once '../api/product-info.php';
+
+                    foreach ($result as $row) {
+                        $productName = $row['name'];
+                        $productPrice = $row['price'];
+                        $productImage = $row['image'];
+
+                        // if cent is 00 replace it with -
+                        $productPrice = preg_replace('/.00$/', '.-', $productPrice);
+
+                        echo "
+                            <div class='box'>
+                                <div class='flexbox'>
+                                    <img src=/images/products/{$productImage}.jpg alt={$productName}>
+                                    <div class='left-space'>
+                                        <h4>$productName</h4>
+                                        <h4>$productPrice</h4>
+                                        <div class='voorraad'>
+                                            <span class='dot'></span>
+                                            <h4>Online op voorraad</h4>
+                                        </div>
+                                        <div class='quantity'>
+                                            <img src=/images/winkelwagen/trash.png alt='trash'>
+                                            <button class='button-increment'>+</button>
+                                            <div> 1 </div>
+                                            <button class='button-increment'>-</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            ";
+                        }
+                    ?>
+            </div>
         </div>
-        <div> <!-- winkelwagen -->
-            <div>Samenvatting</div>
-            <hr>
-            <div>Subtotaal</div>
-            <div class="box">
+        <div class="container">
+            <div class="box"> <!-- winkelwagen -->
+                <h1>Samenvatting</h1>
+                <hr>
+                <h4>Subtotaal</h4>
                 <div class="flex">
-                    <div>Artikel</div>
-                    <div>($count)</div>
+                    <div class="flex">
+                        <h4>Artikel</h4>
+                        <h4>($count)</h4>
+                    </div>
+                    <h4>€$Prijs</h4>
                 </div>
-                <div>€$Prijs</div>
+                
+                <div class="flex">
+                    <h4>Verzendkosten</h4>
+                    <h4>€$prijs</h4>
+                </div>
+                <hr>
+                <h4>Totaal</h4>
+                <div class="flex">
+                    <h4>Incl. BTW</h4>
+                    <h4>€$prijs</h4>
+                </div>
+                <hr>
+                <a href=''><button class='button-winkelwagen'>Ga verder naar de kassa</button></a>
             </div>
-            <div class="box">
-                <div>Verzendkosten</div>
-                <div>€$prijs</div>
+                </div>
             </div>
-            <hr>
-            <div>Totaal</div>
-            <div class="box">
-                <div>Incl. BTW</div>
-                <div>€$prijs</div>
-            </div>
-            <hr>
-            <a href=''><button class='button-winkelwagen'>Ga verder naar de kassa</button></a>
         </div>
+    </div>
 
     <!-- footer -->
     <?php include_once ROOT . '/components/footer.php' ?>
