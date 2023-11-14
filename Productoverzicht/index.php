@@ -3,7 +3,7 @@
 <?php
 include_once '../api/products.php';
 
-$products = getProducts($_GET['search'] ?? "");
+$products = getProducts($_GET['search'] ?? "",$_GET['categorie'] ?? [] ,$_GET['order'] ?? "", $_GET['prijs'] ?? "",$_GET['minprijs'] ?? "",$_GET['maxprijs'] ?? "");
 ?>
 
 <!DOCTYPE html>
@@ -35,6 +35,7 @@ $products = getProducts($_GET['search'] ?? "");
         <div class="mainContent">
             <!--filter-->
             <div class="box">
+                <form action="/productoverzicht/">
                 <div class="section">
                     <b>Filteren</b>
                 </div>
@@ -47,39 +48,39 @@ $products = getProducts($_GET['search'] ?? "");
 
                 <div>
                     <label>
-                        <input type="checkbox">
+                        <input type="checkbox" name="categorie[]" value="1">
                         Laptop
                     </label>
                 </div>
                 <div>
                     <label>
-                        <input type="checkbox">
+                        <input type="checkbox" name="categorie[]" value="2">
                         Phone
                     </label>
                 </div>
 
                 <div>
                     <label>
-                        <input type="checkbox">
+                        <input type="checkbox" name="categorie[]" value="3">
                         Opslag
                     </label>
                 </div>
 
                 <div>
                     <label>
-                        <input type="checkbox">
+                        <input type="checkbox" name="categorie[]" value="4">
                         Router
                     </label>
                 </div>
                 <div>
                     <label>
-                        <input type="checkbox">
+                        <input type="checkbox" name="categorie[]" value="5">
                         Component
                     </label>
                 </div>
                 <div>
                     <label>
-                        <input type="checkbox">
+                        <input type="checkbox" name="categorie[]" value="6">
                         Desktop
                     </label>
                 </div>
@@ -89,13 +90,13 @@ $products = getProducts($_GET['search'] ?? "");
                 </div>
                 <div>
                     <label>
-                        <input type="checkbox">
+                        <input type="radio" name="order" value="az">
                         A-Z
                     </label>
                 </div>
                 <div>
                     <label>
-                        <input type="checkbox">
+                        <input type="radio" name = "order" value="za">
                         Z-A
                     </label>
                 </div>
@@ -106,14 +107,14 @@ $products = getProducts($_GET['search'] ?? "");
 
                 <div>
                     <label>
-                        <input type="checkbox">
+                        <input type="radio" name = "prijs" value="hl">
                         Hoog-laag
                     </label>
                 </div>
 
                 <div>
                     <label>
-                        <input type="checkbox">
+                        <input type="radio" name="prijs" value="lh">
                         Laag-hoog
                     </label>
                 </div>
@@ -125,14 +126,14 @@ $products = getProducts($_GET['search'] ?? "");
 
                 <div class="price-range">
                     <label for="minPrice">€</label>
-                    <input type="number" id="minPrice">
+                    <input type="number" id="minPrice" name="minprijs">
 
                     <label for="maxPrice">tot</label>
-                    <input type="number" id="maxPrice">
+                    <input type="number" id="maxPrice" name="maxprijs">
                     <button type="submit">OK</button>
                 </div>
 
-
+                </form>
             </div>
 
             <div class="products">
