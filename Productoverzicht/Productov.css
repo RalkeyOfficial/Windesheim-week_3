@@ -13,6 +13,7 @@ main {
 }
 .mainContent {
     display: flex;
+    width: 100%;
 }
 
 .title {
@@ -26,6 +27,7 @@ main {
 }
 
 .products {
+    width: 100%;
     height: min-content;
     display: grid;
     grid-template-columns: repeat(4, 1fr); 
@@ -101,4 +103,9 @@ main {
     text-align: center;
     line-height: 40px;
     cursor: pointer;
+}
+
+.no-products {
+    width: 100%;
+    text-align: center;
 }

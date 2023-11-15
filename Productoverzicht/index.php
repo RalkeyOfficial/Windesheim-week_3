@@ -127,8 +127,11 @@ $products = getProducts(
                 </form>
             </div>
 
-            <div class="products">
-                <?php
+
+            <?php
+
+            if ($products->num_rows > 0) {
+                echo "<div class=\"products\">";
 
                 foreach ($products as $row) {
                     $productId = $row['id'];
@@ -159,8 +162,15 @@ $products = getProducts(
                     </div>
                     ";
                 }
-                ?>
-            </div>
+
+                echo "</div>";
+            } else {
+                echo "
+                    <p class='no-products'>Geen producten beschikbaar met deze filter</p>
+                ";
+            }
+            ?>
+
         </div>
 
         <div class="pagina-btn">

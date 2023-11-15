@@ -20,7 +20,7 @@
 
     <main>
         <div class="container">
-            <a href=""><img src="img/1475_SHL_MSI_BigCardBigGameReloaded_16-10-2023_d.jpg" alt="keyboard" class="banner"></a>
+            <a href=""><img src="img/1475_SHL_MSI_BigCardBigGameReloaded_16-10-2023_d.jpg" alt="banner" class="banner"></a>
         </div>
 
         <div class="container">
