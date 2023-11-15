@@ -20,14 +20,14 @@
 
     <main>
         <div class="container">
-            <a href=""><img src="img/highlighted-products/1475_SHL_MSI_BigCardBigGameReloaded_16-10-2023_d.jpg" alt="keyboard" class="banner"></a>
+            <a href=""><img src="img/1475_SHL_MSI_BigCardBigGameReloaded_16-10-2023_d.jpg" alt="keyboard" class="banner"></a>
         </div>
 
         <div class="container">
             <div class="row">
-                <a href=""><img src="img/highlighted-products/action_1.jpg" alt="ACTIE" class="boxes"></a>
-                <a href=""><img src="img/highlighted-products/action_2.png" alt="ACTIE" class="boxes"></a>
-                <a href=""><img src="img/highlighted-products/action_3.png" alt="ACTIE" class="boxes"></a>
+                <a href=""><img src="img/action_1.jpg" alt="ACTIE" class="boxes"></a>
+                <a href=""><img src="img/action_2.png" alt="ACTIE" class="boxes"></a>
+                <a href=""><img src="img/action_3.png" alt="ACTIE" class="boxes"></a>
             </div>
         </div>
 
@@ -64,7 +64,7 @@
         </div>
 
         <div class="container">
-            <a href=""><img src="img/highlighted-products/231005_banner_AlanWake2_Bundel_NVIDIA.png" alt="Headphones" class="banner"></a>
+            <a href=""><img src="img/231005_banner_AlanWake2_Bundel_NVIDIA.png" alt="Headphones" class="banner"></a>
         </div>
 
         <div class="item_container">
