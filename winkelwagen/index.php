@@ -1,4 +1,11 @@
-<?php include_once '../includes/globals.php' ?>
+<?php
+
+session_start();
+
+include_once '../includes/globals.php';
+require_once '../api/getdata.php';
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -17,74 +24,84 @@
     <!-- header -->
     <?php include_once ROOT . '/components/header.php' ?>
 
-    <h2 class="title">Winkelwagen</h2>
-
+    <h2 class="title">Mijn Winkelwagen</h2>
     <div class="wrap">
-        <div class="container">
-            <div class="row">
-                <?php 
-                    include_once '../api/product-info.php';
+        <div class="shopping-cart">
+            <?php
+            $total = 0;
+            if (isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
+                $product_ids = array_column($_SESSION['cart'], 'product_id');
+                $result = getData($product_ids);
 
-                    foreach ($result as $row) {
-                        $productName = $row['name'];
-                        $productPrice = $row['price'];
-                        $productImage = $row['image'];
+                foreach ($result as $row) {
+                    $productId = $row['id'];
+                    $productName = $row['name'];
+                    $productPrice = $row['price'];
+                    $productImage = $row['image'];
+                    $total = $total + (int)$productPrice;
 
-                        // if cent is 00 replace it with -
-                        $productPrice = preg_replace('/.00$/', '.-', $productPrice);
+                    $quantity = 1;
 
-                        echo "
-                            <div class='box'>
-                                <div class='flexbox'>
-                                    <img src=/images/products/{$productImage}.jpg alt={$productName}>
-                                    <div class='left-space'>
-                                        <h4>$productName</h4>
-                                        <h4>$productPrice</h4>
-                                        <div class='voorraad'>
-                                            <span class='dot'></span>
-                                            <h4>Online op voorraad</h4>
-                                        </div>
-                                        <div class='quantity'>
-                                            <img src=/images/winkelwagen/trash.png alt='trash'>
-                                            <button class='button-increment'>+</button>
-                                            <div> 1 </div>
-                                            <button class='button-increment'>-</button>
-                                        </div>
+                    echo "
+                        <div class='box'>
+                            <div class='flexbox'>
+                                <img src='/images/products/{$productImage}.jpg' alt='{$productName}'>
+                                <div class='left-space'>
+                                    <h4>{$productName}</h4>
+                                    <h4>{$productPrice}</h4>
+                                    <div class='voorraad'>
+                                        <span class='dot'></span>
+                                        <h4>Online op voorraad</h4>
+                                    </div>
+                                    <div class='quantity'>
+                                        <a href='../api/remove-item.php?id={$productId}'><i class='fa fa-trash fa-solid fa-2xl' aria-hidden='true'></i></a>
+                                        <button class='button-increment'><i class='fa fa-minus'></i></button>
+                                        <div> $quantity </div>
+                                        <button class='button-increment'><i class='fa fa-plus'></i></button>
                                     </div>
                                 </div>
                             </div>
-                            ";
-                        }
-                    ?>
-            </div>
+                        </div>
+                    ";
+                }
+            } else {
+                echo "<h3>Er zijn geen producten in jouw winkelwagen</h3>";
+            }
+            ?>
         </div>
-        <div class="container">
-            <div class="box"> <!-- winkelwagen -->
+
+        <div>
+            <div class="box">
+                <!-- winkelwagen -->
                 <h1>Samenvatting</h1>
                 <hr>
                 <h4>Subtotaal</h4>
                 <div class="flex">
                     <div class="flex">
-                        <h4>Artikel</h4>
-                        <h4>($count)</h4>
+                        <?php
+                        if (isset($_SESSION['cart'])) {
+                            $count = count($_SESSION['cart']);
+                            echo "<h4>Artikel ($count items)</h4>";
+                        } else {
+                            echo "<h4>Artikel (0 items)</h4>";
+                        }
+                        ?>
                     </div>
-                    <h4>€$Prijs</h4>
+                    <h4>€<?php echo $total; ?></h4>
                 </div>
-                
+
                 <div class="flex">
                     <h4>Verzendkosten</h4>
-                    <h4>€$prijs</h4>
+                    <h4>Gratis!</h4>
                 </div>
                 <hr>
                 <h4>Totaal</h4>
                 <div class="flex">
                     <h4>Incl. BTW</h4>
-                    <h4>€$prijs</h4>
+                    <h4>€<?php echo $total; ?></h4>
                 </div>
                 <hr>
                 <a href=''><button class='button-winkelwagen'>Ga verder naar de kassa</button></a>
-            </div>
-                </div>
             </div>
         </div>
     </div>
@@ -92,5 +109,4 @@
     <!-- footer -->
     <?php include_once ROOT . '/components/footer.php' ?>
 </body>
-
 </html>

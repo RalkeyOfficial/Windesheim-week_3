@@ -16,7 +16,7 @@
         </form>
         <div class="buttons">
             <i class="fa-solid fa-user fa-2xl" style="color: #ffffff;"></i>
-            <i class="fa-solid fa-cart-shopping fa-2xl" style="color: #ffffff;"></i>
+            <a href="../winkelwagen/index.php"><i class="fa-solid fa-cart-shopping fa-2xl" style="color: #ffffff;"></i></a>
         </div>
     </div>
     <div class="separator"></div>
