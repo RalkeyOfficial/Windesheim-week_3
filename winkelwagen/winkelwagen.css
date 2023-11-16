@@ -129,8 +129,10 @@ hr {
 
 .button-increment {
     padding: 5px 10px;
-    margin-left: 1rem;
-    margin-right: 1rem;
+}
+
+.button-decrement {
+    padding: 5px 10px;
 }
 
 .voorraad {
@@ -146,6 +148,12 @@ hr {
 
 .quantity a{
     color:black;
+}
+
+.form-control {
+    width: 3rem;
+    height: 2.1rem;
+    text-align: center;
 }
 
 .quantity img {

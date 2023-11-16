@@ -16,8 +16,8 @@ require_once '../api/getdata.php';
     <link rel="stylesheet" href="winkelwagen.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <title>NerdyGadgets | home</title>
+
+    <title>NerdyGadgets | winkelwagen</title>
 </head>
 
 <body>
@@ -40,10 +40,8 @@ require_once '../api/getdata.php';
                     $productImage = $row['image'];
                     $total = $total + (int)$productPrice;
 
-                    $quantity = 1;
-
                     echo "
-                        <div class='box'>
+                        <div class='box product-data'>
                             <div class='flexbox'>
                                 <img src='/images/products/{$productImage}.jpg' alt='{$productName}'>
                                 <div class='left-space'>
@@ -55,9 +53,11 @@ require_once '../api/getdata.php';
                                     </div>
                                     <div class='quantity'>
                                         <a href='../api/remove-item.php?id={$productId}'><i class='fa fa-trash fa-solid fa-2xl' aria-hidden='true'></i></a>
-                                        <button class='button-increment'><i class='fa fa-minus'></i></button>
-                                        <div> $quantity </div>
-                                        <button class='button-increment'><i class='fa fa-plus'></i></button>
+                                        <div class='left-space'>
+                                            <button class='button-decrement'><i class='fa fa-minus'></i></button>
+                                            <input type='text' class='form-control input-qty' value='1' disabled>
+                                            <button class='button-increment'><i class='fa fa-plus'></i></button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -79,6 +79,7 @@ require_once '../api/getdata.php';
                 <div class="flex">
                     <div class="flex">
                         <?php
+                        $count = 0;
                         if (isset($_SESSION['cart'])) {
                             $count = count($_SESSION['cart']);
                             echo "<h4>Artikel ($count items)</h4>";
@@ -91,8 +92,12 @@ require_once '../api/getdata.php';
                 </div>
 
                 <div class="flex">
-                    <h4>Verzendkosten</h4>
-                    <h4>Gratis!</h4>
+                    <?php 
+                        if ($total > 1) {
+                            echo '<h4>Verzendkosten</h4>';
+                            echo '<h4>Gratis!</h4>';
+                        }
+                    ?>
                 </div>
                 <hr>
                 <h4>Totaal</h4>
@@ -101,12 +106,23 @@ require_once '../api/getdata.php';
                     <h4>€<?php echo $total; ?></h4>
                 </div>
                 <hr>
-                <a href=''><button class='button-winkelwagen'>Ga verder naar de kassa</button></a>
+                <?php
+                    if ($count > 0) {
+                        echo "<button class='button-winkelwagen' onclick='redirectToPayment()'>Ga verder naar de kassa</button>";
+                    } else {
+                        echo "<button class='button-winkelwagen' onclick='redirectToOverview()'>Bekijk onze producten</button>";
+                    }
+                ?>
             </div>
         </div>
     </div>
 
     <!-- footer -->
     <?php include_once ROOT . '/components/footer.php' ?>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="winkelwagen.js"></script>
+    
 </body>
+
 </html>

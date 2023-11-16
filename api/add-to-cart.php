@@ -19,7 +19,6 @@ $products = getProducts($_GET['search'] ?? "");
                     'product_id' => $_POST['product_id']
             );
             $_SESSION['cart'][0] = $item_array;
-            print_r($_SESSION['cart']);
         }
     }
 ?>
