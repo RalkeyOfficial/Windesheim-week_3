@@ -2,7 +2,7 @@
 
 function getProducts($search = "", $categories = [], $order = "", $prijs = "", $minprijs = "", $maxprijs = "")
 {
-    include_once __DIR__ . "\db\dbc.php";
+    require "db\dbc.php";
 
     $preparedData = [];
 
