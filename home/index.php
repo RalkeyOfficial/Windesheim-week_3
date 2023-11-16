@@ -8,9 +8,11 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/overstyle1.css">
+    <link rel="stylesheet" href="css/carousel.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css" integrity="sha384-QYIZto+st3yW+o8+5OHfT6S482Zsvz2WfOzpFSXMF9zqeLcFV0/wlZpMtyFcZALm" crossorigin="anonymous">
+    <script src="js/carousel.js" defer></script>
     <title>NerdyGadgets | home</title>
 </head>
 
@@ -19,15 +21,26 @@
     <?php include_once ROOT . '/components/header.php' ?>
 
     <main>
-        <div class="container">
-            <a href=""><img src="img/highlighted-products/1475_SHL_MSI_BigCardBigGameReloaded_16-10-2023_d.jpg" alt="keyboard" class="banner"></a>
+        <div class="container image-carousel">
+            <ul>
+                <li><a href=""><img src="img/1475_SHL_BlackWeek_ASUS-Notebooks_2023_d_V2.webp" alt="banner" class="banner"></a></li>
+                <li><a href=""><img src="img/1475_SHL_BlackWeek_MSI-Notebooks_2023_d.webp" alt="banner" class="banner"></a></li>
+                <li><a href=""><img src="img/1475_SHL_BlackWeek_SamsungSSD_2023_d.webp" alt="banner" class="banner"></a></li>
+                <li><a href=""><img src="img/1475_SHL_MSI_BigCardBigGameReloaded_16-10-2023_d.jpg" alt="banner" class="banner"></a></li>
+            </ul>
+            <div class="carousel-nav">
+                <button data-active>&#x2022;</button>
+                <button>&#x2022;</button>
+                <button>&#x2022;</button>
+                <button>&#x2022;</button>
+            </div>
         </div>
 
         <div class="container">
             <div class="row">
-                <a href=""><img src="img/highlighted-products/action_1.jpg" alt="ACTIE" class="boxes"></a>
-                <a href=""><img src="img/highlighted-products/action_2.png" alt="ACTIE" class="boxes"></a>
-                <a href=""><img src="img/highlighted-products/action_3.png" alt="ACTIE" class="boxes"></a>
+                <a href=""><img src="img/action_1.jpg" alt="ACTIE" class="boxes"></a>
+                <a href=""><img src="img/action_2.png" alt="ACTIE" class="boxes"></a>
+                <a href=""><img src="img/action_3.png" alt="ACTIE" class="boxes"></a>
             </div>
         </div>
 
@@ -64,7 +77,7 @@
         </div>
 
         <div class="container">
-            <a href=""><img src="img/highlighted-products/231005_banner_AlanWake2_Bundel_NVIDIA.png" alt="Headphones" class="banner"></a>
+            <a href=""><img src="img/231005_banner_AlanWake2_Bundel_NVIDIA.png" alt="Headphones" class="banner"></a>
         </div>
 
         <div class="item_container">
