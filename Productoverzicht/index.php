@@ -6,6 +6,14 @@ include_once '../api/products.php';
 include_once '../includes/globals.php';
 include_once '../api/add-to-cart.php';
 
+$products = getProducts(
+    $_GET['search'] ?? "",
+    $_GET['categorie'] ?? [],
+    $_GET['order'] ?? "",
+    $_GET['prijs'] ?? "",
+    $_GET['minprijs'] ?? "",
+    $_GET['maxprijs'] ?? ""
+);
 ?>
 
 <!DOCTYPE html>
@@ -33,160 +41,93 @@ include_once '../api/add-to-cart.php';
         <div class="mainContent">
             <!--filter-->
             <div class="box">
-                <div class="section">
-                    <b>Filteren</b>
-                </div>
-                <div class="divider"></div>
-                <div class="opties">
-                    <b>Prijs</b>
-                </div>
+                <form action="/productoverzicht/">
+                    <div class="section">
+                        <b>Filteren</b>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="opties">
+                        <b>Categorieën</b>
+                    </div>
+                    <div>
+                        <label>
+                            <!-- if the given input does exist, add a checked value -->
+                            <input type="checkbox" name="categorie[]" value="1" <?= in_array("1", ($_GET['categorie'] ?? [])) ? "checked" : "" ?>>
+                            Laptop
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            <input type="checkbox" name="categorie[]" value="2" <?= in_array("2", ($_GET['categorie'] ?? [])) ? "checked" : "" ?>>
+                            Phone
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            <input type="checkbox" name="categorie[]" value="3" <?= in_array("3", ($_GET['categorie'] ?? [])) ? "checked" : "" ?>>
+                            Opslag
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            <input type="checkbox" name="categorie[]" value="4" <?= in_array("4", ($_GET['categorie'] ?? [])) ? "checked" : "" ?>>
+                            Router
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            <input type="checkbox" name="categorie[]" value="5" <?= in_array("5", ($_GET['categorie'] ?? [])) ? "checked" : "" ?>>
+                            Component
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            <input type="checkbox" name="categorie[]" value="6" <?= in_array("6", ($_GET['categorie'] ?? [])) ? "checked" : "" ?>>
+                            Desktop
+                        </label>
+                    </div>
+                    <div class="opties">
+                        <b>Order</b>
+                    </div>
+                    <div>
+                        <label>
+                            <input type="radio" name="order" value="az" <?= ($_GET['order'] ?? "") == "az" ? "checked" : "" ?>>
+                            A-Z
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            <input type="radio" name="order" value="za" <?= ($_GET['order'] ?? "") == "za" ? "checked" : "" ?>>
+                            Z-A
+                        </label>
+                    </div>
+                    <div class="opties">
+                        <b>Prijs</b>
+                    </div>
+                    <div>
+                        <label>
+                            <input type="radio" name="prijs" value="lh" <?= ($_GET['prijs'] ?? "") == "lh" ? "checked" : "" ?>>
+                            Laag-hoog
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            <input type="radio" name="prijs" value="hl" <?= ($_GET['prijs'] ?? "") == "hl" ? "checked" : "" ?>>
+                            Hoog-laag
+                        </label>
+                    </div>
+                    <div class="opties">
+                        <b>Prijs tussen bereik</b>
+                    </div>
+                    <div class="price-range">
+                        <label for="minPrice">€</label>
+                        <input type="number" id="minPrice" name="minprijs" placeholder="0" value="<?= $_GET['minprijs'] ?? "" ?>">
 
-                <div>
-                    <label>
-                        <input type="checkbox">
-                        Hoog-laag
-                    </label>
-                </div>
-
-                <div>
-                    <label>
-                        <input type="checkbox">
-                        Laag-hoog
-                    </label>
-                </div>
-
-                <div class="opties">
-                    <b>Merken</b>
-                </div>
-
-                <div>
-                    <label>
-                        <input type="checkbox">
-                        TUF
-                    </label>
-                </div>
-                <div>
-                    <label>
-                        <input type="checkbox">
-                        Apple
-                    </label>
-                </div>
-                <div>
-                    <label>
-                        <input type="checkbox">
-                        Samsung
-                    </label>
-                </div>
-                <div>
-                    <label>
-                        <input type="checkbox">
-                        Lenovo
-                    </label>
-                </div>
-
-                <div class="opties">
-                    <b>Populariteit</b>
-                </div>
-                <div>
-                    <label>
-                        <input type="checkbox">
-                        Meest verkocht
-                    </label>
-                </div>
-                <div>
-                    <label>
-                        <input type="checkbox">
-                        Korting
-                    </label>
-                </div>
-                <div>
-                    <label>
-                        <input type="checkbox">
-                        Featured
-                    </label>
-                </div>
-
-                <div class="opties">
-                    <b>Geheugen capaciteit</b>
-                </div>
-                <div>
-                    <label>
-                        <input type="checkbox">
-                        16 GB
-                    </label>
-                </div>
-                <div>
-                    <label>
-                        <input type="checkbox">
-                        32 GB
-                    </label>
-                </div>
-                <div>
-                    <label>
-                        <input type="checkbox">
-                        64 GB
-                    </label>
-                </div>
-
-                <div class="opties">
-                    <b>Opslag capaciteit</b>
-                </div>
-                <div>
-                    <label>
-                        <input type="checkbox">
-                        128 GB
-                    </label>
-                </div>
-                <div>
-                    <label>
-                        <input type="checkbox">
-                        256 GB
-                    </label>
-                </div>
-                <div>
-                    <label>
-                        <input type="checkbox">
-                        512 GB
-                    </label>
-                </div>
-
-                <div class="opties">
-                    <b>Resolutie</b>
-                </div>
-                <div>
-                    <label>
-                        <input type="checkbox">
-                        1920 x 1080
-                    </label>
-                </div>
-                <div>
-                    <label>
-                        <input type="checkbox">
-                        1920 x 1200
-                    </label>
-                </div>
-                <div>
-                    <label>
-                        <input type="checkbox">
-                        2560 x 1600
-                    </label>
-                </div>
-
-                <div class="opties">
-                    <b>Touch Screen</b>
-                </div>
-                <div>
-                    <label>
-                        <input type="checkbox">
-                        Ja
-                    </label>
-                </div>
-                <div>
-                    <label>
-                        <input type="checkbox">
-                        Nee
-                    </label>
-                </div>
+                        <label for="maxPrice">tot</label>
+                        <input type="number" id="maxPrice" name="maxprijs" placeholder="24999" value="<?= $_GET['maxprijs'] ?? "" ?>">
+                        <button type="submit">OK</button>
+                    </div>
+                </form>
             </div>
 
             <div class="products">
