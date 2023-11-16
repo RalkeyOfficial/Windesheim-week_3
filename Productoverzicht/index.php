@@ -144,7 +144,7 @@ $products = getProducts(
 
                     echo "
                         <form class=\"product\" action='index.php' method='post'>
-                            <a href=\"../Productpagina/\">
+                            <a href=\"../Productpagina/?id={$productId}\">
                                 <img src=\"../images/products/{$productImage}.jpg\" alt=\"{$productName}\">
                                 <h4>{$productName}</h4>
                             </a>

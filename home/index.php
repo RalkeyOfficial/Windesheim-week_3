@@ -1,4 +1,11 @@
-<?php include_once '../includes/globals.php' ?>
+<?php 
+
+    session_start();
+
+    include_once '../api/products.php';
+    include_once '../includes/globals.php';
+    include_once '../api/add-to-cart.php';
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -10,7 +17,6 @@
     <link rel="stylesheet" href="css/overstyle1.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>NerdyGadgets | home</title>
 </head>
 
@@ -47,18 +53,21 @@
                     $productPrice = preg_replace('/.00$/', '.-', $productPrice);
 
                     echo "
-                    <div class=\"product\">
-                        <a href=\"\" class=\"info\">
-                            <h4>$productName</h4>
-                            <img src=\"/images/products/{$productImage}.jpg\" alt=\"{$productName}\" class=\"boxes\">
-                        </a>
-                        <div class=\"buttons\">
-                            <button class=\"cart-button\"><i class=\"fa-solid fa-cart-shopping\"></i></button>
-                            <span class=\"price-tag\">€{$productPrice}</span>
-                        </div>
-                    </div>
+                        <form method='post' action='index.php'>
+                            <div class=\"product\">
+                                <a href=\"\" class=\"info\">
+                                    <h4>$productName</h4>
+                                    <img src=\"/images/products/{$productImage}.jpg\" alt=\"{$productName}\" class=\"boxes\">
+                                </a>
+                                <div class=\"buttons\">
+                                    <button type='submit' name='add' class=\"cart-button\"><i class=\"fa-solid fa-cart-shopping\"></i></button>
+                                    <input type='hidden' name='product_id' value='$productId'>
+                                    <span class=\"price-tag\">€{$productPrice}</span>
+                                </div>
+                            </div>
+                        </form>
                     ";
-                }
+                    }
                 ?>
             </div>
         </div>
@@ -83,18 +92,21 @@
                     $productPrice = preg_replace('/.00$/', '.-', $productPrice);
 
                     echo "
-                    <div class=\"product\">
-                        <a href=\"\" class=\"info\">
-                            <h4>$productName</h4>
-                            <img src=\"/images/products/{$productImage}.jpg\" alt=\"{$productName}\" class=\"boxes\">
-                        </a>
-                        <div class=\"buttons\">
-                            <button class=\"cart-button\"><i class=\"fa-solid fa-cart-shopping\"></i></button>
-                            <span class=\"price-tag\">€{$productPrice}</span>
-                        </div>
-                    </div>
-                    ";
-                }
+                        <form method='post' action='index.php'>
+                            <div class=\"product\">
+                                <a href=\"\" class=\"info\">
+                                    <h4>$productName</h4>
+                                    <img src=\"/images/products/{$productImage}.jpg\" alt=\"{$productName}\" class=\"boxes\">
+                                </a>
+                                <div class=\"buttons\">
+                                    <button type='submit' name='add' class=\"cart-button\"><i class=\"fa-solid fa-cart-shopping\"></i></button>
+                                    <input type='hidden' name='product_id' value='$productId'>
+                                    <span class=\"price-tag\">€{$productPrice}</span>
+                                </div>
+                            </div>
+                        </form>
+                        ";
+                    }
                 ?>
             </div>
         </div>
@@ -117,6 +129,8 @@
 
     <!-- footer -->
     <?php include_once ROOT . '/components/footer.php' ?>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../api/add-to-cart.php"></script>
 </body>
 
 </html>

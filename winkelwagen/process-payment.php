@@ -14,6 +14,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 handlePayPalPayment();
                 break;
 
+            case 'klarna':
+                handleKlarnaPayment();
+                break;
+
             case "ideal":##
                 if (isset($_POST["ideal_bank"])) {
                     $idealBank = $_POST["ideal_bank"];
@@ -36,6 +40,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 function handleCreditCardPayment()
 {
     echo "<script>alert('Creditcardbetaling succesvol verwerkt!');";
+    echo "window.location.href = '../home/index.php';</script>";
+}
+
+function handleKlarnaPayment()
+{
+    echo "<script>alert('Klarna-betaling succesvol verwerkt!');";
     echo "window.location.href = '../home/index.php';</script>";
 }
 

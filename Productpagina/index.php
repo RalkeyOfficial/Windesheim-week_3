@@ -1,6 +1,10 @@
 <?php 
-    include_once '../includes/globals.php' 
 
+    session_start();
+
+    include_once '../api/products.php';
+    include_once '../includes/globals.php';
+    include_once '../api/add-to-cart.php';
 ?>
 
 <!DOCTYPE html>
@@ -36,37 +40,42 @@
         $productPrice = preg_replace('/.00$/', '.-', $productPrice);
 
         echo "
-            <div class='p-container'>
-                <div class='row-p'>
-                    <div class='col-2'>
-                    <img src=/images/products/{$productImage}.jpg alt={$productName}>
-                    </div>
-                    <div class='col-2'>
-                        <div class='product-info'>
-                            <p class='smallcategorietekst'>$productCategory</p> <!-- category -->
-                            <h1>$productName</h1> <!-- product name --> 
-                            <hr>
-                            <h4>€$productPrice</h4> <!-- product price -->
-                            <hr>
-                            <div>
-                                <div class='voorraad'>
-                                    <span class='dot'></span>
-                                    <h4>Online op voorraad</h4>
+            <form method='post' action='index.php'>
+                <div class='p-container'>
+                    <div class='row-p'>
+                        <div class='col-2'>
+                        <img src=/images/products/{$productImage}.jpg alt={$productName}>
+                        </div>
+                        <div class='col-2'>
+                            <div class='product-info'>
+                                <p class='smallcategorietekst'>$productCategory</p> <!-- category -->
+                                <h1>$productName</h1> <!-- product name --> 
+                                <hr>
+                                <h4>€$productPrice</h4> <!-- product price -->
+                                <hr>
+                                <div>
+                                    <div class='voorraad'>
+                                        <span class='dot'></span>
+                                        <h4>Online op voorraad</h4>
+                                    </div>
+                                    <div class='left-space'>
+                                        <h4>Voor 23:59 besteld, morgen in huis!</h4>
+                                        <h4>30 dagen bedenktermijn!</h4>
+                                        <h4>36 maanden garantie!</h4>
+                                    </div>
                                 </div>
-                                <div class='left-space'>
-                                    <h4>Voor 23:59 besteld, morgen in huis!</h4>
-                                    <h4>30 dagen bedenktermijn!</h4>
-                                    <h4>36 maanden garantie!</h4>
+                                <hr>
+                                <div class=\"buttons\">
+                                    <a href='/winkelwagen'><button type='submit' name='add' class=\"button-winkelwagen\">Toevoegen aan winkelwagen</button></a>
+                                    <input type='hidden' name='product_id' value='$productId'>
                                 </div>
                             </div>
-                            <hr>
-                            <a href='/winkelwagen'><button class='button-winkelwagen'>Toevoegen aan winkelwagen</button></a> <!-- button -->
                         </div>
                     </div>
                 </div>
-            </div>
+            </form>
         ";
-    }
+        }
 ?>
 
 <div class="p-container">

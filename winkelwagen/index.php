@@ -64,9 +64,9 @@ require_once '../api/getdata.php';
                         </div>
                     ";
                 }
-            } else {
-                echo "<h3>Er zijn geen producten in jouw winkelwagen</h3>";
-            }
+                } else {
+                    echo "<h3>Er zijn geen producten in jouw winkelwagen</h3>";
+                }
             ?>
         </div>
 
