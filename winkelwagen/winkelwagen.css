@@ -77,14 +77,12 @@ body {
 }
 
 .dot {
-    height: 22px;
-    width: 22px;
-    background-color: green;
+    height: 1rem;
+    width: 1rem;
+    background-color: #009e00;
     border-radius: 50%;
     display: inline-block;
     margin-right: 0.5rem;
-    border-style: solid;
-    border-width: 0.01rem;
 }
 
 .left-space {
@@ -109,10 +107,6 @@ hr {
     display: flex;
 }
 
-.flexbox h4, div{
-    margin-bottom: 0.3rem;
-}
-
 .flexbox img {
     width: 200px;
     height: 200px; /*  gewenste hoogte img */
@@ -131,6 +125,7 @@ hr {
 .voorraad {
     display: flex;
     align-items: center;
+    margin-bottom: 0.3rem;
 }
 
 .quantity {
@@ -147,6 +142,16 @@ hr {
     width: 3rem;
     height: 2.1rem;
     text-align: center;
+}
+
+.form-control input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.form-control input[type=number] {
+    -moz-appearance:textfield;
 }
 
 .quantity img {

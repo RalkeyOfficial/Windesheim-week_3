@@ -15,8 +15,4 @@ function getData($product_ids = []) {
 
     return $conn->query($query);
 }
-
-$product_ids = [1, 2, 3];
-
-$result = getData($product_ids);
 ?>

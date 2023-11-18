@@ -3,7 +3,7 @@
 session_start();
 
 include_once '../includes/globals.php';
-require_once '../api/getdata.php';
+require_once '../api/product-id-info.php';
 
 ?>
 
@@ -38,7 +38,7 @@ require_once '../api/getdata.php';
                     $productName = $row['name'];
                     $productPrice = $row['price'];
                     $productImage = $row['image'];
-                    $total = $total + (int)$productPrice;
+                    $total = $total + (int)$productPrice; 
 
                     echo "
                         <div class='box product-data'>
@@ -46,16 +46,19 @@ require_once '../api/getdata.php';
                                 <img src='/images/products/{$productImage}.jpg' alt='{$productName}'>
                                 <div class='left-space'>
                                     <h4>{$productName}</h4>
-                                    <h4>{$productPrice}</h4>
+                                    <h4 id='productPrice'>$productPrice</h4>
+                                    <?php 
+                                        if
+                                    ?>
                                     <div class='voorraad'>
                                         <span class='dot'></span>
-                                        <h4>Online op voorraad</h4>
+                                        <h5>Online op voorraad</h5>
                                     </div>
                                     <div class='quantity'>
-                                        <a href='../api/remove-item.php?id={$productId}'><i class='fa fa-trash fa-solid fa-2xl' aria-hidden='true'></i></a>
+                                        <a href='../api/remove-cart-item.php?id={$productId}'><i class='fa-solid fa-trash fa-2xl'></i></a>
                                         <div class='left-space'>
                                             <button class='button-decrement'><i class='fa fa-minus'></i></button>
-                                            <input type='text' class='form-control input-qty' value='1' disabled>
+                                            <input type='number' class='form-control input-qty' value='1' id='quantity' oninput='updateTotalCost()' disabled>
                                             <button class='button-increment'><i class='fa fa-plus'></i></button>
                                         </div>
                                     </div>
@@ -88,7 +91,11 @@ require_once '../api/getdata.php';
                         }
                         ?>
                     </div>
-                    <h4>€<?php echo $total; ?></h4>
+                    <h4>€
+                        <?php 
+                            echo "<span id='totalCost'>$total</span>";
+                        ?>
+                        </h4>
                 </div>
 
                 <div class="flex">
@@ -103,7 +110,11 @@ require_once '../api/getdata.php';
                 <h4>Totaal</h4>
                 <div class="flex">
                     <h4>Incl. BTW</h4>
-                    <h4>€<?php echo $total; ?></h4>
+                    <h4>€
+                        <?php 
+                            echo "<span id='totalCost'>$total</span>"; 
+                        ?>
+                    </h4>
                 </div>
                 <hr>
                 <?php

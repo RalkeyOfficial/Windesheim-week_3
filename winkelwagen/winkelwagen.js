@@ -1,33 +1,3 @@
-$(document).ready(function () {
-    $('.button-increment').click(function (e) {
-        e.preventDefault();
-
-        var qty = $(this).closest('.product-data').find('.input-qty').val();
-        
-        var value = parseInt(qty, 10);
-        value = isNaN(value) ? 0 : value;
-        if (value < 99) {
-            value++;
-            $(this).closest('.product-data').find('.input-qty').val(value);
-        }
-    });
-});
-
-$(document).ready(function () {
-    $('.button-decrement').click(function (e) {
-        e.preventDefault();
-
-        var qty = $(this).closest('.product-data').find('.input-qty').val();
-        
-        var value = parseInt(qty, 10);
-        value = isNaN(value) ? 0 : value;
-        if (value > 1) {
-            value--;
-            $(this).closest('.product-data').find('.input-qty').val(value);
-        }
-    });
-});
-
 function redirectToPayment() {
     window.location.href = 'payment-page.php?total=' + '<?php echo $total; ?>';
 }
@@ -50,8 +20,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
-
-// 
 
 document.addEventListener('DOMContentLoaded', function () {
     const paymentMethod = document.querySelectorAll('input[name="payment_method"]');
@@ -92,3 +60,45 @@ document.addEventListener('DOMContentLoaded', function () {
         xhr.send();
     }
 });
+
+// cart logic
+
+$(document).ready(function () {
+    $('.button-increment').click(function (e) {
+        e.preventDefault();
+        updateQuantity($(this), 1);
+    });
+
+    $('.button-decrement').click(function (e) {
+        e.preventDefault();
+        updateQuantity($(this), -1);
+    });
+
+    $('.input-qty').on('input', function () {
+        updateTotalCost();
+    });
+});
+
+var productPrice = parseFloat($('#productPrice').text().replace('$', ''));
+
+function updateQuantity(element, change) {
+    var quantityInput = element.closest('.product-data').find('.input-qty');
+    var currentQuantity = parseInt(quantityInput.val());
+    var newQuantity = currentQuantity + change;
+
+    // Ensure the quantity is not less than 1 and not more than 99
+    newQuantity = Math.min(99, Math.max(1, newQuantity));
+
+    quantityInput.val(newQuantity);
+    updateTotalCost();
+}
+
+function updateTotalCost() {
+    var quantityInput = $('.input-qty');
+    var totalCostElement = $('#totalCost');
+
+    var quantity = parseInt(quantityInput.val());
+    var totalCost = quantity * productPrice;
+
+    totalCostElement.text(totalCost.toFixed(2));
+}

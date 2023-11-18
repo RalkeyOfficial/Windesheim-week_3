@@ -172,7 +172,7 @@ $products = getProducts(
             <a href="pagina2.html"><span>2</span></a>
             <a href="pagina3.html"><span>3</span></a>
             <a href="pagina4.html"><span>4</span></a>
-             <a href="pagina4.html"><span>➔<!--<i class="fa fa-arrow-right"></i>--></span></a> 
+             <a href="pagina4.html"><span><i class="fa fa-arrow-right"></i></span></a> 
         </div>
     </main>
 

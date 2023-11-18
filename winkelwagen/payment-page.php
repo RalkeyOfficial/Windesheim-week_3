@@ -3,7 +3,7 @@
 session_start();
 
 include_once '../includes/globals.php';
-require_once '../api/getdata.php';
+require_once '../api/product-id-info.php';
 
 ?>
 
@@ -64,8 +64,7 @@ require_once '../api/getdata.php';
                         <option value="Regiobank">Regiobank</option>
                         <option value="Revolut">Revolut</option>
                         <option value="SNS">SNS</option>
-                        <option value="Triodos_Bank">Triodos Bank</option>
-                        
+                        <option value="Triodos Bank">Triodos Bank</option>
                     </select>
                 </div>
                 <button class='button-winkelwagen' type="submit">Pay Now</button>
