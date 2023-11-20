@@ -61,7 +61,7 @@
 
                     echo "
                     <div class=\"product\">
-                        <a href=\"\" class=\"info\">
+                        <a href=\"/plp/product/?id=$productId\" class=\"info\">
                             <h4>$productName</h4>
                             <img src=\"/images/products/{$productImage}.jpg\" alt=\"{$productName}\" class=\"boxes\">
                         </a>
@@ -97,7 +97,7 @@
 
                     echo "
                     <div class=\"product\">
-                        <a href=\"\" class=\"info\">
+                        <a href=\"/plp/product/?id=$productId\" class=\"info\">
                             <h4>$productName</h4>
                             <img src=\"/images/products/{$productImage}.jpg\" alt=\"{$productName}\" class=\"boxes\">
                         </a>

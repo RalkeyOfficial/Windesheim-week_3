@@ -1,50 +1,101 @@
 <?php
 
-function getProducts($search = "", $categories = [], $order = "", $prijs = "", $minprijs = "", $maxprijs = "")
+include_once __DIR__ . "\db\dbc.php";
+
+class Product
 {
-    include_once __DIR__ . "\db\dbc.php";
+    private $conn;
 
-    $preparedData = [];
+    public function __construct()
+    {
+        global $conn; // Access the global $conn variable
+        $this->conn = $conn;
+    }
 
-    // push search query to prepared data array
-    // we use prepared data to avoid a SQL Injection attack
-    array_push($preparedData, "%$search%");
+    function getAll($limit = 12, $search = "", $categories = [], $order = "", $prijs = "", $minprijs = "", $maxprijs = "")
+    {
+        $preparedData = [];
 
-    // Manage product order
-    $orderClauses = [];
+        // push search query to prepared data array
+        // we use prepared data to avoid a SQL Injection attack
+        array_push($preparedData, "%$search%");
 
-    if ($order == "az") array_push($orderClauses, "name ASC");
-    if ($order == "za") array_push($orderClauses, "name DESC");
+        // Manage product order
+        $orderClauses = [];
 
-    if ($prijs == "lh") array_push($orderClauses, "price ASC");
-    if ($prijs == "hl") array_push($orderClauses, "price DESC");
+        if ($order == "az") array_push($orderClauses, "name ASC");
+        if ($order == "za") array_push($orderClauses, "name DESC");
 
-    $order = "";
-    if (isset($orderClauses[0])) $order = "ORDER BY " . join(", ", $orderClauses);
-    // adding data to prepared statement is not needed here as this part is SQL injection safe
+        if ($prijs == "lh") array_push($orderClauses, "price ASC");
+        if ($prijs == "hl") array_push($orderClauses, "price DESC");
 
-    // Manage min/max price default value
-    if (!$minprijs) $minprijs = "0";
-    if (!$maxprijs) $maxprijs = "999999";
-    // push min/max price to prepared data array
-    array_push($preparedData, $minprijs);
-    array_push($preparedData, $maxprijs);
+        $order = "";
+        if (isset($orderClauses[0])) $order = "ORDER BY " . join(", ", $orderClauses);
+        // adding data to prepared statement is not needed here as this part is SQL injection safe
 
-    // manage categories in the WHERE clause
-    $categorieClause = "";
-    if (isset($categories[0])) $categorieClause = "AND category_id IN (" . implode(', ', array_fill(0, count($categories), '?')) . ")";
-    // push categories to prepared data array
-    // this is done using the spread operator (...) since $categories already an array is
-    array_push($preparedData, ...$categories);
+        // Manage min/max price default value
+        if (!$minprijs) $minprijs = "0";
+        if (!$maxprijs) $maxprijs = "999999";
+        // push min/max price to prepared data array
+        array_push($preparedData, $minprijs);
+        array_push($preparedData, $maxprijs);
 
-    $query = "
-    SELECT *
-    FROM product
-    WHERE name LIKE ? AND (price BETWEEN ? AND ?) {$categorieClause}
-    {$order}
-    LIMIT 12
-    ";
+        // manage categories in the WHERE clause
+        $categorieClause = "";
+        if (isset($categories[0])) $categorieClause = "AND category_id IN (" . implode(', ', array_fill(0, count($categories), '?')) . ")";
+        // push categories to prepared data array
+        // this is done using the spread operator (...) since $categories already an array is
+        array_push($preparedData, ...$categories);
+
+        array_push($preparedData, $limit);
+
+        $query = "
+        SELECT p.*, c.naam AS category, c.id AS category_id
+        FROM product p
+        JOIN categories c ON p.category_id = c.id
+        WHERE name LIKE ? AND (price BETWEEN ? AND ?) {$categorieClause}
+        {$order}
+        LIMIT ?
+        ";
 
 
-    return $conn->execute_query($query, $preparedData);
+        return $this->conn->execute_query($query, $preparedData);
+    }
+
+    function getOne($id)
+    {
+        $preparedData = [$id];
+
+        $query = "
+        SELECT p.*, c.naam AS category, c.id AS category_id 
+        FROM product p
+        JOIN categories c ON p.category_id = c.id
+        WHERE p.id = ?
+        LIMIT 1
+        ";
+
+        return $this->conn->execute_query($query, $preparedData);
+    }
+
+    function getRelated($categoryId)
+    {
+        $preparedData = [$categoryId];
+
+        $query = "
+        WITH product_sales AS (
+            SELECT product_id, SUM(quantity) AS total_quantity
+            FROM order_item
+            GROUP BY product_id
+        )
+        SELECT p.*, c.naam AS category, c.id AS category_id
+        FROM product p
+        JOIN product_sales ps ON p.id = ps.product_id
+        JOIN categories c ON p.category_id = c.id
+        WHERE c.id = ?
+        ORDER BY ps.total_quantity DESC
+        LIMIT 4;
+        ";
+
+        return $this->conn->execute_query($query, $preparedData);
+    }
 }

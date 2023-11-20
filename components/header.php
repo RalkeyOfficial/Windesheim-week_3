@@ -10,7 +10,7 @@
             <img src="../../../../../../images/Logo-website.png" alt="">
             <h1>Nerdy Gadgets</h1>
         </a>
-        <form action="/productoverzicht/" class="search">
+        <form action="/plp/" class="search">
             <input type="text" name="search" placeholder="search products" value="<?php echo $_GET['search'] ?? "" ?>">
             <button type="submit"><i class="fa-solid fa-magnifying-glass fa-lg" style="color: #ffffff;"></i></button>
         </form>
@@ -24,24 +24,20 @@
         <div>
             <div class="dropdown">
                 <button>
-                    Hardware
+                    Categorieën
                     <span><i class="fa-solid fa-caret-down" style="color: #ffffff;"></i></span>
                 </button>
                 <div class="dropdown-content">
-                    <a href="#">Videokaarten</a>
-                    <a href="#">Moederborden</a>
-                    <a href="#">Processoren</a>
-                    <a href="#">SSD (Solid State Drive)</a>
-                    <a href="#">Hard disks</a>
-                    <a href="#">Behuizing</a>
-                    <a href="#">Koeling</a>
-                    <a href="#">Geheugen</a>
-                    <a href="#">Voeding</a>
+                    <a href="/plp/?categorie%5B%5D=1">Laptops</a>
+                    <a href="/plp/?categorie%5B%5D=2">Phones</a>
+                    <a href="/plp/?categorie%5B%5D=3">Opslag</a>
+                    <a href="/plp/?categorie%5B%5D=4">Routers</a>
+                    <a href="/plp/?categorie%5B%5D=5">Componenten</a>
+                    <a href="/plp/?categorie%5B%5D=6">Desktops</a>
                 </div>
             </div>
-            <a class="navItem" href="../productoverzicht/">Desktops</a>
-            <a class="navItem" href="../productoverzicht/">Laptops</a>
-            <a class="navItem" href="../productoverzicht/">Accessoires</a>
+            <a class="navItem" href="/plp/">Producten</a>
+            <a class="navItem" href="/over-ons/">over ons</a>
         </div>
     </div>
 </header>

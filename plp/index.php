@@ -3,14 +3,17 @@
 <?php
 include_once '../api/products.php';
 
-$products = getProducts(
+$productsClass = new Product();
+
+$products = $productsClass->getAll(
+    12,
     $_GET['search'] ?? "",
     $_GET['categorie'] ?? [],
     $_GET['order'] ?? "",
     $_GET['prijs'] ?? "",
     $_GET['minprijs'] ?? "",
     $_GET['maxprijs'] ?? ""
-);
+)
 ?>
 
 <!DOCTYPE html>
@@ -38,7 +41,7 @@ $products = getProducts(
         <div class="mainContent">
             <!--filter-->
             <div class="box">
-                <form action="/productoverzicht/">
+                <form action="/plp/">
                     <div class="section">
                         <b>Filteren</b>
                     </div>
@@ -142,9 +145,9 @@ $products = getProducts(
                     // if cent is 00 replace it with -
                     $productPrice = preg_replace('/.00$/', '.-', $productPrice);
 
-                    echo "
+                    echo " 
                     <div class=\"product\">
-                        <a href=\"../Productpagina/\">
+                        <a href=\"product/?id=$productId\">
                             <img src=\"../images/products/{$productImage}.jpg\" alt=\"{$productName}\">
                             <h4>{$productName}</h4>
                         </a>
