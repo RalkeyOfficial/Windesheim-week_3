@@ -17,6 +17,7 @@
     display: flex;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
+    scrollbar-width: none;
 }
 .image-carousel ul::-webkit-scrollbar {
     display: none;
