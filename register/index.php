@@ -17,14 +17,15 @@ if (isset($_POST['registreren'])) {
     $achternaam = $_POST['achternaam'];
     $email = $_POST['email'];
     $wachtwoord = $_POST['wachtwoord'];
-    $straatnaam = $_POST['straatnaam'];
-    $huisnummer = $_POST['huisnummer'];
-    $postcode = $_POST['postcode'];
-    $stad = $_POST['stad'];
+    $confirmwachtwoord = $_POST['confirmwachtwoord'];
     $pepper= 'fjdsbfafdawbhflkvsvsafids';
     $hashed_password = password_hash($pepper.$wachtwoord, PASSWORD_ARGON2ID);
+
+    if($confirmwachtwoord !== $wachtwoord){
+        echo "<script>alert('u heeft niet de zelfde wachtwoorden ingevoerd')</script>";
+    }
     //kijken hoeveel characters een password bevat
-    if (strlen($wachtwoord) <= 7) {
+    elseif (strlen($wachtwoord) <= 7) {
         echo "<script>alert('Een wachtwoord moet minstens 8 characters bevatten')</script>";
     } //als er geen error is
     else {
@@ -41,10 +42,10 @@ if (isset($_POST['registreren'])) {
             // als niemad dit email heeft gebruikt
         } else {
             //nieuwe user maken
-            $stmt = $conn->prepare("INSERT INTO user(email,password,first_name,surname_prefix,surname,street_name,apartment_nr,postal_code,city)
-                   VALUES (?,?,?,?,?,?,?,?,?)");
+            $stmt = $conn->prepare("INSERT INTO user(email,password,first_name,surname_prefix,surname)
+                   VALUES (?,?,?,?,?)");
 
-            $stmt->bind_param('sssssssss', $email, $hashed_password, $naam, $tussenvoegsel, $achternaam, $straatnaam, $huisnummer, $postcode, $stad);
+            $stmt->bind_param('sssss', $email, $hashed_password, $naam, $tussenvoegsel, $achternaam);
             //als account succesvol is gemaakt
             if ($stmt->execute()) {
                 $user_id = $stmt->insert_id;
@@ -76,58 +77,36 @@ if (isset($_POST['registreren'])) {
 </head>
 
 <body>
-<a href="../home/index.php"><img class="image-container" src="../images/Logo-website.png" alt="websitelogo"></a>
-<div class="registration-container">
-    <div class="registration-header"><b>Registratie</b></div>
-    <form class="registration-form" method="post" action="../register/index.php">
-        <div class="form-section">
-            <p><b>Persoonlijke Gegevens:</b></p>
+<div class="container">
+    <a href="../home/index.php">
+        <img class="image-container" src="../images/Logo-website.png" alt="websitelogo">
+    </a>
+    <div class="registration-container">
+        <div class="registration-header"><b>Registratie</b></div>
+        <form class="registration-form" method="post" action="../register/index.php">
             <div class="form-input">
-
                 <input type="text" id="voornaam" name="voornaam" required placeholder="Voornaam">
             </div>
             <div class="form-input">
-
                 <input type="text" id="tussenvoegsel" name="tussenvoegsel" placeholder="Tussenvoegsel">
             </div>
             <div class="form-input">
-
                 <input type="text" id="achternaam" name="achternaam" required placeholder="Achternaam">
             </div>
             <div class="form-input">
-
                 <input type="email" id="email" name="email" required placeholder="E-mailadres">
             </div>
             <div class="form-input">
-
                 <input type="password" id="wachtwoord" name="wachtwoord" required placeholder="Wachtwoord">
             </div>
-        </div>
-        <div class="form-section">
-            <p><b>Adresgegevens:</b></p>
             <div class="form-input">
-
-                <input type="text" id="straatnaam" name="straatnaam" required placeholder="Straatnaam">
+                <input type="password" id="wachtwoord" name="confirmwachtwoord" required placeholder="Wachtwoord bevestiging">
             </div>
-            <div class="form-input">
-
-                <input type="text" id="huisnummer" name="huisnummer" required placeholder="Huisnummer">
-            </div>
-            <div class="form-input">
-
-                <input type="text" id="postcode" name="postcode" required placeholder="Postcode">
-            </div>
-            <div class="form-input">
-
-                <input type="text" id="stad" name="stad" required placeholder="Stad">
-            </div>
-        </div>
-        <button class='button-register' name="registreren" type="submit">Registreer</button>
-    </form>
-    <p><b>Heeft u al een account?</b> <a class="login-link" href="../inlog/">Klik hier</a></p>
+            <button class='button-register' name="registreren" type="submit">Registreer</button>
+        </form>
+        <p><b>Heeft u al een account?</b> <a class="login-link" href="../inlog/">Klik hier</a></p>
+    </div>
 </div>
-
-
 </body>
 
 </html>

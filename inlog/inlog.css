@@ -4,12 +4,22 @@
 }
 
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
     margin: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
     background-color: white;
+}
+
+.image-container {
+    margin-left: 20px;
+    width: 150px; /*  breedte  */
+    height: auto;
 }
 
 .login-container {
@@ -20,6 +30,7 @@ body {
     -webkit-box-shadow: 0px 6px 15px -3px #AEAEAE;
     box-shadow: 0px 6px 15px -3px #AEAEAE;
     width: 400px;
+    margin-top: 20px; /* marge tussen afbeelding  inlogcontainer */
 }
 
 .login-header {

@@ -26,7 +26,7 @@ if (isset($_POST['inloggen'])){
 
         if ($stmt->fetch()) {
 
-            if (password_verify($wachtwoord, $dbwachtwoord)) {
+            if (password_verify($pepper.$wachtwoord, $dbwachtwoord)) {
                 $_SESSION['id'] = $user_id;
                 $_SESSION['first_name'] = $voornaam;
                 $_SESSION['email'] = $email;
@@ -56,23 +56,23 @@ if (isset($_POST['inloggen'])){
 </head>
 
 <body>
-<a href="../home/index.php"><img class="image-container" src="../images/Logo-website.png" alt="websitelogo"></a>
-<div class="login-container">
-    <div class="login-header"><b>Login</B></div>
-    <form class="login-form" method="post" action="../inlog/index.php" >
-        <p style="color: red" class="text-center"><?php if (isset($_GET['error'])){ echo $_GET['error']; }?></p>
-        <div class="form-input">
-            <input type="email" id="email" name="email" placeholder="E-mail" required>
-        </div>
-        <div class="form-input">
-            <input type="password" id="password" name="wachtwoord" placeholder="Wachtwoord" required>
-        </div>
-        <button class='button-inlog' type="submit" name="inloggen">Inloggen</button>
-    </form>
-    <p><b>Nog niet geregistreerd?</b> <a class="register-link" href="../register/">Klik hier</a></p>
+<div class="container">
+    <a href="../home/index.php"><img class="image-container" src="../images/Logo-website.png" alt="websitelogo"></a>
+    <div class="login-container">
+        <div class="login-header"><b>Login</b></div>
+        <form class="login-form" method="post" action="../inlog/index.php">
+            <p style="color: red" class="text-center"><?php if (isset($_GET['error'])){ echo $_GET['error']; }?></p>
+            <div class="form-input">
+                <input type="email" id="email" name="email" placeholder="E-mail" required>
+            </div>
+            <div class="form-input">
+                <input type="password" id="password" name="wachtwoord" placeholder="Wachtwoord" required>
+            </div>
+            <button class='button-inlog' type="submit" name="inloggen">Inloggen</button>
+        </form>
+        <p><b>Nog niet geregistreerd?</b> <a class="register-link" href="../register/">Klik hier</a></p>
+    </div>
 </div>
-
-
 </body>
 
 </html>

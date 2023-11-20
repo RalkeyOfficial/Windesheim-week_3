@@ -20,8 +20,15 @@ body {
     -webkit-box-shadow: 0px 6px 15px -3px #AEAEAE;
     box-shadow: 0px 6px 15px -3px #AEAEAE;
     width: 400px;
-}
+    margin-top: 20px; /* marge tussen afbeelding en registratiecontainer */
+    margin-bottom: 20px; /* Voeg een marge toe aan de onderkant */
 
+}
+.image-container {
+    margin-left: 125px; /* Verplaats de afbeelding meer naar rechts */
+    width: 150px; /* Breedte */
+    height: auto;
+}
 .registration-header {
     font-size: 24px;
     margin-bottom: 20px;
