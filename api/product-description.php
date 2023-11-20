@@ -1,4 +1,5 @@
-<?php 
+<?php
+
 include_once __DIR__ . "\db\dbc.php";
 
 // SIMPLE GET REQUEST
