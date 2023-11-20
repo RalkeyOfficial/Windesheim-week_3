@@ -1,7 +1,6 @@
 <style>
     <?php include_once ROOT . '/components/header.css' ?>
 </style>
-
 <script src="https://kit.fontawesome.com/ee85149100.js" crossorigin="anonymous"></script>
 
 <header>
@@ -15,7 +14,7 @@
             <button type="submit"><i class="fa-solid fa-magnifying-glass fa-lg" style="color: #ffffff;"></i></button>
         </form>
         <div class="buttons">
-            <i class="fa-solid fa-user fa-2xl" style="color: #ffffff;"></i>
+            <a href="../inlog/"><i class="fa-solid fa-user fa-2xl" style="color: #ffffff;"></i></a>
             <i class="fa-solid fa-cart-shopping fa-2xl" style="color: #ffffff;"></i>
         </div>
     </div>
