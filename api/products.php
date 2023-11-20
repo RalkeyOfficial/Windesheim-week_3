@@ -77,9 +77,9 @@ class Product
         return $this->conn->execute_query($query, $preparedData);
     }
 
-    function getRelated($categoryId)
+    function getRelated($categoryId, $productId)
     {
-        $preparedData = [$categoryId];
+        $preparedData = [$categoryId, $productId];
 
         $query = "
         WITH product_sales AS (
@@ -91,7 +91,7 @@ class Product
         FROM product p
         JOIN product_sales ps ON p.id = ps.product_id
         JOIN categories c ON p.category_id = c.id
-        WHERE c.id = ?
+        WHERE c.id = ? AND p.id <> ?
         ORDER BY ps.total_quantity DESC
         LIMIT 4;
         ";

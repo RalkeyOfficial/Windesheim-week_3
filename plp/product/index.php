@@ -192,7 +192,8 @@ $productsClass = new Product();
             <div class="row">
                 <?php
                 $relatedProduct = $productsClass->getRelated(
-                    $row['category_id']
+                    $row['category_id'],
+                    $row['id']
                 );
 
                 foreach ($relatedProduct as $row) {
@@ -206,7 +207,7 @@ $productsClass = new Product();
 
                     echo "
                         <div class='relatedProduct'>
-                            <a href='product/?id=$productId'>
+                            <a href='?id=$productId'>
                                 <img src=/images/products/{$productImage}.jpg alt={$productName}>
                                 <h4>$productName</h4>
                             </a>
