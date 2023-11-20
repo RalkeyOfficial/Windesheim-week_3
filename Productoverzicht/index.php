@@ -130,8 +130,11 @@ $products = getProducts(
                 </form>
             </div>
 
-            <div class="products">
-                <?php
+
+            <?php
+
+            if ($products->num_rows > 0) {
+                echo "<div class=\"products\">";
 
                 foreach ($products as $row) {
                     $productId = $row['id'];
@@ -143,7 +146,7 @@ $products = getProducts(
                     $productPrice = preg_replace('/.00$/', '.-', $productPrice);
 
                     echo "
-                        <form class=\"product\" action='index.php' method='post'>
+                     <form class=\"product\" action='index.php' method='post'>
                             <a href=\"../Productpagina/?id={$productId}\">
                                 <img src=\"../images/products/{$productImage}.jpg\" alt=\"{$productName}\">
                                 <h4>{$productName}</h4>
@@ -161,10 +164,16 @@ $products = getProducts(
                                 <span class=\"price-tag\">€{$productPrice}</span>
                             </div>
                         </form>
-                        ";
-                    }   
-                ?>
-            </div>
+                    ";
+                }
+
+                echo "</div>";
+            } else {
+                echo "
+                    <p class='no-products'>Geen producten beschikbaar met deze filter</p>
+                ";
+            }
+            ?>
         </div>
 
         <div class="pagina-btn">
