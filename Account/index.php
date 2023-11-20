@@ -4,7 +4,7 @@
 session_start();
 
 if (!isset($_SESSION['logged_in'])){
-    header('location: ../inlog/index.php');
+    header('location: ../inlog/');
     exit;
 }
 if (isset($_GET['logout'])){
@@ -12,7 +12,7 @@ if (isset($_GET['logout'])){
         unset($_SESSION['logged_in']);
         unset($_SESSION['email']);
         unset($_SESSION['first_name']);
-        header('location: ../inlog/index.php');
+        header('location: ../inlog/');
         exit;
     }
 }
@@ -42,7 +42,7 @@ if (isset($_GET['logout'])){
                 <p>Naam:<span><?php if (isset($_SESSION['first_name'])){ echo $_SESSION['first_name'];} ?></span></p>
                 <p>E-mail:<span><?php if (isset($_SESSION['email'])){ echo $_SESSION['email'];} ?></span></p>
                 <p><a href="../home/" id="order-btn">Terug naar startscherm</a> </p>
-                <p><a href="../Account/index.php?logout=1" id="Logout-btn">Uitloggen</a> </p>
+                <p><a href="../Account/?logout=1" id="Logout-btn">Uitloggen</a> </p>
 
             </div>
 

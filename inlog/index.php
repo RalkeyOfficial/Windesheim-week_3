@@ -31,13 +31,13 @@ if (isset($_POST['inloggen'])){
                 $_SESSION['first_name'] = $voornaam;
                 $_SESSION['email'] = $email;
                 $_SESSION['logged_in'] = TRUE;
-                header('location: ../Account/index.php?message= u bent ingelogd');
+                header('location: ../Account/?message= u bent ingelogd');
             }
         }else{
-            header('location: ../inlog/index.php?error=uw account kon niet geverifieerd worden');
+            header('location: ../inlog/?error=uw account kon niet geverifieerd worden');
         }
     }else{
-        header('location: ../inlog/index.php?error= Er is iets fout gegaan');
+        header('location: ../inlog/?error= Er is iets fout gegaan');
     }
 }
 
@@ -57,11 +57,11 @@ if (isset($_POST['inloggen'])){
 
 <body>
 <div class="container">
-    <a href="../home/index.php"><img class="image-container" src="../images/Logo-website.png" alt="websitelogo"></a>
+    <a href="../home/"><img class="image-container" src="../images/Logo-website.png" alt="websitelogo"></a>
     <div class="login-container">
         <div class="login-header"><b>Login</b></div>
-        <form class="login-form" method="post" action="../inlog/index.php">
-            <p style="color: red" class="text-center"><?php if (isset($_GET['error'])){ echo $_GET['error']; }?></p>
+        <form class="login-form" method="post" action="../inlog/">
+            <p style="color: red" class="text-center"><?php if (isset($_GET['error'])){ echo nl2br(strip_tags($_GET['error'])); }?></p>
             <div class="form-input">
                 <input type="email" id="email" name="email" placeholder="E-mail" required>
             </div>

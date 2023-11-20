@@ -53,10 +53,10 @@ if (isset($_POST['registreren'])) {
                 $_SESSION['email'] = $email;
                 $_SESSION['first_name'] = $naam;
                 $_SESSION['logged_in'] = True;
-                header('location: ../Account/index.php?register= Je account is aangemaakt');
+                header('location: ../Account/?register= Je account is aangemaakt');
                 //account kon niet aangemaakt worden
             } else {
-                header('location: index.php?error= momenteel kunt u geen account aanmaken');
+                header('location: ?error= momenteel kunt u geen account aanmaken');
             }
         }
     }
@@ -78,12 +78,12 @@ if (isset($_POST['registreren'])) {
 
 <body>
 <div class="container">
-    <a href="../home/index.php">
+    <a href="../home/">
         <img class="image-container" src="../images/Logo-website.png" alt="websitelogo">
     </a>
     <div class="registration-container">
         <div class="registration-header"><b>Registratie</b></div>
-        <form class="registration-form" method="post" action="../register/index.php">
+        <form class="registration-form" method="post" action="../register/">
             <div class="form-input">
                 <input type="text" id="voornaam" name="voornaam" required placeholder="Voornaam">
             </div>
