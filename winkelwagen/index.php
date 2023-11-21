@@ -41,12 +41,12 @@ require_once '../api/product-id-info.php';
                     $total = $total + (int)$productPrice; 
 
                     echo "
-                        <div class='box product-data'>
+                        <div class='box product-data' data-id=$productId>
                             <div class='flexbox'>
                                 <img src='/images/products/{$productImage}.jpg' alt='{$productName}'>
                                 <div class='left-space'>
                                     <h4>{$productName}</h4>
-                                    <h4 id='productPrice'>$productPrice</h4>
+                                    <h4 class='productPrice'>€$productPrice</h4>
                                     <?php 
                                         if
                                     ?>
@@ -74,7 +74,7 @@ require_once '../api/product-id-info.php';
         </div>
 
         <div>
-            <div class="box">
+            <form class="box" action="payment-page.php" method="post">
                 <!-- winkelwagen -->
                 <h1>Samenvatting</h1>
                 <hr>
@@ -93,7 +93,7 @@ require_once '../api/product-id-info.php';
                     </div>
                     <h4>€
                         <?php 
-                            echo "<span id='totalCost'>$total</span>";
+                            echo "<span class='totalCost'>$total</span>";
                         ?>
                         </h4>
                 </div>
@@ -112,26 +112,30 @@ require_once '../api/product-id-info.php';
                     <h4>Incl. BTW</h4>
                     <h4>€
                         <?php 
-                            echo "<span id='totalCost'>$total</span>"; 
+                            echo "<span class='totalCost'>$total</span>"; 
+                            echo "<input id='hiddenTotal' type='hidden' name='total' value='$total' />"
                         ?>
                     </h4>
                 </div>
                 <hr>
                 <?php
                     if ($count > 0) {
-                        echo "<button class='button-winkelwagen' onclick='redirectToPayment()'>Ga verder naar de kassa</button>";
+                        echo "<button class='button-winkelwagen' type='submit'>Ga verder naar de kassa</button>";
                     } else {
                         echo "<button class='button-winkelwagen' onclick='redirectToOverview()'>Bekijk onze producten</button>";
                     }
                 ?>
-            </div>
+            </form>
         </div>
     </div>
 
     <!-- footer -->
     <?php include_once ROOT . '/components/footer.php' ?>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script
+        src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+        crossorigin="anonymous"></script>
     <script src="winkelwagen.js"></script>
     
 </body>

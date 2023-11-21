@@ -1,7 +1,3 @@
-function redirectToPayment() {
-    window.location.href = 'payment-page.php?total=' + '<?php echo $total; ?>';
-}
-
 function redirectToOverview() {
     window.location.href = '../Productoverzicht/index.php';
 }
@@ -79,8 +75,6 @@ $(document).ready(function () {
     });
 });
 
-var productPrice = parseFloat($('#productPrice').text().replace('$', ''));
-
 function updateQuantity(element, change) {
     var quantityInput = element.closest('.product-data').find('.input-qty');
     var currentQuantity = parseInt(quantityInput.val());
@@ -94,11 +88,17 @@ function updateQuantity(element, change) {
 }
 
 function updateTotalCost() {
-    var quantityInput = $('.input-qty');
-    var totalCostElement = $('#totalCost');
+    let totalPrice = 0;
 
-    var quantity = parseInt(quantityInput.val());
-    var totalCost = quantity * productPrice;
+    $('.product-data').each((_, obj) => {
+        const price = $(obj).find('.productPrice').text().replace('€', '');
+        const quantity = $(obj).find('.input-qty').val()
 
-    totalCostElement.text(totalCost.toFixed(2));
+        totalPrice += price * quantity;
+    })
+
+    $('.totalCost').each((_, obj) => {
+        $(obj).text(totalPrice.toFixed(2).replace(/.00$/, '.-'));
+    })
+    $('#hiddenTotal').val(totalPrice.toFixed(2).replace(/.00$/, '.-'));
 }

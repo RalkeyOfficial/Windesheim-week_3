@@ -9,7 +9,7 @@ function getData($product_ids = []) {
     $query = "SELECT * FROM product";
 
     if (!empty($product_ids)) {
-        $product_ids = implode(',', $product_ids);
+        $product_ids = implode(', ', $product_ids);
         $query .= " WHERE id IN ($product_ids)";
     }
 

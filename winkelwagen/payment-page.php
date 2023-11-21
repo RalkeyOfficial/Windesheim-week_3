@@ -90,7 +90,7 @@ require_once '../api/product-id-info.php';
                 <hr>
                 <div class="flex">
                     <h4>Subtotaal</h4>
-                    <h4>€<?php echo $total; ?></h4>
+                    <h4>€<?php echo "<span class='totalCost'>{$_POST['total']}</span>";?></h4>
                 </div>
 
                 <div class="flex">
@@ -101,7 +101,7 @@ require_once '../api/product-id-info.php';
                 <h4>Totaal</h4>
                 <div class="flex">
                     <h4>Incl. BTW</h4>
-                    <h4>€<?php echo $total; ?></h4>
+                    <h4>€<?php echo "<span class='totalCost'>{$_POST['total']}</span>";?></h4>
                 </div>
             </div>
         </div>
