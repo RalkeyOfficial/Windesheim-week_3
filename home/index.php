@@ -1,4 +1,11 @@
-<?php include_once '../includes/globals.php' ?>
+<?php 
+
+    session_start();
+
+    include_once '../api/products.php';
+    include_once '../includes/globals.php';
+    include_once '../api/add-to-cart.php';
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -71,7 +78,7 @@
                         </div>
                     </div>
                     ";
-                }
+                    }
                 ?>
             </div>
         </div>
@@ -130,6 +137,8 @@
 
     <!-- footer -->
     <?php include_once ROOT . '/components/footer.php' ?>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../api/add-to-cart.php"></script>
 </body>
 
 </html>

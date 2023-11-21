@@ -1,5 +1,5 @@
 <?php
-include_once __DIR__ . "\db\dbc.php";
+require "db\dbc.php";
 
 // SIMPLE GET REQUEST
 

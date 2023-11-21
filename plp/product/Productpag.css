@@ -215,14 +215,12 @@ body {
 }
 
 .dot {
-    height: 22px;
-    width: 22px;
-    background-color: green;
+    height: 1rem;
+    width: 1rem;
+    background-color: #009e00;
     border-radius: 50%;
     display: inline-block;
     margin-right: 0.5rem;
-    border-style: solid;
-    border-width: 0.01rem;
 }
 
 .voorraad {

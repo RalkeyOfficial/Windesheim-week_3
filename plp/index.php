@@ -1,18 +1,21 @@
-<?php include_once '../includes/globals.php' ?>
+<?php 
 
-<?php
+session_start(); 
+
 include_once '../api/products.php';
+include_once '../includes/globals.php';
+include_once '../api/add-to-cart.php';
 
 $productsClass = new Product();
 
 $products = $productsClass->getAll(
-    12,
     $_GET['search'] ?? "",
     $_GET['categorie'] ?? [],
     $_GET['order'] ?? "",
     $_GET['prijs'] ?? "",
     $_GET['minprijs'] ?? "",
-    $_GET['maxprijs'] ?? ""
+    $_GET['maxprijs'] ?? "",
+    12
 )
 ?>
 
@@ -132,7 +135,6 @@ $products = $productsClass->getAll(
 
 
             <?php
-
             if ($products->num_rows > 0) {
                 echo "<div class=\"products\">";
 
@@ -146,7 +148,7 @@ $products = $productsClass->getAll(
                     $productPrice = preg_replace('/.00$/', '.-', $productPrice);
 
                     echo " 
-                    <div class=\"product\">
+                    <form class=\"product\" action='index.php' method='post'>
                         <a href=\"product/?id=$productId\">
                             <img src=\"../images/products/{$productImage}.jpg\" alt=\"{$productName}\">
                             <h4>{$productName}</h4>
@@ -159,10 +161,11 @@ $products = $productsClass->getAll(
                             <i class=\"fa fa-star\"></i>
                         </div>
                         <div class=\"buttons\">
-                            <button class=\"cart-button\"><i class=\"fa-solid fa-cart-shopping\"></i></button>
+                            <button type='submit' name='add' class=\"cart-button\"><i class=\"fa-solid fa-cart-shopping\"></i></button>
+                            <input type='hidden' name='product_id' value='$productId'>
                             <span class=\"price-tag\">€{$productPrice}</span>
                         </div>
-                    </div>
+                    </form>
                     ";
                 }
 
@@ -173,7 +176,6 @@ $products = $productsClass->getAll(
                 ";
             }
             ?>
-
         </div>
 
         <div class="pagina-btn">
@@ -181,7 +183,7 @@ $products = $productsClass->getAll(
             <a href="pagina2.html"><span>2</span></a>
             <a href="pagina3.html"><span>3</span></a>
             <a href="pagina4.html"><span>4</span></a>
-            <a href="pagina4.html"><span><i class="fa fa-arrow-right"></i></span></a>
+             <a href="pagina4.html"><span><i class="fa fa-arrow-right"></i></span></a> 
         </div>
     </main>
 

@@ -12,7 +12,7 @@ class Product
         $this->conn = $conn;
     }
 
-    function getAll($limit = 12, $search = "", $categories = [], $order = "", $prijs = "", $minprijs = "", $maxprijs = "")
+    function getAll($search = "", $categories = [], $order = "", $prijs = "", $minprijs = "", $maxprijs = "", $limit = -1)
     {
         $preparedData = [];
 
@@ -47,6 +47,7 @@ class Product
         // this is done using the spread operator (...) since $categories already an array is
         array_push($preparedData, ...$categories);
 
+        if ($limit == -1) $limit = 999999;
         array_push($preparedData, $limit);
 
         $query = "
