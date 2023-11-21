@@ -67,19 +67,16 @@
                     $productPrice = preg_replace('/.00$/', '.-', $productPrice);
 
                     echo "
-                        <form method='post' action='index.php'>
-                            <div class=\"product\">
-                                <a href=\"\" class=\"info\">
-                                    <h4>$productName</h4>
-                                    <img src=\"/images/products/{$productImage}.jpg\" alt=\"{$productName}\" class=\"boxes\">
-                                </a>
-                                <div class=\"buttons\">
-                                    <button type='submit' name='add' class=\"cart-button\"><i class=\"fa-solid fa-cart-shopping\"></i></button>
-                                    <input type='hidden' name='product_id' value='$productId'>
-                                    <span class=\"price-tag\">€{$productPrice}</span>
-                                </div>
-                            </div>
-                        </form>
+                    <div class=\"product\">
+                        <a href=\"/plp/product/?id=$productId\" class=\"info\">
+                            <h4>$productName</h4>
+                            <img src=\"/images/products/{$productImage}.jpg\" alt=\"{$productName}\" class=\"boxes\">
+                        </a>
+                        <div class=\"buttons\">
+                            <button class=\"cart-button\"><i class=\"fa-solid fa-cart-shopping\"></i></button>
+                            <span class=\"price-tag\">€{$productPrice}</span>
+                        </div>
+                    </div>
                     ";
                     }
                 ?>
@@ -106,21 +103,18 @@
                     $productPrice = preg_replace('/.00$/', '.-', $productPrice);
 
                     echo "
-                        <form method='post' action='index.php'>
-                            <div class=\"product\">
-                                <a href=\"\" class=\"info\">
-                                    <h4>$productName</h4>
-                                    <img src=\"/images/products/{$productImage}.jpg\" alt=\"{$productName}\" class=\"boxes\">
-                                </a>
-                                <div class=\"buttons\">
-                                    <button type='submit' name='add' class=\"cart-button\"><i class=\"fa-solid fa-cart-shopping\"></i></button>
-                                    <input type='hidden' name='product_id' value='$productId'>
-                                    <span class=\"price-tag\">€{$productPrice}</span>
-                                </div>
-                            </div>
-                        </form>
-                        ";
-                    }
+                    <div class=\"product\">
+                        <a href=\"/plp/product/?id=$productId\" class=\"info\">
+                            <h4>$productName</h4>
+                            <img src=\"/images/products/{$productImage}.jpg\" alt=\"{$productName}\" class=\"boxes\">
+                        </a>
+                        <div class=\"buttons\">
+                            <button class=\"cart-button\"><i class=\"fa-solid fa-cart-shopping\"></i></button>
+                            <span class=\"price-tag\">€{$productPrice}</span>
+                        </div>
+                    </div>
+                    ";
+                }
                 ?>
             </div>
         </div>

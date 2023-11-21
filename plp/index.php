@@ -6,14 +6,17 @@ include_once '../api/products.php';
 include_once '../includes/globals.php';
 include_once '../api/add-to-cart.php';
 
-$products = getProducts(
+$productsClass = new Product();
+
+$products = $productsClass->getAll(
+    12,
     $_GET['search'] ?? "",
     $_GET['categorie'] ?? [],
     $_GET['order'] ?? "",
     $_GET['prijs'] ?? "",
     $_GET['minprijs'] ?? "",
     $_GET['maxprijs'] ?? ""
-);
+)
 ?>
 
 <!DOCTYPE html>
@@ -41,7 +44,7 @@ $products = getProducts(
         <div class="mainContent">
             <!--filter-->
             <div class="box">
-                <form action="/productoverzicht/">
+                <form action="/plp/">
                     <div class="section">
                         <b>Filteren</b>
                     </div>
@@ -145,25 +148,24 @@ $products = getProducts(
                     // if cent is 00 replace it with -
                     $productPrice = preg_replace('/.00$/', '.-', $productPrice);
 
-                    echo "
-                     <form class=\"product\" action='index.php' method='post'>
-                            <a href=\"../Productpagina/?id={$productId}\">
-                                <img src=\"../images/products/{$productImage}.jpg\" alt=\"{$productName}\">
-                                <h4>{$productName}</h4>
-                            </a>
-                            <div class=\"klantreviews\">
-                                <i class=\"fa fa-star\"></i>
-                                <i class=\"fa fa-star\"></i>
-                                <i class=\"fa fa-star\"></i>
-                                <i class=\"fa fa-star\"></i>
-                                <i class=\"fa fa-star\"></i>
-                            </div>
-                            <div class=\"buttons\">
-                                <button type ='submit' name='add' class=\"cart-button\"><i class=\"fa-solid fa-cart-shopping\"></i></button>
-                                <input type='hidden' name='product_id' value='$productId'>
-                                <span class=\"price-tag\">€{$productPrice}</span>
-                            </div>
-                        </form>
+                    echo " 
+                    <div class=\"product\">
+                        <a href=\"product/?id=$productId\">
+                            <img src=\"../images/products/{$productImage}.jpg\" alt=\"{$productName}\">
+                            <h4>{$productName}</h4>
+                        </a>
+                        <div class=\"klantreviews\">
+                            <i class=\"fa fa-star\"></i>
+                            <i class=\"fa fa-star\"></i>
+                            <i class=\"fa fa-star\"></i>
+                            <i class=\"fa fa-star\"></i>
+                            <i class=\"fa fa-star\"></i>
+                        </div>
+                        <div class=\"buttons\">
+                            <button class=\"cart-button\"><i class=\"fa-solid fa-cart-shopping\"></i></button>
+                            <span class=\"price-tag\">€{$productPrice}</span>
+                        </div>
+                    </div>
                     ";
                 }
 

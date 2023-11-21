@@ -1,0 +1,64 @@
+* {
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: white;
+}
+
+.account-container {
+    text-align: center;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 6px 15px -3px #AEAEAE;
+    box-shadow: 0px 6px 15px -3px #AEAEAE;
+    width: 400px;
+}
+
+.bold {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.account-info {
+    text-align: left;
+}
+
+.account-info p {
+    margin: 10px 0;
+}
+
+.account-info span {
+    font-weight: bold;
+    margin-left: 10px;
+    color: #333;
+}
+
+#order-btn,
+#Logout-btn {
+    display: inline-block;
+    width: 100%;
+    background-color: #2776EA;
+    color: white;
+    text-decoration: none;
+    border: none;
+    font-weight: bold;
+    padding: 13px 0;
+    border-radius: 30px;
+    transition: 0.4s;
+    margin-top: 10px;
+    cursor: pointer;
+    text-align: center; /* Toegevoegd om tekst in het midden te centreren */
+}
+
+#order-btn:hover,
+#Logout-btn:hover {
+    background-color: #3498db;
+}
