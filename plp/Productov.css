@@ -9,6 +9,7 @@ body {
 }
 main {
     max-width: 1200px;
+    width: 100%;
     margin: auto;
 }
 .mainContent {
@@ -30,7 +31,7 @@ main {
     width: 100%;
     height: min-content;
     display: grid;
-    grid-template-columns: repeat(4, 1fr); 
+    grid-template-columns: repeat(4, 1fr);
     gap: 1rem;
 }
 
@@ -92,17 +93,31 @@ main {
     color: black;
 }
 .pagina-btn {
-    margin: 0 auto 80px;
+    display: flex;
+    justify-content: center;
+    gap: 0.8rem;
 }
-.pagina-btn span {
-    display: inline-block;
+.spacing {
+    margin: 4rem 0;
+}
+.pagina-btn button {
+    background-color: white;
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border: 1px solid #2776ea;
-    margin-left: 10px;
+    border-radius: 3px;
     width: 40px;
     height: 40px;
-    text-align: center;
-    line-height: 40px;
     cursor: pointer;
+    transition: all 0.1s ease;
+    font-size: 1.15rem;
+}
+.pagina-btn button:hover,
+.pagina-btn button.active {
+    background-color: #2776ea;
+    color: white;
 }
 
 .no-products {

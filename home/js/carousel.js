@@ -32,7 +32,7 @@ intervalId = setInterval(nextSlide, 8000);
 
 function nextSlide() {
     const activeButton = document.querySelector(".carousel-nav > *[data-active]");
-    const buttonsLength = [...buttons].length - 1; // -1 to deal with the difference in indexing and length
+    const buttonsLength = [...buttons].length - 1; // -1 to deal with the difference in length (1-10) and indexing (0-9)
     const activeButtonIndex = [...buttons].indexOf(activeButton);
     const newButtonIndex = activeButtonIndex + 1 > buttonsLength ? 0 : activeButtonIndex + 1;
 

@@ -1,5 +1,11 @@
 <?php
 
+// +===================================+
+//      please dont touch this code     
+//   unless you know what you're doing  
+//         this code is a bitch         
+// +===================================+
+
 include_once __DIR__ . "\db\dbc.php";
 
 class Product
@@ -12,7 +18,7 @@ class Product
         $this->conn = $conn;
     }
 
-    function getAll($search = "", $categories = [], $order = "", $prijs = "", $minprijs = "", $maxprijs = "", $limit = -1)
+    function getAll($search = "", $categories = [], $order = "", $prijs = "", $minprijs = "", $maxprijs = "", $limit = -1, $page = -1)
     {
         $preparedData = [];
 
@@ -47,6 +53,14 @@ class Product
         // this is done using the spread operator (...) since $categories already an array is
         array_push($preparedData, ...$categories);
 
+        // limit query + pagination
+        $limitStr = "LIMIT ?";
+        if ($page >= 0 && $limit > 0) {
+            $limitStr .= ", ?";
+            array_push($preparedData, $limit * ($page - 1)); // $page should be -1 due to the way offset works in sql + how we send the page this file
+        }
+
+        // check if limit is defined or nah
         if ($limit == -1) $limit = 999999;
         array_push($preparedData, $limit);
 
@@ -56,7 +70,7 @@ class Product
         JOIN categories c ON p.category_id = c.id
         WHERE name LIKE ? AND (price BETWEEN ? AND ?) {$categorieClause}
         {$order}
-        LIMIT ?
+        {$limitStr}
         ";
 
 
