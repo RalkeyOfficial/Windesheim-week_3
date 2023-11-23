@@ -2,6 +2,11 @@
 
 session_start();
 
+if (!isset($_SESSION['logged_in'])){
+    header('location: ../inlog/');
+    exit;
+}
+
 include_once '../includes/globals.php';
 require_once '../api/product-id-info.php';
 
