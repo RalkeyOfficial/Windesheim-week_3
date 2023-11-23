@@ -94,24 +94,30 @@ $productsClass = new Product();
         <div class="container">
             <h2 class="title">Recenties</h2>
             <div class="box">
-                <div class="review">
-                    <div class="evenly">
-                        <div class="klantreviews">
-                            <i class="fa fa-star-o"></i>
-                            <i class="fa fa-star-o"></i>
-                            <i class="fa fa-star-o"></i>
-                            <i class="fa fa-star-o"></i>
-                            <i class="fa fa-star-o"></i>
+                <form action="" method="post">
+                    <div class="review">
+                        <div class="evenly">
+                            <div class="klantreviews">
+                                <div class="rate">
+                                    <input type="radio" id="star1" name="rate" value="1" />
+                                    <label for="star1" title="text">1 stars</label>
+                                    <input type="radio" id="star2" name="rate" value="2" />
+                                    <label for="star2" title="text">2 stars</label>
+                                    <input type="radio" id="star3" name="rate" value="3" />
+                                    <label for="star3" title="text">3 stars</label>
+                                    <input type="radio" id="star4" name="rate" value="4" />
+                                    <label for="star4" title="text">4 stars</label>
+                                    <input type="radio" id="star5" name="rate" value="5" />
+                                    <label for="star5" title="text">5 star</label>
+                                </div>
+                            </div>
                         </div>
-                        <h5>17/10/2023</h5>
+                        <input type="text" id="title" name="title" required placeholder="Titel">
+                        <input type="text" id="name" name="name" required placeholder="Naam">
+                        <textarea name="productreview" rows="6" cols="70rem" required placeholder="Schrijf in dit tekstvak uw recentie over dit product."></textarea>
+                        <input class="button-winkelwagen" type="submit" value="submit">
                     </div>
-                    <form action="">
-                        <input type="text" id="title" name="title" placeholder="Titel"><br><br>
-                        <textarea name="productreview" rows="6" cols="70rem" placeholder="Schrijf in dit tekstvak uw recentie over dit product."></textarea>
-                        <br>
-                        <input class="button-winkelwagen" type="submit" value="Submit">
-                    </form>
-                </div>
+                </form>
             </div>
 
             <div class="box">
