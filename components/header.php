@@ -15,7 +15,7 @@
         </form>
         <div class="buttons">
             <a href="../inlog/"><i class="fa-solid fa-user fa-2xl" style="color: #ffffff;"></i></a>
-            <a href="../winkelwagen/"><i class="fa-solid fa-cart-shopping fa-2xl" style="color: #ffffff;"></i></a>
+            <a href="/winkelwagen/"><i class="fa-solid fa-cart-shopping fa-2xl" style="color: #ffffff;"></i></a>
         </div>
     </div>
     <div class="separator"></div>
