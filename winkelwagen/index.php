@@ -74,7 +74,7 @@ require_once '../api/product-id-info.php';
         </div>
 
         <div>
-            <form class="box" action="payment-page.php" method="post">
+            <form class="box samenvatting" action="payment-page.php" method="post">
                 <!-- winkelwagen -->
                 <h1>Samenvatting</h1>
                 <hr>

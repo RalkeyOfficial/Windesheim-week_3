@@ -5,7 +5,6 @@ session_start();
 include_once '../api/products.php';
 include_once '../api/product-count.php';
 include_once '../includes/globals.php';
-include_once '../api/add-to-cart.php';
 
 $amountPages = ceil(getCount(
     $_GET['categorie'] ?? [],
@@ -40,7 +39,8 @@ $products = $productsClass->getAll(
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css" integrity="sha384-QYIZto+st3yW+o8+5OHfT6S482Zsvz2WfOzpFSXMF9zqeLcFV0/wlZpMtyFcZALm" crossorigin="anonymous">
     <link rel="stylesheet" href="filteren.css">
-    <script src="./pagination.js" defer></script>
+    <script src="./js/addToCart.js" defer></script>
+    <script src="./js/pagination.js" defer></script>
     <title>NerdyGadgets | Producten</title>
 </head>
 
@@ -182,24 +182,23 @@ $products = $productsClass->getAll(
                         $productPrice = preg_replace('/.00$/', '.-', $productPrice);
 
                         echo " 
-                    <form class=\"product\" action='index.php' method='post'>
-                        <a href=\"product/?id=$productId\">
-                            <img src=\"../images/products/{$productImage}.jpg\" alt=\"{$productName}\">
-                            <h4>{$productName}</h4>
-                        </a>
-                        <div class=\"klantreviews\">
-                            <i class=\"fa fa-star\"></i>
-                            <i class=\"fa fa-star\"></i>
-                            <i class=\"fa fa-star\"></i>
-                            <i class=\"fa fa-star\"></i>
-                            <i class=\"fa fa-star\"></i>
+                        <div class=\"product\">
+                            <a href=\"product/?id=$productId\">
+                                <img src=\"../images/products/{$productImage}.jpg\" alt=\"{$productName}\">
+                                <h4>{$productName}</h4>
+                            </a>
+                            <div class=\"klantreviews\">
+                                <i class=\"fa fa-star\"></i>
+                                <i class=\"fa fa-star\"></i>
+                                <i class=\"fa fa-star\"></i>
+                                <i class=\"fa fa-star\"></i>
+                                <i class=\"fa fa-star\"></i>
+                            </div>
+                            <div class=\"buttons\">
+                                <button data-id='$productId' class=\"cart-button\"><i class=\"fa-solid fa-cart-shopping\"></i></button>
+                                <span class=\"price-tag\">€{$productPrice}</span>
+                            </div>
                         </div>
-                        <div class=\"buttons\">
-                            <button type='submit' name='add' class=\"cart-button\"><i class=\"fa-solid fa-cart-shopping\"></i></button>
-                            <input type='hidden' name='product_id' value='$productId'>
-                            <span class=\"price-tag\">€{$productPrice}</span>
-                        </div>
-                    </form>
                     ";
                     }
 
@@ -234,6 +233,8 @@ $products = $productsClass->getAll(
 
     <!-- footer -->
     <?php include_once ROOT . '/components/footer.php' ?>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 </body>
 
 </html>

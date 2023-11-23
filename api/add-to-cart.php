@@ -1,5 +1,8 @@
 <?php
-if (isset($_POST['add'])){
+
+session_start();
+
+if (isset($_POST['add'])) {
     if (!isset($_SESSION['cart'])) $_SESSION['cart'] = array();
 
     // check if id is already in cart
@@ -16,6 +19,9 @@ if (isset($_POST['add'])){
             'product_id' => $_POST['product_id']
         );
         $_SESSION['cart'][] = $item_array;
+
+        echo json_encode(['status' => 200, 'message' => "Product ID {$_POST['product_id']} added to cart"]);
+    } else {
+        echo json_encode(['status' => 418, 'message' => "Product ID already in cart"]);
     }
 }
-?>

@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 body {
     background-color: white;
@@ -35,35 +35,45 @@ body {
     margin: 40px auto 40px;
     position: relative;
     line-height: 60px;
-    color: #2776EA ;
+    color: #2776ea;
     font-size: 40px;
 }
 
 .button-winkelwagen {
-    background-color: #2776EA;
+    background-color: #2776ea;
     color: white;
     text-decoration: none;
     border: 2px solid transparent;
     font-weight: bold;
     padding: 13px 30px;
     border-radius: 30px;
-    transition: .4s;
+    transition: 0.4s;
     margin-top: 10px; /* Verhoog de bovenmarge van de knop */
 }
 
 .button-winkelwagen:hover {
     background-color: transparent;
-    border: 2px solid #2776EA;
+    border: 2px solid #2776ea;
     cursor: pointer;
     color: black;
+}
+
+.shopping-cart {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
 .box {
     width: 100%;
     border-radius: 4px;
     padding: 15px;
-    background-color: #F7F7F7;
-    margin-bottom: 40px;
+    background-color: #f7f7f7;
+}
+
+.samenvatting {
+    position: sticky;
+    top: 1rem;
 }
 
 .wrap {
@@ -134,8 +144,8 @@ hr {
     float: left;
 }
 
-.quantity a{
-    color:black;
+.quantity a {
+    color: black;
 }
 
 .form-control {
@@ -150,8 +160,8 @@ input::-webkit-inner-spin-button {
     margin: 0;
 }
 
-.form-control input[type=number] {
-    -moz-appearance:textfield;
+.form-control input[type="number"] {
+    -moz-appearance: textfield;
 }
 
 .quantity img {

@@ -4,7 +4,6 @@ session_start();
 
 include_once '../api/products.php';
 include_once '../includes/globals.php';
-include_once '../api/add-to-cart.php';
 ?>
 
 <!DOCTYPE html>
@@ -20,6 +19,7 @@ include_once '../api/add-to-cart.php';
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css" integrity="sha384-QYIZto+st3yW+o8+5OHfT6S482Zsvz2WfOzpFSXMF9zqeLcFV0/wlZpMtyFcZALm" crossorigin="anonymous">
     <script src="js/carousel.js" defer></script>
+    <script src="js/addToCart.js" defer></script>
     <title>NerdyGadgets | home</title>
 </head>
 
@@ -67,19 +67,16 @@ include_once '../api/add-to-cart.php';
                     $productPrice = preg_replace('/.00$/', '.-', $productPrice);
 
                     echo "
-                    <form method='post' action=''>
-                        <div class=\"product\">
-                            <a href=\"\" class=\"info\">
-                                <h4>$productName</h4>
-                                <img src=\"/images/products/{$productImage}.jpg\" alt=\"{$productName}\" class=\"boxes\">
-                            </a>
-                            <div class=\"buttons\">
-                                <button type='submit' name='add' class=\"cart-button\"><i class=\"fa-solid fa-cart-shopping\"></i></button>
-                                <input type='hidden' name='product_id' value='$productId'>
-                                <span class=\"price-tag\">€{$productPrice}</span>
-                            </div>
+                    <div class=\"product\">
+                        <a href=\"/plp/product?id=$productId\" class=\"info\">
+                            <h4>$productName</h4>
+                            <img src=\"/images/products/{$productImage}.jpg\" alt=\"{$productName}\" class=\"boxes\">
+                        </a>
+                        <div class=\"buttons\">
+                            <button data-id='$productId' class=\"cart-button\"><i class=\"fa-solid fa-cart-shopping\"></i></button>
+                            <span class=\"price-tag\">€{$productPrice}</span>
                         </div>
-                    </form>
+                    </div>
                     ";
                 }
                 ?>
@@ -106,19 +103,16 @@ include_once '../api/add-to-cart.php';
                     $productPrice = preg_replace('/.00$/', '.-', $productPrice);
 
                     echo "
-                    <form method='post' action=''>
-                        <div class=\"product\">
-                            <a href=\"\" class=\"info\">
-                                <h4>$productName</h4>
-                                <img src=\"/images/products/{$productImage}.jpg\" alt=\"{$productName}\" class=\"boxes\">
-                            </a>
-                            <div class=\"buttons\">
-                                <button type='submit' name='add' class=\"cart-button\"><i class=\"fa-solid fa-cart-shopping\"></i></button>
-                                <input type='hidden' name='product_id' value='$productId'>
-                                <span class=\"price-tag\">€{$productPrice}</span>
-                            </div>
+                    <div class=\"product\">
+                        <a href=\"/plp/product?id=$productId\" class=\"info\">
+                            <h4>$productName</h4>
+                            <img src=\"/images/products/{$productImage}.jpg\" alt=\"{$productName}\" class=\"boxes\">
+                        </a>
+                        <div class=\"buttons\">
+                            <button data-id='$productId' class=\"cart-button\"><i class=\"fa-solid fa-cart-shopping\"></i></button>
+                            <span class=\"price-tag\">€{$productPrice}</span>
                         </div>
-                    </form>
+                    </div>
                     ";
                 }
                 ?>
@@ -143,8 +137,8 @@ include_once '../api/add-to-cart.php';
 
     <!-- footer -->
     <?php include_once ROOT . '/components/footer.php' ?>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="../api/add-to-cart.php"></script>
+    
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 </body>
 
 </html>

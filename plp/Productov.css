@@ -85,6 +85,10 @@ main {
     font-size: 1.3rem;
     color: #2776ea;
     cursor: pointer;
+    transition: 0.1s;
+}
+.product > .buttons > .cart-button:active {
+    scale: 0.9;
 }
 
 .klantreviews {

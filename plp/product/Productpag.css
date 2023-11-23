@@ -140,7 +140,7 @@ body {
     font-weight: bold;
     padding: 13px 30px;
     border-radius: 30px;
-    transition: .4s;
+    transition: .1s;
     margin-top: 10px; /* Verhoog de bovenmarge van de knop */
 }
 
@@ -149,6 +149,10 @@ body {
     border: 2px solid #2776EA;
     cursor: pointer;
     color: black;
+}
+
+.button-winkelwagen:active {
+    scale: 0.9;
 }
 
 /* recenties start */
