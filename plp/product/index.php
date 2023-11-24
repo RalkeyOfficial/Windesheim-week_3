@@ -94,7 +94,7 @@ $productsClass = new Product();
         <div class="container">
             <h2 class="title">Recenties</h2>
             <div class="box">
-                <form action="../../api/review-geven.php" method="post">
+                <form action="../../api/review-insert.php" method="post">
                     <div class="review">
                         <div class="evenly">
                             <div class="klantreviews">
