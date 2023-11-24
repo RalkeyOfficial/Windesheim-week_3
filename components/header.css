@@ -95,6 +95,17 @@ header .buttons {
     cursor: pointer;
 }
 
+header .buttons a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+header .buttons .accountName {
+    color: white;
+}
+
 /* NAVBAR */
 header .navbar {
     height: calc(100% - var(--head-size));

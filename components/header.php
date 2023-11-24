@@ -14,7 +14,10 @@
             <button type="submit"><i class="fa-solid fa-magnifying-glass fa-lg" style="color: #ffffff;"></i></button>
         </form>
         <div class="buttons">
-            <a href="../inlog/"><i class="fa-solid fa-user fa-2xl" style="color: #ffffff;"></i></a>
+            <a href="../inlog/">
+                <?php if (isset($_SESSION['logged_in'])) echo "<h4 class='accountName'>{$_SESSION['first_name']}</h4>" ?>
+                <i class="fa-solid fa-user fa-2xl" style="color: #ffffff;"></i>
+            </a>
             <a href="/winkelwagen/"><i class="fa-solid fa-cart-shopping fa-2xl" style="color: #ffffff;"></i></a>
         </div>
     </div>

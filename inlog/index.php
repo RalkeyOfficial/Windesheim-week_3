@@ -15,8 +15,7 @@ if (isset($_POST['inloggen'])){
     $email=$_POST['email'];
     $wachtwoord = $_POST['wachtwoord'];
     $pepper= 'fjdsbfafdawbhflkvsvsafids';
-    $hashed_password = password_hash($pepper.$wachtwoord, PASSWORD_ARGON2ID);
-    $stmt =$conn->prepare("SELECT id,first_name,email,password FROM user WHERE email=?  LIMIT 1");
+    $stmt = $conn->prepare("SELECT id,first_name,email,password FROM user WHERE email=?  LIMIT 1");
 
     $stmt->bind_param('s',$email);
 
@@ -32,9 +31,11 @@ if (isset($_POST['inloggen'])){
                 $_SESSION['email'] = $email;
                 $_SESSION['logged_in'] = TRUE;
                 header('location: ../Account/?message= u bent ingelogd');
+            } else {
+                header('location: ../inlog/?error=verkeerde wachtwoord');
             }
         }else{
-            header('location: ../inlog/?error=uw account kon niet geverifieerd worden');
+            header('location: ../inlog/?error=een account met dit email adres bestaat niet');
         }
     }else{
         header('location: ../inlog/?error= Er is iets fout gegaan');
