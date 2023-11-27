@@ -43,6 +43,7 @@ if (isset($_GET['logout'])){
                 <p>E-mail:<span><?php if (isset($_SESSION['email'])){ echo $_SESSION['email'];} ?></span></p>
                 <p><a href="../home/" id="order-btn">Terug naar startscherm</a> </p>
                 <p><a href="../Account/?logout=1" id="Logout-btn">Uitloggen</a> </p>
+                <p><a href="../mijngegevens/" id="order-btn">Mijn gegevens</a> </p>
 
             </div>
 
