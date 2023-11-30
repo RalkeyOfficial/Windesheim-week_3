@@ -8,7 +8,7 @@ session_start();
 
 //als de gebruiker al een account heeft stuur ze naar de accountpagina
 if(isset($_SESSION['logged_in'])) {
-    header('location: ../Account/');
+    header('location: ../account/');
     exit;
 }
 if (isset($_POST['registreren'])) {
@@ -53,7 +53,7 @@ if (isset($_POST['registreren'])) {
                 $_SESSION['email'] = $email;
                 $_SESSION['first_name'] = $naam;
                 $_SESSION['logged_in'] = True;
-                header('location: ../Account/?register= Je account is aangemaakt');
+                header('location: ../account/?register= Je account is aangemaakt');
                 //account kon niet aangemaakt worden
             } else {
                 header('location: ?error= momenteel kunt u geen account aanmaken');
