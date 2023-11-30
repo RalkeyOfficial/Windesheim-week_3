@@ -15,13 +15,12 @@ if (isset($_POST['inloggen'])){
     $email=$_POST['email'];
     $wachtwoord = $_POST['wachtwoord'];
     $pepper= 'fjdsbfafdawbhflkvsvsafids';
-    $hashed_password = password_hash($pepper.$wachtwoord, PASSWORD_ARGON2ID);
-    $stmt =$conn->prepare("SELECT id,first_name,surname,surname_prefix,street_name,apartment_nr,postal_code,city,email,password FROM user WHERE email=?  LIMIT 1");
+    $stmt = $conn->prepare("SELECT id,first_name,email,password FROM user WHERE email=?  LIMIT 1");
 
     $stmt->bind_param('s',$email);
 
     if($stmt->execute()){
-        $stmt->bind_result($user_id,$voornaam,$achternaam,$tussenvoegsel,$straatnaam,$huisnummer,$postcode,$stad,$email,$dbwachtwoord);
+        $stmt->bind_result($user_id,$voornaam,$email,$dbwachtwoord);
         $stmt->store_result();
 
         if ($stmt->fetch()) {
@@ -30,17 +29,13 @@ if (isset($_POST['inloggen'])){
                 $_SESSION['id'] = $user_id;
                 $_SESSION['first_name'] = $voornaam;
                 $_SESSION['email'] = $email;
-                $_SESSION['surname'] = $achternaam;
-                $_SESSION['surname_prefix'] = $tussenvoegsel;
-                $_SESSION['street_name'] = $straatnaam;
-                $_SESSION['apartment_nr'] = $huisnummer;
-                $_SESSION['postal_code'] = $postcode;
-                $_SESSION['city'] = $stad;
                 $_SESSION['logged_in'] = TRUE;
                 header('location: ../Account/?message= u bent ingelogd');
+            } else {
+                header('location: ../inlog/?error=verkeerde wachtwoord');
             }
         }else{
-            header('location: ../inlog/?error=uw account kon niet geverifieerd worden');
+            header('location: ../inlog/?error=een account met dit email adres bestaat niet');
         }
     }else{
         header('location: ../inlog/?error= Er is iets fout gegaan');
