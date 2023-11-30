@@ -6,7 +6,7 @@ session_start();
 include'../api/db/dbc.php';
 
 if (isset($_SESSION['logged_in'])){
-    header('location: ../Account/');
+    header('location: ../account/');
     exit;
 
 }
@@ -24,13 +24,12 @@ if (isset($_POST['inloggen'])){
         $stmt->store_result();
 
         if ($stmt->fetch()) {
-
             if (password_verify($pepper.$wachtwoord, $dbwachtwoord)) {
                 $_SESSION['id'] = $user_id;
                 $_SESSION['first_name'] = $voornaam;
                 $_SESSION['email'] = $email;
                 $_SESSION['logged_in'] = TRUE;
-                header('location: ../Account/?message= u bent ingelogd');
+                header('location: ../account/?message= u bent ingelogd');
             } else {
                 header('location: ../inlog/?error=verkeerde wachtwoord');
             }
