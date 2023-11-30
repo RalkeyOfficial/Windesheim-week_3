@@ -1,4 +1,10 @@
-<?php include_once '../includes/globals.php' ?>
+<?php
+
+session_start();
+
+include_once '../api/products.php';
+include_once '../includes/globals.php';
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -8,9 +14,12 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/overstyle1.css">
+    <link rel="stylesheet" href="css/carousel.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css" integrity="sha384-QYIZto+st3yW+o8+5OHfT6S482Zsvz2WfOzpFSXMF9zqeLcFV0/wlZpMtyFcZALm" crossorigin="anonymous">
+    <script src="js/carousel.js" defer></script>
+    <script src="js/addToCart.js" defer></script>
     <title>NerdyGadgets | home</title>
 </head>
 
@@ -19,39 +28,94 @@
     <?php include_once ROOT . '/components/header.php' ?>
 
     <main>
-        <div class="container">
-            <a href=""><img src="img/highlighted-products/keyboard.jpg" alt="keyboard" class="banner"></a>
-        </div>
-
-        <div class="container">
-            <div class="row">
-                <a href=""><img src="img/highlighted-products/action_1.jpg" alt="ACTIE" class="boxes"></a>
-                <a href=""><img src="img/highlighted-products/action_2.png" alt="ACTIE" class="boxes"></a>
-                <a href=""><img src="img/highlighted-products/action_3.png" alt="ACTIE" class="boxes"></a>
+        <div class="container image-carousel">
+            <ul>
+                <li><a href=""><img src="img/1475_SHL_BlackWeek_ASUS-Notebooks_2023_d_V2.webp" alt="banner" class="banner"></a></li>
+                <li><a href=""><img src="img/1475_SHL_BlackWeek_MSI-Notebooks_2023_d.webp" alt="banner" class="banner"></a></li>
+                <li><a href=""><img src="img/1475_SHL_BlackWeek_SamsungSSD_2023_d.webp" alt="banner" class="banner"></a></li>
+                <li><a href=""><img src="img/1475_SHL_MSI_BigCardBigGameReloaded_16-10-2023_d.jpg" alt="banner" class="banner"></a></li>
+            </ul>
+            <div class="carousel-nav">
+                <button data-active>&#x2022;</button>
+                <button>&#x2022;</button>
+                <button>&#x2022;</button>
+                <button>&#x2022;</button>
             </div>
         </div>
 
         <div class="container">
-        <h1 class="highlights">highlighted products!</h1>
             <div class="row">
-                <a href=""><img src="img/highlighted-products/Ryzen-7-7800X3D.jpg" alt="highlighted product" class="boxes"></a>
-                <a href=""><img src="img/highlighted-products/Asus-ROG-STRIX-B650E-F-GAMING-WIFI.jpg" alt="highlighted product" class="boxes"></a>
-                <a href=""><img src="img/highlighted-products/Corsair-DDR4-Vengeance.jpg" alt="highlighted product" class="boxes"></a>
-                <a href=""><img src="img/highlighted-products/Fractal-Design-North-Charcoal-Black-TG-Dark.jpg" alt="highlighted product" class="boxes"></a>
-                <a href=""><img src="img/highlighted-products/MSI-G272QPF.jpg" alt="highlighted product" class="boxes"></a>
+                <a href=""><img src="img/action_1.jpg" alt="ACTIE" class="boxes"></a>
+                <a href=""><img src="img/action_2.png" alt="ACTIE" class="boxes"></a>
+                <a href=""><img src="img/action_3.png" alt="ACTIE" class="boxes"></a>
+            </div>
+        </div>
+
+        <div class="item_container">
+            <h1 class="title">Veel verkochte producten!</h1>
+            <div class="content">
+                <?php
+                include_once '../api/popular-items.php';
+
+                foreach ($result as $row) {
+                    $productId = $row['id'];
+                    $productName = $row['name'];
+                    $productPrice = $row['price'];
+                    $productImage = $row['image'];
+
+                    // if cent is 00 replace it with -
+                    $productPrice = preg_replace('/.00$/', '.-', $productPrice);
+
+                    echo "
+                    <div class=\"product\">
+                        <a href=\"/plp/product?id=$productId\" class=\"info\">
+                            <h4>$productName</h4>
+                            <img src=\"/images/products/{$productImage}.jpg\" alt=\"{$productName}\" class=\"boxes\">
+                        </a>
+                        <div class=\"buttons\">
+                            <button data-id='$productId' class=\"cart-button\"><i class=\"fa-solid fa-cart-shopping\"></i></button>
+                            <span class=\"price-tag\">€{$productPrice}</span>
+                        </div>
+                    </div>
+                    ";
+                }
+                ?>
             </div>
         </div>
 
         <div class="container">
-            <a href=""><img src="img/highlighted-products/banner_2.avif" alt="Headphones" class="banner"></a>
+            <a href=""><img src="img/231005_banner_AlanWake2_Bundel_NVIDIA.png" alt="Headphones" class="banner"></a>
         </div>
 
-        <div class="container">
-            <div class="row">
-                <a href=""><img src="img/highlighted-products/headphones.jpg" alt="Headphones" class="boxes"></a>
-                <a href=""><img src="img/highlighted-products/headphones.jpg" alt="Headphones" class="boxes"></a>
-                <a href=""><img src="img/highlighted-products/headphones.jpg" alt="Headphones" class="boxes"></a>
-                <a href=""><img src="img/highlighted-products/headphones.jpg" alt="Headphones" class="boxes"></a>
+        <div class="item_container">
+            <h1 class="title">Recent verkocht!</h1>
+            <div class="content">
+                <?php
+                include_once '../api/recent_verkocht.php';
+
+                foreach ($result as $row) {
+                    $productId = $row['id'];
+                    $productName = $row['name'];
+                    $productPrice = $row['price'];
+                    $productImage = $row['image'];
+
+                    // if cent is 00 replace it with -
+                    $productPrice = preg_replace('/.00$/', '.-', $productPrice);
+
+                    echo "
+                    <div class=\"product\">
+                        <a href=\"/plp/product?id=$productId\" class=\"info\">
+                            <h4>$productName</h4>
+                            <img src=\"/images/products/{$productImage}.jpg\" alt=\"{$productName}\" class=\"boxes\">
+                        </a>
+                        <div class=\"buttons\">
+                            <button data-id='$productId' class=\"cart-button\"><i class=\"fa-solid fa-cart-shopping\"></i></button>
+                            <span class=\"price-tag\">€{$productPrice}</span>
+                        </div>
+                    </div>
+                    ";
+                }
+                ?>
             </div>
         </div>
 
@@ -73,6 +137,8 @@
 
     <!-- footer -->
     <?php include_once ROOT . '/components/footer.php' ?>
+    
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 </body>
 
 </html>

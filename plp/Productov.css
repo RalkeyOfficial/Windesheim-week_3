@@ -1,0 +1,130 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+body {
+    background-color: white;
+}
+main {
+    max-width: 1200px;
+    width: 100%;
+    margin: auto;
+}
+.mainContent {
+    display: flex;
+    width: 100%;
+}
+
+.title {
+    text-align: center;
+    margin: 0 auto 80px;
+    position: relative;
+    line-height: 60px;
+    color: #2776ea;
+    font-family: "Poppins", sans-serif;
+    font-size: 40px;
+}
+
+.products {
+    width: 100%;
+    height: min-content;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+
+/* items */
+.product {
+    padding: 10px;
+    min-width: 200px;
+    text-align: center;
+
+    display: grid;
+    grid-template-rows: 1fr auto auto;
+    gap: 1rem;
+}
+.product > a {
+    text-decoration: none;
+}
+.product > a > h4 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+
+    color: #2776ea;
+    font-weight: 400;
+}
+.product > a > img {
+    width: 100%;
+    height: 200px; /*  gewenste hoogte img */
+    object-fit: contain; /* beeldverhouding en bedek de volledige ruimte */
+}
+.product > .buttons {
+    justify-self: end;
+    width: min-content;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 0.5rem;
+}
+.product > .buttons > .price-tag {
+    background-color: #2776ea;
+    color: white;
+    font-weight: bold;
+    border-radius: 4px;
+    padding: 4px 15px;
+    font-size: 1.3rem;
+}
+.product > .buttons > .cart-button {
+    border: 1px solid #2776ea;
+    background-color: white;
+    border-radius: 4px;
+    padding: 4px 10px;
+    font-size: 1.3rem;
+    color: #2776ea;
+    cursor: pointer;
+    transition: 0.1s;
+}
+.product > .buttons > .cart-button:active {
+    scale: 0.9;
+}
+
+.klantreviews {
+    justify-self: end;
+    font-size: smaller;
+    color: black;
+}
+.pagina-btn {
+    display: flex;
+    justify-content: center;
+    gap: 0.8rem;
+}
+.spacing {
+    margin: 4rem 0;
+}
+.pagina-btn button {
+    background-color: white;
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #2776ea;
+    border-radius: 3px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: all 0.1s ease;
+    font-size: 1.15rem;
+}
+.pagina-btn button:hover,
+.pagina-btn button.active {
+    background-color: #2776ea;
+    color: white;
+}
+
+.no-products {
+    width: 100%;
+    text-align: center;
+}

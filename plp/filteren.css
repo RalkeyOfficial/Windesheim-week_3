@@ -1,0 +1,77 @@
+label:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.box {
+    width: 16rem;
+    height: fit-content;
+    background-color: whitesmoke;
+    border: 2px solid #eae6e6;
+    padding: 10px;
+    margin: 20px;
+    border-radius: 5px;
+}
+
+.divider {
+    width: 220px;
+    margin-top: 20px;
+    border: none;
+    border-top: 2px solid #eae6e6;
+    margin-left: 5px;
+}
+
+.section {
+    margin-top: 20px;
+    margin-left: 75px;
+    color: black;
+    margin-bottom: 10px;
+}
+
+
+
+.opties {
+    margin-top: 35px;
+    color: black;
+}
+
+.price-range {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.price-range label {
+    font-size: 0.8rem;
+}
+
+.price-range input[type="number"] {
+    padding: 0.3rem;
+    width: 100%;
+    height: 2.5rem;
+
+    border-radius: 4px;
+    outline: none;
+    border: 1px solid rgb(197, 197, 197);
+
+    -moz-appearance: textfield;
+}
+
+.price-range input[type="number"]::-webkit-inner-spin-button,
+.price-range input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.price-range button {
+    cursor: pointer;
+    height: 37px;
+    width: 150px;
+    background-color: #007bff;
+    border-radius: 4px;
+    color: white;
+    border: none;
+    font-size: 15px;
+    font-weight: bold;
+}

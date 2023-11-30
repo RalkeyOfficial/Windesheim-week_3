@@ -1,0 +1,53 @@
+* {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+}
+
+.image-carousel {
+    width: 100%;
+    position: relative;
+}
+
+/* slides */
+.image-carousel ul {
+    padding: 0;
+    list-style-type: none;
+    inset: 0;
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+}
+.image-carousel ul::-webkit-scrollbar {
+    display: none;
+}
+.image-carousel ul li {
+    flex: 0 0 100%;
+    white-space: nowrap;
+    scroll-snap-align: start;
+}
+.image-carousel ul li img {
+    display: block;
+    width: 100%;
+}
+
+/* buttons */
+.carousel-nav {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    top: 98%;
+}
+
+.carousel-nav > button {
+    padding: 0.1rem;
+    border: none;
+    background: none;
+    font-size: 2rem;
+    color: grey;
+    cursor: pointer;
+}
+.carousel-nav > button[data-active] {
+    color: #2776ea;
+}
