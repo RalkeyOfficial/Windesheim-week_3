@@ -135,8 +135,8 @@ $row = $result->fetch_assoc();
             <img src="../images/Logo-website.png" alt="websitelogo">
         </a>
         <div class="registration-container">
-            <p class="berichttext" style="color: red"><?= $_GET['error'] ?? "" ?></p>
-            <p class="berichttext" style="color: #2776ea"><?= $_GET['message'] ?? "" ?></p>
+            <p class="berichttext" style="color: red"><?= nl2br(strip_tags($_GET['error'])) ?? "" ?></p>
+            <p class="berichttext" style="color: #2776ea"><?= nl2br(strip_tags($_GET['message'])) ?? "" ?></p>
 
             <div class="registration-header"><b>Mijn gegevens</b></div>
 
