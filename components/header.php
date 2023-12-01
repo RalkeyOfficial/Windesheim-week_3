@@ -5,8 +5,8 @@
 
 <header>
     <div class="head">
-        <a href="../../../../../../home/" class="logo">
-            <img src="../../../../../../images/Logo-website.png" alt="">
+        <a href="/home/" class="logo">
+            <img src="/images/Logo-website.png" alt="">
             <h1>Nerdy Gadgets</h1>
         </a>
         <form action="/plp/" class="search">
@@ -14,7 +14,7 @@
             <button type="submit"><i class="fa-solid fa-magnifying-glass fa-lg" style="color: #ffffff;"></i></button>
         </form>
         <div class="buttons">
-            <a href="../inlog/">
+            <a href="/inlog/">
                 <?php if (isset($_SESSION['logged_in'])) echo "<h4 class='accountName'>{$_SESSION['first_name']}</h4>" ?>
                 <i class="fa-solid fa-user fa-2xl" style="color: #ffffff;"></i>
             </a>
