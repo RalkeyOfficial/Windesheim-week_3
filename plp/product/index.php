@@ -183,7 +183,7 @@ $productsClass = new Product();
                 </div>
             </div>
             <div class="readmore">
-                <button class="button-winkelwagen" onclick="myFunction()" id="myBtn">Read more</button>
+                <button class="button-winkelwagen" onclick="myFunction()" id="myBtn">Meer lezen</button>
             </div>
         </div>
 

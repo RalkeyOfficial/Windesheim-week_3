@@ -10,7 +10,7 @@
             <h1>Nerdy Gadgets</h1>
         </a>
         <form action="/plp/" class="search">
-            <input type="text" name="search" placeholder="search products" value="<?php echo $_GET['search'] ?? "" ?>">
+            <input type="text" name="search" placeholder="zoek producten" value="<?php echo $_GET['search'] ?? "" ?>">
             <button type="submit"><i class="fa-solid fa-magnifying-glass fa-lg" style="color: #ffffff;"></i></button>
         </form>
         <div class="buttons">
