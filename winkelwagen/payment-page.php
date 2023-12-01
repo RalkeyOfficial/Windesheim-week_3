@@ -20,13 +20,13 @@ WHERE id = ?
 ";
 $result = $conn->execute_query($query, [$_SESSION['id']])->fetch_assoc();
 
-$adressIsComplete = true;
+$adresIsComplete = true;
 foreach ($result as $key => $value) {
-    global $adressIsComplete;
-    if (empty($value)) $adressIsComplete = false;
+    global $adresIsComplete;
+    if (empty($value)) $adresIsComplete = false;
 }
 
-if (!$adressIsComplete) {
+if (!$adresIsComplete) {
     header('location: /mijngegevens/?message= U heeft nog niet uw adress gegevens ingevuld.');
 }
 
