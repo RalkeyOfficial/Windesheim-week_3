@@ -30,11 +30,7 @@ if (isset($_POST['inloggen'])){
                 $_SESSION['email'] = $email;
                 $_SESSION['logged_in'] = TRUE;
                 header('location: ../account/?message= u bent ingelogd');
-            } else {
-                header('location: ../inlog/?error=verkeerde wachtwoord');
             }
-        }else{
-            header('location: ../inlog/?error=een account met dit email adres bestaat niet');
         }
     }else{
         header('location: ../inlog/?error= Er is iets fout gegaan');
