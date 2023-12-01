@@ -9,6 +9,26 @@ if (!isset($_SESSION['logged_in'])){
 
 include_once '../includes/globals.php';
 require_once '../api/product-id-info.php';
+require '../api/db/dbc.php';
+
+global $conn;
+
+$query = "
+SELECT street_name, apartment_nr, postal_code, city
+FROM user
+WHERE id = ?
+";
+$result = $conn->execute_query($query, [$_SESSION['id']])->fetch_assoc();
+
+$adressIsComplete = true;
+foreach ($result as $key => $value) {
+    global $adressIsComplete;
+    if (empty($value)) $adressIsComplete = false;
+}
+
+if (!$adressIsComplete) {
+    header('location: /mijngegevens/?message= U heeft nog niet uw adress gegevens ingevuld.');
+}
 
 ?>
 
