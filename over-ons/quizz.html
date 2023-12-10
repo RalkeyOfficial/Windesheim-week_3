@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Environmental Quiz</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #fffdfd;
+            margin: 0;
+            padding: 0;
+        }
+
+        .quiz-container {
+            max-width: 600px;
+            margin: 50px auto;
+            text-align: center;
+            background-color: #f4f4f4;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .question {
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            width: 80%;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px;
+            font-size: 18px;
+            cursor: pointer;
+            background-color: #366aa8;
+            color: #fff;
+            border-radius: 30px;
+        }
+        button:hover {
+            background-color: #455aa0;
+        }
+
+        .feedback {
+            margin-top: 20px;
+            font-size: 16px;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+<div class="quiz-container">
+    <button onclick="startQuiz()">Beantwoord alle vragen correct en ontvang een kortingscode ter waarde van 10%!</button>
+</div>
+
+<div id="quiz-page" class="quiz-container" style="display: none;">
+    <div class="question" id="question1">Vraag 1: Hoe heet onze winkel? </div>
+    <input type="text" id="answer1" placeholder="Your Answer">
+
+    <div class="question" id="question2">Vraag 2: Hoe duur is onze duurste product?</div>
+    <input type="text" id="answer2" placeholder="Your Answer">
+
+    <div class="question" id="question3">Vraag 3: Wat is onze mail?</div>
+    <input type="text" id="answer3" placeholder="Your Answer">
+    <br>
+    <button onclick="checkAnswers()">Submit Answers</button>
+
+    <div id="feedback" class="feedback"></div>
+</div>
+
+<script>
+    let correctAnswers = ["Nerdy Gadgets", "1999", "NerdyGadgets@contact.nl"];
+    let userAnswers = [];
+
+    function startQuiz() {
+        document.getElementById('quiz-page').style.display = 'block';
+    }
+
+    function checkAnswers() {
+        userAnswers.push(document.getElementById('answer1').value.trim().toLowerCase());
+        userAnswers.push(document.getElementById('answer2').value.trim().toLowerCase());
+        userAnswers.push(document.getElementById('answer3').value.trim().toLowerCase());
+
+        let correctCount = 0;
+        for (let i = 0; i < correctAnswers.length; i++) {
+            if (userAnswers[i].toLowerCase().trim() === correctAnswers[i].toLowerCase().trim()) {
+                correctCount++;
+            }
+        }
+
+        let feedbackElement = document.getElementById('feedback');
+        if (correctCount === correctAnswers.length) {
+            feedbackElement.style.color = "green";
+            feedbackElement.textContent = "Gefeliciteerd je hebt alle vragen correct beantwoord! Gebruik de kortings code: GADGETS";
+            // window.location.href = "http://localhost/over-ons/index.php";
+        } else {
+            feedbackElement.style.color = "red";
+            feedbackElement.textContent = "Helaas je hebt niet alle vragen correct beantwoord, probeer het nog eens..";
+            userAnswers = [];
+        }
+    }
+
+</script>
+
+</body>
+</html>

@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
     <title>NerdyGadgets | Over Ons</title>
 </head>
 
@@ -21,7 +22,7 @@
         <section class="section">
             <img src="ons-team.jpg" alt="Afbeelding 1">
             <h2> Onze Brand Story:</h2>
-            <p>Bij Nerdy Gadgets begon onze reis uit pure passie.
+            <p>Bij <a href="http://localhost/over-ons/quizz.html"> Nerdy Gadgets </a> begon onze reis uit pure passie.
                 We zijn een groep techliefhebbers en popcultuurfanaten die een gemeenschap wilden creëren
                 waar gelijkgestemde individuen hun liefde voor technologie en popcultuur konden delen.
                 Onze naam, "Nerdy Gadgets," vertelt ons verhaal van passie, toewijding en liefde voor alles wat nerdy is.

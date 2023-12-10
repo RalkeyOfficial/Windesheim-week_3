@@ -47,5 +47,10 @@ main p {
     font-family: 'Poppins', sans-serif;
 }
 
+a {
+    color: black;
+    cursor: pointer;
+    text-decoration: none;
+}
 
 
