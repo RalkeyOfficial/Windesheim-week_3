@@ -4,10 +4,6 @@
     box-sizing: border-box;
 }
 
-body {
-    background-color: #F8F8F4;
-}
-
 main {
     width: 100%;
     max-width: 1200px;

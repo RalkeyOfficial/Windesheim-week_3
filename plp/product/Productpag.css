@@ -12,7 +12,7 @@ body {
     margin: auto;
     padding-left: 25px;
     padding-right: 25px;
-    margin-bottom: 2rem;
+    margin-bottom: 6rem;
 }
 
 .container {
@@ -34,6 +34,8 @@ body {
 }
 .col-2 img {
     width: 100%; /* Pas de breedte van de afbeelding aan */
+    height: 28rem;
+    object-fit: contain;
 }
 
 .row {
@@ -45,8 +47,7 @@ body {
     gap: 3rem
 }
 
-.col-4 {
-    flex-basis: 25%;
+.relatedProduct {
     padding: 10px;
     min-width: 200px;
     margin-bottom: 2rem;
@@ -54,8 +55,11 @@ body {
     text-align: center; /* Centreer  inhoud binnen de kolom */
 }
 
-.col-4 h4{
-    flex-basis: 25%;
+.relatedProduct a {
+    text-decoration: none !important;
+}
+
+.relatedProduct h4{
     min-width: 200px;
     margin-bottom: 1.5rem;
     box-sizing: border-box; /* padding en randen binnen de 25% breedte vallen */
@@ -64,11 +68,10 @@ body {
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
+    color: black;
 }
 
-
-
-.col-4 img {
+.relatedProduct img {
     width: 100%;
     height: 200px; /*  gewenste hoogte img */
     object-fit: contain; /* beeldverhouding en bedek de volledige ruimte */
@@ -137,7 +140,7 @@ body {
     font-weight: bold;
     padding: 13px 30px;
     border-radius: 30px;
-    transition: .4s;
+    transition: .1s;
     margin-top: 10px; /* Verhoog de bovenmarge van de knop */
 }
 
@@ -146,6 +149,10 @@ body {
     border: 2px solid #2776EA;
     cursor: pointer;
     color: black;
+}
+
+.button-winkelwagen:active {
+    scale: 0.9;
 }
 
 /* recenties start */
@@ -166,6 +173,12 @@ body {
     margin-bottom: 40px;
 }
 
+.review {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
 .review .evenly{
     font-size: 20px;
     display: flex;
@@ -174,17 +187,16 @@ body {
 
 .review h2 {
     font-size: 25px;
-    margin-top: 5px;
+    /* margin-top: 5px; */
 }
 
 .review h4, p {
-    font-size: 17px;
-    margin-top: 10px; /* Vergroot de afstand boven de h3 */;
+    /* margin-top: 10px; /* Vergroot de afstand boven de h3; */
 }
 
 .review .behulpzaam {
     font-size: 17px;
-    margin-top: 10px; /* Vergroot de afstand boven de h3 */
+    /* margin-top: 10px; /* Vergroot de afstand boven de h3 */
     display: flex;
     gap: 1rem;
 }
@@ -198,7 +210,7 @@ body {
 
 .wrap {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 5fr 4fr;
     width: 1200px;
     margin: auto;
     margin-top: 5rem;
@@ -207,14 +219,12 @@ body {
 }
 
 .dot {
-    height: 22px;
-    width: 22px;
-    background-color: green;
+    height: 1rem;
+    width: 1rem;
+    background-color: #009e00;
     border-radius: 50%;
     display: inline-block;
     margin-right: 0.5rem;
-    border-style: solid;
-    border-width: 0.01rem;
 }
 
 .voorraad {

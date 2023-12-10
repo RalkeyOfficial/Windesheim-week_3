@@ -1,0 +1,171 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+body {
+    background-color: white;
+}
+
+.container {
+    max-width: 1200px;
+}
+
+.row {
+    display: grid; /* kolommen in één rij  */
+    grid-template-columns: auto auto;
+    align-items: center;
+    flex-wrap: wrap; /*  kolommen nieuwe rij  niet in de container passen */
+    justify-content: space-around;
+}
+
+.col-1 img {
+    width: 100%;
+    height: 150px; /*  gewenste hoogte img */
+    object-fit: contain; /* beeldverhouding en bedek de volledige ruimte */
+}
+
+.col-1 {
+    display: flex;
+}
+
+.title {
+    text-align: center;
+    margin: 40px auto 40px;
+    position: relative;
+    line-height: 60px;
+    color: #2776ea;
+    font-size: 40px;
+}
+
+.button-winkelwagen {
+    background-color: #2776ea;
+    color: white;
+    text-decoration: none;
+    border: 2px solid transparent;
+    font-weight: bold;
+    padding: 13px 30px;
+    border-radius: 30px;
+    transition: 0.4s;
+    margin-top: 10px; /* Verhoog de bovenmarge van de knop */
+}
+
+.button-winkelwagen:hover {
+    background-color: transparent;
+    border: 2px solid #2776ea;
+    cursor: pointer;
+    color: black;
+}
+
+.shopping-cart {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.box {
+    width: 100%;
+    border-radius: 4px;
+    padding: 15px;
+    background-color: #f7f7f7;
+}
+
+.samenvatting {
+    position: sticky;
+    top: 1rem;
+}
+
+.wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 1200px;
+    margin: auto;
+    margin-top: 5rem;
+    margin-bottom: 2rem;
+    gap: 3rem;
+}
+
+.dot {
+    height: 1rem;
+    width: 1rem;
+    background-color: #009e00;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 0.5rem;
+}
+
+.left-space {
+    margin-left: 2rem;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.flexbox {
+    display: flex;
+}
+
+.flexbox img {
+    width: 200px;
+    height: 200px; /*  gewenste hoogte img */
+    object-fit: contain; /* beeldverhouding en bedek de volledige ruimte */
+    align-self: center;
+}
+
+.button-increment {
+    padding: 5px 10px;
+}
+
+.button-decrement {
+    padding: 5px 10px;
+}
+
+.voorraad {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.3rem;
+}
+
+.quantity {
+    display: flex;
+    align-items: center;
+    float: left;
+}
+
+.quantity a {
+    color: black;
+}
+
+.form-control {
+    width: 3rem;
+    height: 2.1rem;
+    text-align: center;
+}
+
+.form-control input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.form-control input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+.quantity img {
+    width: 100%;
+    height: 2.1rem; /*  gewenste hoogte img */
+    object-fit: contain; /* beeldverhouding en bedek de volledige ruimte */
+}

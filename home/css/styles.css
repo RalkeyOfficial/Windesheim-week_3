@@ -60,7 +60,7 @@ main > * {
 }
 .product > .info > h4 {
     display: -webkit-box;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
@@ -92,6 +92,10 @@ main > * {
     font-size: 1.3rem;
     color: #2776ea;
     cursor: pointer;
+    transition: 0.1s;
+}
+.product > .buttons > .cart-button:active {
+    scale: 0.9;
 }
 
 .banner {
