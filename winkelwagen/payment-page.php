@@ -93,6 +93,12 @@ if (!$adresIsComplete) {
                     </select>
                 </div>
                 <button class='button-winkelwagen' type="submit">Pay Now</button>
+                <div id="popup">
+                    <div id="popup-content">
+                    <div id="puzzle-container"></div>
+                    <button onclick="closePopup()">Close</button>
+                </div>
+  </div>
             </form>
         </div>
 
@@ -138,7 +144,7 @@ if (!$adresIsComplete) {
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="winkelwagen.js"></script>
-
+<script src="easteregg.js"></script>
 
 </body>
 
