@@ -1,97 +1,109 @@
 // Zoekt voor de letter combinatie game
 const targetSequence = 'game';
-    let currentSequence = '';
-    function handleKeyDown(event) {
-      currentSequence += event.key.toLowerCase();
+let currentSequence = '';
+function handleKeyDown(event) {
+  currentSequence += event.key.toLowerCase();
 
-      // Check if the target sequence is detected
-      if (currentSequence === targetSequence) {
-        document.getElementById('popup').style.display = 'flex';
-        currentSequence = '';
-      }
+  // checked of de targetsquence is gevonden in de currentsequence en als dat zo is opened hij de model
+  if (currentSequence === targetSequence) {
+    document.getElementById('popup').style.display = 'flex';
+    currentSequence = '';
     }
+  }
 
-    // Attach the keydown event listener to the document
-    document.addEventListener('keydown', handleKeyDown);
+// luistered mee naar de keyboard input
+document.addEventListener('keydown', handleKeyDown);
 
-    const puzzleContainer = document.getElementById('puzzle-container');
-    const pieces = Array.from({ length: 8 }, (_, index) => index + 1);
-    pieces.push(9);
+const puzzleContainer = document.getElementById('puzzle-container');
+const pieces = Array.from({ length: 8 }, (_, index) => index + 1);
+pieces.push(9);
 
-    // puzzle stukjes schudden
-    shuffleArray(pieces);
+// puzzle stukjes schudden
+shuffleArray(pieces);
 
-    // creeren van puzzle stukjes
-    pieces.forEach((value, index) => {
-      const piece = document.createElement('div');
-      piece.className = 'puzzle-piece';
-      piece.innerHTML = value.toString();
-      piece.dataset.index = index;
-      piece.draggable = true;
+// creeren van puzzle stukjes
+pieces.forEach((value, index) => {
+  const piece = document.createElement('div');
+  piece.className = 'puzzle-piece';
+  // maakt de achtergrondafbeelding van het puzzelstukje in met behulp van de 'value' uit de 'pieces' array
+  piece.style.backgroundImage = `url('puzzle-img/${value}.jpg')`;
+  piece.dataset.index = index;
+  // maakt de puzzelstukje sleepbaar (draggable)
+  piece.draggable = true;
 
-      piece.addEventListener('dragstart', dragStart);
-      piece.addEventListener('dragover', dragOver);
-      piece.addEventListener('dragenter', dragEnter);
-      piece.addEventListener('dragleave', dragLeave);
-      piece.addEventListener('drop', drop);
+  // Voegt de eventlistener toe voor het slepen en neerzetten functionaliteit
+  piece.addEventListener('dragstart', dragStart);
+  piece.addEventListener('dragover', dragOver);
+  piece.addEventListener('dragenter', dragEnter);
+  piece.addEventListener('dragleave', dragLeave);
+  piece.addEventListener('drop', drop);
 
-      puzzleContainer.appendChild(piece);
-    });
+  // Voegt de puzzelstukje toe aan de 'puzzleContainer'
+  puzzleContainer.appendChild(piece);
+});
 
-    // openen en sluiten van model
-    function closePopup() {
-      document.getElementById('popup').style.display = 'none';
-    }
+// openen en sluiten van model
+function closePopup() {
+  document.getElementById('popup').style.display = 'none';
+}
 
-    function shuffleArray(array) {
-      for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-      }
-    }
+// schudt de elementen van een array willekeurig door elkaar
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}
 
-    function dragStart(e) {
-      e.dataTransfer.setData('text/plain', e.target.dataset.index);
-    }
+// activeerd wanneer het slepen van een element begint
+function dragStart(e) {
+  e.dataTransfer.setData('text/plain', e.target.dataset.index);
+}
 
-    function dragOver(e) {
-      e.preventDefault();
-    }
+// activeerd wanneer een element over een geldig neerzetdoel wordt gesleept
+function dragOver(e) {
+  e.preventDefault();
+}
 
-    function dragEnter(e) {
-      e.preventDefault();
-      this.style.border = '2px dashed #000';
-    }
+// activeerd wanneer een gesleept element een geldig neerzetdoel binnenkomt
+function dragEnter(e) {
+  e.preventDefault();
+  this.style.border = '2px dashed #000';
+}
 
-    function dragLeave() {
-      this.style.border = '2px solid #000';
-    }
+// activeerd wanneer een gesleept element een neerzetdoel verlaat
+function dragLeave() {
+  this.style.border = '2px solid #000';
+}
 
-    function drop(e) {
-      e.preventDefault();
-      const draggedIndex = e.dataTransfer.getData('text/plain');
-      const targetIndex = this.dataset.index;
+// activeerd wanneer een gesleept element wordt neergezet op een geldig neerzetdoel
+function drop(e) {
+  e.preventDefault();
+  const draggedIndex = e.dataTransfer.getData('text/plain');
+  const targetIndex = this.dataset.index;
 
-      [pieces[draggedIndex], pieces[targetIndex]] = [pieces[targetIndex], pieces[draggedIndex]];
-      renderPuzzle();
-    }
+  [pieces[draggedIndex], pieces[targetIndex]] = [pieces[targetIndex], pieces[draggedIndex]];
+  renderPuzzle();
+}
 
-    function renderPuzzle() {
-      const puzzlePieces = document.querySelectorAll('.puzzle-piece');
-      puzzlePieces.forEach((piece, index) => {
-        piece.innerHTML = pieces[index].toString();
-        piece.style.border = '2px solid #000';
-      });
+// werkt de visuele weergave van de puzzel bij op basis van de huidige staat van de 'pieces' array
+function renderPuzzle() {
+  const puzzlePieces = document.querySelectorAll('.puzzle-piece');
+  puzzlePieces.forEach((piece, index) => {
+  piece.style.backgroundImage = `url('puzzle-img/${pieces[index]}.jpg')`;
+  piece.style.border = '2px solid #000';
+  });
 
-      checkSolution();
-    }
+  checkSolution();
+}
 
-    function checkSolution() {
-  const correctOrder = Array.from({ length: 8 }, (_, index) => index + 1);
-  correctOrder.push(9);
+// als de puzzel klaar is wordt de gebruiker geredirect
+function checkSolution() {
+const correctOrder = Array.from({ length: 8 }, (_, index) => index + 1);
+correctOrder.push(9);
 
   if (JSON.stringify(pieces) === JSON.stringify(correctOrder)) {
-    window.location.href = 'https://www.youtube.com/watch?v=JHdkLUl3hxM';
+    window.location.href = 'https://www.youtube.com/watch?v=xvFZjo5PgG0&ab_channel=Duran';
     closePopup();
   }
 }
