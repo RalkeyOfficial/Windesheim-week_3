@@ -1,15 +1,33 @@
 // Zoekt voor de letter combinatie game
 const targetSequence = 'game';
 let currentSequence = '';
+let correctLetterIndex = 0;
+
 function handleKeyDown(event) {
-  currentSequence += event.key.toLowerCase();
+  // checked voor de puzzle 
+  const currentKey = event.key.toLowerCase();
+
+  if (targetSequence[correctLetterIndex] === currentKey) {
+    correctLetterIndex++;
+  } else {
+    correctLetterIndex = 0;
+  }
 
   // checked of de targetsquence is gevonden in de currentsequence en als dat zo is opened hij de model
-  if (currentSequence === targetSequence) {
+  if (correctLetterIndex === targetSequence.length) {
     document.getElementById('popup').style.display = 'flex';
     currentSequence = '';
+    correctLetterIndex = 0;
+  } else {
+    currentSequence += currentKey;
+
+    // zoekt of de target sequence is gevonden in de current sequence
+    if (currentSequence === targetSequence) {
+      document.getElementById('popup').style.display = 'flex';
+      currentSequence = '';
     }
   }
+}
 
 // luistered mee naar de keyboard input
 document.addEventListener('keydown', handleKeyDown);
@@ -90,8 +108,8 @@ function drop(e) {
 function renderPuzzle() {
   const puzzlePieces = document.querySelectorAll('.puzzle-piece');
   puzzlePieces.forEach((piece, index) => {
-  piece.style.backgroundImage = `url('puzzle-img/${pieces[index]}.jpg')`;
-  piece.style.border = '2px solid #000';
+    piece.style.backgroundImage = `url('puzzle-img/${pieces[index]}.jpg')`;
+    piece.style.border = '2px solid #000';
   });
 
   checkSolution();
@@ -99,11 +117,12 @@ function renderPuzzle() {
 
 // als de puzzel klaar is wordt de gebruiker geredirect
 function checkSolution() {
-const correctOrder = Array.from({ length: 8 }, (_, index) => index + 1);
-correctOrder.push(9);
+  const correctOrder = Array.from({ length: 8 }, (_, index) => index + 1);
+  correctOrder.push(9);
 
   if (JSON.stringify(pieces) === JSON.stringify(correctOrder)) {
-    window.location.href = 'https://www.youtube.com/watch?v=xvFZjo5PgG0&ab_channel=Duran';
+    // de _blank zorgt ervoor dat het op een nieuwe tab opent
+    window.open('https://www.youtube.com/watch?v=xvFZjo5PgG0', '_blank');
     closePopup();
   }
 }
