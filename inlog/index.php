@@ -64,11 +64,11 @@ if (isset($_POST['inloggen'])){
             <div class="form-input">
                 <input type="password" id="password" name="wachtwoord" placeholder="Wachtwoord" required>
             </div>
-            <button class='button-inlog' type="submit" name="inloggen">Inloggen</button>
+            <button class='button-inlog' type="submit" name="inloggen" id="loginButton" disabled>Inloggen</button>
         </form>
         <p><b>Nog niet geregistreerd?</b> <a class="register-link" href="../register/">Klik hier</a></p>
     </div>
 </div>
+<script src="../inlog/login.js"></script>
 </body>
-
 </html>
