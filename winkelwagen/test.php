@@ -121,7 +121,7 @@ require_once '../api/product-id-info.php';
                 <h4>Kortingscode:</h4>
             </div>
             <input type="text" id="couponCode" name="couponCode" placeholder="Kortingscode">
-            <button class='button-winkelwagen' type="button" onclick="applyCoupon()">Activeer</button>
+            <button class='button-korting' type="button" onclick="applyCoupon()">Activeer</button>
 
 
 

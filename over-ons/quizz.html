@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Environmental Quiz</title>
+    <title>Nerdy Gadgets Quiz</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #fffdfd;
+            background-color: white;
             margin: 0;
             padding: 0;
         }
@@ -16,7 +16,7 @@
             max-width: 600px;
             margin: 50px auto;
             text-align: center;
-            background-color: #f4f4f4;
+            background-color: #ffffff;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -38,13 +38,15 @@
         button {
             padding: 10px;
             font-size: 18px;
+            font-weight: bold;
+            border: none;
             cursor: pointer;
-            background-color: #366aa8;
+            background-color: #2776ea;
             color: #fff;
             border-radius: 30px;
         }
         button:hover {
-            background-color: #455aa0;
+            background-color: #0e4c93;
         }
 
         .feedback {
@@ -62,13 +64,13 @@
 
 <div id="quiz-page" class="quiz-container" style="display: none;">
     <div class="question" id="question1">Vraag 1: Hoe heet onze winkel? </div>
-    <input type="text" id="answer1" placeholder="Your Answer">
+    <input type="text" id="answer1" placeholder="Antwoord 1">
 
     <div class="question" id="question2">Vraag 2: Hoe duur is onze duurste product?</div>
-    <input type="text" id="answer2" placeholder="Your Answer">
+    <input type="text" id="answer2" placeholder="Antwoord 2">
 
     <div class="question" id="question3">Vraag 3: Wat is onze mail?</div>
-    <input type="text" id="answer3" placeholder="Your Answer">
+    <input type="text" id="answer3" placeholder="Antwoord 3">
     <br>
     <button onclick="checkAnswers()">Submit Answers</button>
 
