@@ -73,11 +73,10 @@ input[type="password"] {
     margin-top: 10px;
     cursor: pointer;
     margin-left: 115px;
+    transition: transform 0.09s ease-out;
+    position: relative;
 }
 
-.button-inlog:hover {
-    background-color: #3498db;
-}
 
 .register-link {
     text-decoration: none;
