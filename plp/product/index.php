@@ -78,113 +78,16 @@ $productsClass = new Product();
 
     ?>
 
-    <div class="p-container">
-        <?php
-        $productDescription = $row['description'];
+    <div class="wrap">
+        <div>
+            <?php
+            $productDescription = $row['description'];
 
-        echo "
+            echo "
             <h2 class='pro-desc-title'>Productbeschrijving</h2>
             <p class='pro-desc'>$productDescription</p>
             ";
-        ?>
-    </div>
-
-    <div class="wrap">
-        <!------Product beoordeling------>
-        <div class="container">
-            <h2 class="title">Recenties</h2>
-            <div class="box">
-                <div class="review">
-                    <div class="evenly">
-                        <div class="klantreviews">
-                            <i class="fa fa-star-o"></i>
-                            <i class="fa fa-star-o"></i>
-                            <i class="fa fa-star-o"></i>
-                            <i class="fa fa-star-o"></i>
-                            <i class="fa fa-star-o"></i>
-                        </div>
-                        <h5>17/10/2023</h5>
-                    </div>
-                    <form action="">
-                        <input type="text" id="title" name="title" placeholder="Titel"><br><br>
-                        <textarea name="productreview" rows="6" cols="70rem" placeholder="Schrijf in dit tekstvak uw recentie over dit product."></textarea>
-                        <br>
-                        <input class="button-winkelwagen" type="submit" value="Submit">
-                    </form>
-                </div>
-            </div>
-
-            <div class="box">
-                <div class="review">
-                    <div class="evenly">
-                        <div class="klantreviews">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                        <h5>14/10/2023</h5>
-                    </div>
-                    <h2>Product titel</h2>
-                    <h4>Klantnaam</h4>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type.</p>
-                    <div class="behulpzaam">
-                        <div>Behulpzaam?</div>
-                        <div>Ja(0)</div>
-                        <div>Nee(0)</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="box">
-                <div class="review">
-                    <div class="evenly">
-                        <div class="klantreviews">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                        <h5>14/10/2023</h5>
-                    </div>
-                    <h2>Product titel</h2>
-                    <h4>Klantnaam</h4>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type.</p>
-                    <div class="behulpzaam">
-                        <div>Behulpzaam?</div>
-                        <div>Ja(0)</div>
-                        <div>Nee(0)</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="box">
-                <div class="review">
-                    <div class="evenly">
-                        <div class="klantreviews">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                        <h5>14/10/2023</h5>
-                    </div>
-                    <h2>Product titel</h2>
-                    <h4>Klantnaam</h4>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type.</p>
-                    <div class="behulpzaam">
-                        <div>Behulpzaam?</div>
-                        <div>Ja(0)</div>
-                        <div>Nee(0)</div>
-                    </div>
-                </div>
-            </div>
-            <div class="readmore">
-                <button class="button-winkelwagen" onclick="myFunction()" id="myBtn">Meer lezen</button>
-            </div>
+            ?>
         </div>
 
         <!------gerelateerde producten------>
@@ -208,18 +111,20 @@ $productsClass = new Product();
 
                     echo "
                         <div class='relatedProduct'>
-                            <a href='?id=$productId'>
-                                <img src=/images/products/{$productImage}.jpg alt={$productName}>
-                                <h4>$productName</h4>
-                            </a>
-                            <div class='klantreviews'>
-                                <i class='fa fa-star'></i>
-                                <i class='fa fa-star'></i>
-                                <i class='fa fa-star'></i>
-                                <i class='fa fa-star'></i>
-                                <i class='fa fa-star'></i>
+                            <div class='content'>
+                                <a href='?id=$productId'>
+                                    <img src=/images/products/{$productImage}.jpg alt={$productName}>
+                                    <h4>$productName</h4>
+                                </a>
+                                <div class='klantreviews'>
+                                    <i class='fa fa-star'></i>
+                                    <i class='fa fa-star'></i>
+                                    <i class='fa fa-star'></i>
+                                    <i class='fa fa-star'></i>
+                                    <i class='fa fa-star'></i>
+                                </div>
+                                <p>€$productPrice</p>
                             </div>
-                            <p>€$productPrice</p>
                         </div>
                     ";
                 }
