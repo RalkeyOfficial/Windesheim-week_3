@@ -1,0 +1,105 @@
+* {
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: white;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.registration-container {
+    text-align: center;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 6px 15px -3px #aeaeae;
+    box-shadow: 0px 6px 15px -3px #aeaeae;
+    width: 600px;
+    margin-top: 20px; /* marge tussen afbeelding en registratiecontainer */
+    margin-bottom: 20px; /* Voeg een marge toe aan de onderkant */
+}
+.image-container {
+    width: 150px
+}
+.image-container > img {
+    width: 150px;
+    height: auto;
+}
+.registration-header {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.registration-form {
+    text-align: left;
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 0.8rem;
+}
+
+.form-section {
+    margin: 20px 0;
+}
+
+.form-input {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-input > * {
+    width: min-content;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.button-register {
+    background-color: #2776ea;
+    color: white;
+    text-decoration: none;
+    border: none;
+    font-weight: bold;
+    padding: 13px 2rem;
+    border-radius: 30px;
+    transition: 0.1s;
+    margin: 0.5rem auto;
+    cursor: pointer;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    width: fit-content;
+}
+
+.button-register:hover {
+    background-color: #3498db;
+}
+
+.login-link {
+    text-decoration: none;
+    color: #3498db;
+}

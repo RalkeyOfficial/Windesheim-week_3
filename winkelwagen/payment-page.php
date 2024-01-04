@@ -9,6 +9,26 @@ if (!isset($_SESSION['logged_in'])){
 
 include_once '../includes/globals.php';
 require_once '../api/product-id-info.php';
+require '../api/db/dbc.php';
+
+global $conn;
+
+$query = "
+SELECT street_name, apartment_nr, postal_code, city
+FROM user
+WHERE id = ?
+";
+$result = $conn->execute_query($query, [$_SESSION['id']])->fetch_assoc();
+
+$adresIsComplete = true;
+foreach ($result as $key => $value) {
+    global $adresIsComplete;
+    if (empty($value)) $adresIsComplete = false;
+}
+
+if (!$adresIsComplete) {
+    header('location: /mijngegevens/?message= U heeft nog niet uw adress gegevens ingevuld.');
+}
 
 ?>
 
@@ -73,6 +93,12 @@ require_once '../api/product-id-info.php';
                     </select>
                 </div>
                 <button class='button-winkelwagen' type="submit">Pay Now</button>
+                <div id="popup">
+                    <div id="popup-content">
+                    <div id="puzzle-container"></div>
+                    <button onclick="closePopup()">Close</button>
+                </div>
+  </div>
             </form>
         </div>
 
@@ -118,7 +144,7 @@ require_once '../api/product-id-info.php';
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="winkelwagen.js"></script>
-
+<script src="easteregg.js"></script>
 
 </body>
 

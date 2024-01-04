@@ -6,7 +6,7 @@ session_start();
 include'../api/db/dbc.php';
 
 if (isset($_SESSION['logged_in'])){
-    header('location: ../Account/');
+    header('location: ../account/');
     exit;
 
 }
@@ -24,18 +24,13 @@ if (isset($_POST['inloggen'])){
         $stmt->store_result();
 
         if ($stmt->fetch()) {
-
             if (password_verify($pepper.$wachtwoord, $dbwachtwoord)) {
                 $_SESSION['id'] = $user_id;
                 $_SESSION['first_name'] = $voornaam;
                 $_SESSION['email'] = $email;
                 $_SESSION['logged_in'] = TRUE;
-                header('location: ../Account/?message= u bent ingelogd');
-            } else {
-                header('location: ../inlog/?error=verkeerde wachtwoord');
+                header('location: ../account/?message= u bent ingelogd');
             }
-        }else{
-            header('location: ../inlog/?error=een account met dit email adres bestaat niet');
         }
     }else{
         header('location: ../inlog/?error= Er is iets fout gegaan');
@@ -69,11 +64,11 @@ if (isset($_POST['inloggen'])){
             <div class="form-input">
                 <input type="password" id="password" name="wachtwoord" placeholder="Wachtwoord" required>
             </div>
-            <button class='button-inlog' type="submit" name="inloggen">Inloggen</button>
+            <button class='button-inlog' type="submit" name="inloggen" id="loginButton" disabled>Inloggen</button>
         </form>
         <p><b>Nog niet geregistreerd?</b> <a class="register-link" href="../register/">Klik hier</a></p>
     </div>
 </div>
+<script src="../inlog/login.js"></script>
 </body>
-
 </html>
