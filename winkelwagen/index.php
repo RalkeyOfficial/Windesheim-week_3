@@ -45,9 +45,10 @@ require_once '../api/product-id-info.php';
                                 <img src='/images/products/{$productImage}.jpg' alt='{$productName}'>
                                 <div class='left-space'>
                                     <h4>{$productName}</h4>
-                                    <h4 class='productPrice'>€$productPrice</h4>";
-                // PHP code for the inventory status
-                echo "
+                                    <h4 class='productPrice'>€$productPrice</h4>
+                <?php 
+                                        if
+                                    ?>
                                     <div class='voorraad'>
                                         <span class='dot'></span>
                                         <h5>Online op voorraad</h5>
