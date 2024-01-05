@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 
 include_once '../includes/globals.php';
@@ -45,7 +44,7 @@ require_once '../api/product-id-info.php';
                     $productName = $row['name'];
                     $productPrice = $row['price'];
                     $productImage = $row['image'];
-                    $total = $total + (int)$productPrice; 
+                    $total = $total + (int)$productPrice;
 
                     echo "
                         <div class='box product-data' data-id=$productId>
@@ -54,9 +53,6 @@ require_once '../api/product-id-info.php';
                                 <div class='left-space'>
                                     <h4>{$productName}</h4>
                                     <h4 class='productPrice'>€$productPrice</h4>
-                                    <?php 
-                                        if
-                                    ?>
                                     <div class='voorraad'>
                                         <span class='dot'></span>
                                         <h5>Online op voorraad</h5>
@@ -74,9 +70,9 @@ require_once '../api/product-id-info.php';
                         </div>
                     ";
                 }
-                } else {
-                    echo "<h3>Er zijn geen producten in jouw winkelwagen</h3>";
-                }
+            } else {
+                echo "<h3>Er zijn geen producten in jouw winkelwagen</h3>";
+            }
             ?>
         </div>
 
@@ -99,38 +95,50 @@ require_once '../api/product-id-info.php';
                         ?>
                     </div>
                     <h4>€
-                        <?php 
-                            echo "<span class='totalCost'>$total</span>";
+                        <?php
+                        echo "<span class='totalCost'>$total</span>";
                         ?>
-                        </h4>
+                    </h4>
                 </div>
 
                 <div class="flex">
-                    <?php 
-                        if ($total > 1) {
-                            echo '<h4>Verzendkosten</h4>';
-                            echo '<h4>Gratis!</h4>';
-                        }
+                    <?php
+                    if ($total > 1) {
+                        echo '<h4>Verzendkosten</h4>';
+                        echo '<h4>Gratis!</h4>';
+                    }
                     ?>
                 </div>
+
+                <div class="flex">
+                    <h4>Kortingscode:</h4>
+                </div>
+                <div class="addKorting">
+                    <input type="text" id="couponCode" name="couponCode" placeholder="Kortingscode" class="kortingCodeInput">
+                    <button class='button-korting' type="button-small" onclick="applyCoupon(event)">Activeer</button>
+                </div>
+
                 <hr>
                 <h4>Totaal</h4>
                 <div class="flex">
                     <h4>Incl. BTW</h4>
                     <h4>€
-                        <?php 
-                            echo "<span class='totalCost'>$total</span>"; 
-                            echo "<input id='hiddenTotal' type='hidden' name='total' value='$total' />"
+                        <?php
+                        echo "<span class='totalCost'>$total</span>";
+                        echo "<input id='hiddenTotal' type='hidden' name='total' value='$total' />"
                         ?>
                     </h4>
+
                 </div>
+
                 <hr>
+
                 <?php
-                    if ($count > 0) {
-                        echo "<button class='button-winkelwagen' type='submit'>Ga verder naar de kassa</button>";
-                    } else {
-                        echo "<button class='button-winkelwagen' onclick='redirectToOverview()'>Bekijk onze producten</button>";
-                    }
+                if ($count > 0) {
+                    echo "<button class='button-winkelwagen' type='submit'>Ga verder naar de kassa</button>";
+                } else {
+                    echo "<button class='button-winkelwagen' onclick='redirectToOverview()'>Bekijk onze producten</button>";
+                }
                 ?>
             </form>
         </div>
@@ -139,12 +147,50 @@ require_once '../api/product-id-info.php';
     <!-- footer -->
     <?php include_once ROOT . '/components/footer.php' ?>
 
-    <script
-        src="https://code.jquery.com/jquery-3.7.1.min.js"
-        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="winkelwagen.js"></script>
-    
+
+    <script>
+        let discountApplied = false;
+
+        function applyCoupon(e) {
+            e.preventDefault();
+
+            if (discountApplied) {
+                alert('Discount has already been applied.');
+                return;
+            }
+
+            let couponCode = document.getElementById('couponCode').value.toLowerCase() || "";
+
+            if (couponCode === hex2a('67616467657473')) {
+                let discountPercentage = 10;
+
+                let totalInclBtw = parseFloat(document.querySelector('.totalCost').innerText);
+                let discountAmount = (discountPercentage / 100) * totalInclBtw;
+                let discountedTotalInclBtw = totalInclBtw - discountAmount;
+
+                [...document.querySelectorAll('.totalCost')].map(item => item.innerText = discountedTotalInclBtw.toFixed(2))
+                document.getElementById('hiddenTotal').value = discountedTotalInclBtw.toFixed(2);
+
+                discountApplied = true;
+
+                document.querySelector("#couponCode").disabled = true;
+                document.querySelector(".button-korting").disabled = true;
+            } else {
+                alert('Invalid coupon code.');
+            }
+        }
+
+        function hex2a(hexx) {
+            var hex = hexx.toString(); //force conversion
+            var str = '';
+            for (var i = 0; i < hex.length; i += 2)
+                str += String.fromCharCode(parseInt(hex.substr(i, 2), 16));
+            return str;
+        }
+    </script>
+
 </body>
 
 </html>
