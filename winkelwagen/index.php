@@ -23,6 +23,13 @@ require_once '../api/product-id-info.php';
     <!-- header -->
     <?php include_once ROOT . '/components/header.php' ?>
 
+    <div id="popup">
+        <div id="popup-content">
+        <div id="puzzle-container"></div>
+        <button onclick="closePopup()">Close</button>
+        </div>
+    </div>
+
     <h2 class="title">Mijn Winkelwagen</h2>
     <div class="wrap">
         <div class="shopping-cart">
