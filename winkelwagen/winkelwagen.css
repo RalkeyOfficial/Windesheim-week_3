@@ -170,15 +170,33 @@ input::-webkit-inner-spin-button {
     object-fit: contain;
 }
 
+.addKorting {
+    display: flex;
+    flex-direction: row;
+    gap: 0;
+    margin-top: 10px;
+    border-radius: 30em;
+    outline: 1px solid #ccc;
+    width: fit-content;
+    overflow: hidden;
+}
+
 .button-korting {
     background-color: #2776ea;
     color: white;
     text-decoration: none;
     border: 2px solid transparent;
     font-weight: bold;
-    padding: 10px 20px;
-    border-radius: 8px;
+    padding: 0.5em 1em;
     transition: 0.4s;
-    margin-top: 10px;
+    cursor: pointer;
+}
+.button-korting:disabled {
+    background-color: grey;
 }
 
+.kortingCodeInput {
+    padding: 0.5em 1em;
+    outline: none;
+    border: none;
+}
