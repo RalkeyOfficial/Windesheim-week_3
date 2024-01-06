@@ -170,15 +170,75 @@ input::-webkit-inner-spin-button {
     object-fit: contain;
 }
 
+/* easter egg */
+#puzzle-container {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 5px;
+} 
+
+.puzzle-piece {
+    width: 100px;
+    height: 100px;
+    border: 2px solid #000;
+    background-color: #3498db;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    cursor: grab;
+    background-size: contain;
+}
+
+#popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+#popup-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.addKorting {
+    display: flex;
+    flex-direction: row;
+    gap: 0;
+    margin-top: 10px;
+    border-radius: 30em;
+    outline: 1px solid #ccc;
+    width: fit-content;
+    overflow: hidden;
+}
+
 .button-korting {
     background-color: #2776ea;
     color: white;
     text-decoration: none;
     border: 2px solid transparent;
     font-weight: bold;
-    padding: 10px 20px;
-    border-radius: 8px;
+    padding: 0.5em 1em;
     transition: 0.4s;
-    margin-top: 10px;
+    cursor: pointer;
 }
 
+.button-korting:disabled {
+    background-color: grey;
+}
+
+.kortingCodeInput {
+    padding: 0.5em 1em;
+    outline: none;
+    border: none;
+}
