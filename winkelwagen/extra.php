@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 
 include_once '../includes/globals.php';
@@ -167,29 +168,23 @@ require_once '../api/product-id-info.php';
         var couponCode = document.getElementById('couponCode').value.toUpperCase();
 
         if (couponCode === 'GADGETS') {
-
             var discountPercentage = 10;
-
 
             var totalInclBtw = parseFloat(document.querySelector('.totalCost').innerText);
             var discountAmount = (discountPercentage / 100) * totalInclBtw;
             var discountedTotalInclBtw = totalInclBtw - discountAmount;
 
-
-            document.querySelectorAll('.totalCost').forEach(item => item.innerText = discountedTotalInclBtw.toFixed(2));
-
+            [document.querySelectorAll('.totalCost')].map(item => item.innerText = discountedTotalInclBtw.toFixed(2));
             document.getElementById('hiddenTotal').value = discountedTotalInclBtw.toFixed(2);
-
-
 
 
 
             discountApplied = true;
         } else {
-
             alert('Invalid coupon code.');
         }
     }
+
 
 </script>
 
