@@ -95,7 +95,7 @@ if (!$adresIsComplete) {
                 <button class='button-winkelwagen' type="submit">Pay Now</button>
                 <div id="popup">
                     <div id="popup-content">
-                    <div id="puzzle-container"></div>
+                    <iframe width="500" height="500" src="https://www.youtube.com/embed/xvFZjo5PgG0?"></iframe> 
                     <button onclick="closePopup()">Close</button>
                 </div>
   </div>
@@ -144,7 +144,7 @@ if (!$adresIsComplete) {
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="winkelwagen.js"></script>
-<script src="easteregg.js"></script>
+<script src="easter.js"></script>
 
 </body>
 
