@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 body {
     background-color: white;
@@ -23,10 +23,10 @@ body {
     display: grid; /* Gebruik een grid-layout */
     grid-template-columns: 1fr 1fr; /* Twee kolommen met gelijke breedte */
     align-items: center;
-    gap : 4rem
+    gap: 4rem;
 }
 .smallcategorietekst {
-    color: #2776EA;
+    color: #2776ea;
     font-weight: bold;
 }
 .col-2 {
@@ -44,22 +44,42 @@ body {
     align-items: center;
     flex-wrap: wrap; /*  kolommen nieuwe rij  niet in de container passen */
     justify-content: space-around;
-    gap: 3rem
+    gap: 1rem;
 }
 
+/* i got a bit of motivation and decided to fuck around and find out */
+/* and the result is good */
 .relatedProduct {
     padding: 10px;
     min-width: 200px;
     margin-bottom: 2rem;
     box-sizing: border-box; /* padding en randen binnen de 25% breedte vallen */
     text-align: center; /* Centreer  inhoud binnen de kolom */
+    box-shadow: inset -0px -0px 0px 0px rgba(0, 0, 0, 0);
+    transition: box-shadow 0.1s linear;
+    border-radius: 2rem;
+}
+.relatedProduct:hover {
+    box-shadow: inset -1px -1px 5px 2px rgba(0, 0, 0, 0.1);
+}
+.relatedProduct:active {
+    box-shadow: inset -1px -1px 5px 4px rgba(0, 0, 0, 0.1);
+}
+.relatedProduct > .content {
+    transition: scale 0.1s linear;
+}
+.relatedProduct:hover > .content {
+    scale: 0.99;
+}
+.relatedProduct:active > .content {
+    scale: 0.97;
 }
 
 .relatedProduct a {
     text-decoration: none !important;
 }
 
-.relatedProduct h4{
+.relatedProduct h4 {
     min-width: 200px;
     margin-bottom: 1.5rem;
     box-sizing: border-box; /* padding en randen binnen de 25% breedte vallen */
@@ -75,6 +95,7 @@ body {
     width: 100%;
     height: 200px; /*  gewenste hoogte img */
     object-fit: contain; /* beeldverhouding en bedek de volledige ruimte */
+    padding: 1rem;
 }
 
 .title {
@@ -82,12 +103,12 @@ body {
     margin: 0 auto 60px;
     position: relative;
     line-height: 60px;
-    color: #2776EA ;
+    color: #2776ea;
     font-size: 40px;
 }
 
 .pro-desc-title {
-    color: #2776EA ;
+    color: #2776ea;
     font-size: 40px;
 }
 
@@ -104,18 +125,18 @@ body {
 .col-4 p {
     font-size: 1.2rem;
 }
-.col-4 h4{
+.col-4 h4 {
     font-size: 20px;
 }
 .klantreviews .fa {
-    color: #2776EA;
+    color: #2776ea;
 }
-.pagina-btn{
+.pagina-btn {
     margin: 0 auto 80px;
 }
-.pagina-btn span{
+.pagina-btn span {
     display: inline-block;
-    border: 1px solid #2776EA;
+    border: 1px solid #2776ea;
     margin-left: 10px;
     width: 40px;
     height: 40px;
@@ -129,24 +150,24 @@ body {
     width: 100%;
     border-radius: 4px;
     padding: 15px;
-    background-color: #F7F7F7;
+    background-color: #f7f7f7;
 }
 
 .button-winkelwagen {
-    background-color: #2776EA;
+    background-color: #2776ea;
     color: white;
     text-decoration: none;
     border: 2px solid transparent;
     font-weight: bold;
     padding: 13px 30px;
     border-radius: 30px;
-    transition: .1s;
+    transition: 0.1s;
     margin-top: 10px; /* Verhoog de bovenmarge van de knop */
 }
 
 .button-winkelwagen:hover {
     background-color: transparent;
-    border: 2px solid #2776EA;
+    border: 2px solid #2776ea;
     cursor: pointer;
     color: black;
 }
@@ -155,66 +176,11 @@ body {
     scale: 0.9;
 }
 
-/* recenties start */
-
-.box {
-    width: 100%;
-    border-radius: 4px;
-    padding: 15px;
-    background-color: #F7F7F7;
-    margin-bottom: 40px;
-}
-
-.tekstfield {
-    width: 100%;
-    border-radius: 4px;
-    padding: 15px;
-    background-color: #F7F7F7;
-    margin-bottom: 40px;
-}
-
-.review {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.review .evenly{
-    font-size: 20px;
-    display: flex;
-    justify-content: space-between;
-}
-
-.review h2 {
-    font-size: 25px;
-    /* margin-top: 5px; */
-}
-
-.review h4, p {
-    /* margin-top: 10px; /* Vergroot de afstand boven de h3; */
-}
-
-.review .behulpzaam {
-    font-size: 17px;
-    /* margin-top: 10px; /* Vergroot de afstand boven de h3 */
-    display: flex;
-    gap: 1rem;
-}
-
-.readmore {
-    display: flex;
-    justify-content: center;
-}
-
-/* recenties end */
-
 .wrap {
     display: grid;
-    grid-template-columns: 5fr 4fr;
+    grid-template-columns: 5fr 5fr;
     width: 1200px;
     margin: auto;
-    margin-top: 5rem;
-    margin-bottom: 2rem;
     gap: 3rem;
 }
 
